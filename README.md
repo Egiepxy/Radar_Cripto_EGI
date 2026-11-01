@@ -1,10 +1,11 @@
-# Radar Cripto EGI — Central V1.3.2 (01/11/2026)
+# Radar Cripto EGI — Central V1.4 (01/11/2026)
 
 **O mercado fala. Nós investigamos.**
 
 Projeto público independente dos aplicativos operacionais EGI. Portal de vídeos, notícias verificadas e auditoria dos laboratórios EGI, sem execução de ordens.
 
 - Central oficial: https://egiepxy.github.io/Radar_Cripto_EGI/
+- Kit de produção do episódio 01: https://egiepxy.github.io/Radar_Cripto_EGI/producao-episodio-01.html
 - Manual Mestre HTML: https://egiepxy.github.io/Radar_Cripto_EGI/manual-mestre.html
 - Canal oficial WhatsApp: https://whatsapp.com/channel/0029VbDM7Z51SWsxzjtKLb18
 - Feed RSS: https://egiepxy.github.io/Radar_Cripto_EGI/feed.xml
@@ -12,8 +13,9 @@ Projeto público independente dos aplicativos operacionais EGI. Portal de vídeo
 
 ## Arquivos preservados
 
+- `producao-episodio-01.html`: kit V1.4 com roteiro, teleprompter, chamada curta, descrição para YouTube/WhatsApp e checklist, sem vídeo gerado ou publicado.
 - `index.html`: portal público responsivo, laboratório, notícias, novidades, avisos, compartilhamento.
-- `manual-mestre.html`: **apostila oficial V1.3.2**, com história, tutorial de publicação, segurança, rotina editorial, backup, recuperação e caderno de evolução.
+- `manual-mestre.html`: **apostila oficial V1.4**, com história, tutorial de publicação, segurança, rotina editorial, backup, recuperação e caderno de evolução.
 - `painel-editorial.html`: Painel Editorial V1.3 de rascunhos locais com exportação JSON/TXT e compartilhamento manual. NÃO publica automaticamente.
 - `feed.xml`: RSS de novidades. Atualizar MANUALMENTE a cada publicação real.
 - `config.js`: links verdadeiros do canal YouTube, Telegram público, fornecedor de formulário e notícias verificadas. Não colocar segredos.
@@ -74,6 +76,11 @@ O relatório inicial sobre seis ativos é uma fotografia de 30/10/2026 às 18:44
 - **V1.3 — 01/11/2026:** Painel Editorial offline (rascunhos e backups), WhatsApp e Telegram prioritários, sem formulário de e-mail. Links ainda não configurados nessa versão.
 - **V1.3.1 — 01/11/2026:** Canal oficial do WhatsApp vinculado, botão de destaque na página inicial e Manual Mestre atualizado. Sem notificações automáticas nem coleta de números.
 - **V1.3.2 — 01/11/2026:** FP institucionalizada, com página pública, rodapé, roteiro de vídeo e saída editorial. Manual Mestre e histórico atualizados.
+- **V1.4 — 01/11/2026:** kit do episódio piloto (teleprompter e textos), links na Central, documentação atualizada; vídeo ainda não publicado.
+
+## Primeiro vídeo
+
+O roteiro está em pré-produção. Os estudos históricos de 30/10/2026 não são cotações de hoje. A descrição pronta não significa upload, publicação ou envio automático. Somente após o vídeo estar no YouTube se deve inserir o link real na Central, atualizar RSS e avisar o canal do WhatsApp.
 
 Para atualizações futuras: mudar o índice principal, README, manual e RSS quando houver nova publicação. Registrar decisões e falhas antes de substituir versões.
 
