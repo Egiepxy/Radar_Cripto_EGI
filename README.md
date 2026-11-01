@@ -1,4 +1,4 @@
-# Radar Cripto EGI — Central V1.4.2 (01/11/2026)
+# Radar Cripto EGI — Central V1.4.3 (01/11/2026)
 
 **O mercado fala. Nós investigamos.**
 
@@ -15,7 +15,7 @@ Projeto público independente dos aplicativos operacionais EGI. Portal de vídeo
 
 - `producao-episodio-01.html`: kit V1.4 com roteiro, teleprompter, chamada curta, descrição para YouTube/WhatsApp e checklist, sem vídeo gerado ou publicado.
 - `index.html`: portal público responsivo, laboratório, notícias, novidades, avisos, compartilhamento.
-- `manual-mestre.html`: **apostila oficial V1.4.2**, com história, tutorial de publicação, segurança, rotina editorial, backup, recuperação e caderno de evolução.
+- `manual-mestre.html`: **apostila oficial V1.4.3**, com história, tutorial de publicação, segurança, rotina editorial, backup, recuperação e caderno de evolução.
 - `painel-editorial.html`: agora somente resgate de JSON de rascunhos antigos armazenados no próprio navegador. O editor funcional e o backup da Central V1.4 estão preservados na pasta `Radar_Cripto_EGI_Privado/` do repositório **privado** `Egiepxy/Meus_Projetos` e são usados via download do HTML, offline.
 - `feed.xml`: RSS de novidades. Atualizar MANUALMENTE a cada publicação real.
 - `config.js`: links verdadeiros do canal YouTube, Telegram público, fornecedor de formulário e notícias verificadas. Não colocar segredos.
@@ -96,3 +96,7 @@ Para atualizações futuras: mudar o índice principal, README, manual e RSS qua
 **Conteúdo educacional. Sem ordens e sem promessa de lucro.**
 
 - **V1.4.2 — 01/11/2026:** YouTube oficial vinculado, botão inicial e seção Avisos atualizados; WhatsApp, FP, manual e área editorial preservados.
+
+## Mercado ao Vivo EGI — teste BTC V1 (V1.4.3)
+
+Abrir `btc-ao-vivo.html`: gráfico externo TradingView de BINANCE:BTCUSDT, volume, detalhes e botões 15m/1h/4h. Conexão e disponibilidade dependem do TradingView; componente carregado não comprova cotação atualizada. Conferir horário no gráfico. Falha: recarregar ou abrir no TradingView. Não gera sinais ou ordens. FP incluída. Backup completo deve preservar este arquivo. Acesso pela Central e documentação no Manual Mestre.
