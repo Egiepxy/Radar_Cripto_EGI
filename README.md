@@ -1,28 +1,54 @@
-# Radar Cripto EGI — Central V1.1
-
-Site responsivo e independente dos aplicativos EGI de trading.
-
-## Publicação
-
-No GitHub, abra Settings → Pages → Build and deployment → Deploy from a branch. Escolha main, pasta / (root), e salve.
-
-Endereço esperado após a ativação: https://egiepxy.github.io/Radar_Cripto_EGI/
-
-## Arquivos
-
-- index.html: página principal, vídeos, notícias, laboratório e cadastro.
-- config.js: configurar links reais; nunca inserir tokens, senhas ou chaves.
-- assets/logo.svg e assets/episodio01.svg: identidade visual.
-- privacidade.html e roteiro-episodio-01.html: páginas auxiliares.
-
-## Avisos
-
-Cadastro voluntário desativado até preencher endpoint real do Formspree e e-mail de privacidade. O Formspree recolhe pedidos, mas não distribui alertas automaticamente. Para notificações de vídeos por e-mail, será necessária integração de newsletter com confirmação e descadastro.
-
-## Dados
-
-Os seis resultados do Laboratório são do registro de 30/10/2026, RelEGI V1.8 (2), horizonte de três candles de 15 minutos. Retorno direcional retrospectivo não representa lucro. +6/+12 estavam pendentes no relatório.
-
-Nenhum vídeo fictício é anunciado como publicado. Notícias somente com fontes verificadas. Não realiza ordens, não acessa contas de corretoras.
+# Radar Cripto EGI — Central V1.2 (01/11/2026)
 
 **O mercado fala. Nós investigamos.**
+
+Projeto público independente dos aplicativos operacionais EGI. Portal de vídeos, notícias verificadas e auditoria dos laboratórios EGI, sem execução de ordens.
+
+- Central oficial: https://egiepxy.github.io/Radar_Cripto_EGI/
+- Manual Mestre HTML: https://egiepxy.github.io/Radar_Cripto_EGI/manual-mestre.html
+- Feed RSS: https://egiepxy.github.io/Radar_Cripto_EGI/feed.xml
+- Roteiro do episódio 01: https://egiepxy.github.io/Radar_Cripto_EGI/roteiro-episodio-01.html
+
+## Arquivos preservados
+
+- `index.html`: portal público responsivo, laboratório, notícias, novidades, avisos, compartilhamento.
+- `manual-mestre.html`: **apostila oficial V1.2**, com história, tutorial de publicação, segurança, rotina editorial, backup, recuperação e caderno de evolução.
+- `feed.xml`: RSS de novidades. Atualizar MANUALMENTE a cada publicação real.
+- `config.js`: links verdadeiros do canal YouTube, Telegram público, fornecedor de formulário e notícias verificadas. Não colocar segredos.
+- `privacidade.html`: política e estágio de coleta de dados.
+- `roteiro-episodio-01.html`: roteiro, não confundir com vídeo já publicado.
+- `assets/logo.svg` / `assets/episodio01.svg`: marca e capa.
+
+## GitHub Pages
+
+Settings → Pages → Build and deployment → Deploy from a branch → `main` → `/(root)` → Save.
+
+Verificar após cada mudança o endereço `https://egiepxy.github.io/Radar_Cripto_EGI/`. Se houver 404, conferir o nome do repositório, branch, pasta, index.html e publicação.
+
+## Inscrições / notificações
+
+- **RSS ativo:** URL `feed.xml`; um leitor de RSS permite seguir alterações, mas não envia e-mail por si só.
+- **YouTube / Telegram público:** os links continuam vazios até criação e confirmação dos canais. Não confundir com o Telegram privado dos sinais EGI.
+- **Cadastro de e-mail inativo:** o `config.js` ainda não tem endpoint real ou contato de privacidade. Não afirmar que a newsletter funciona. Formspree, se escolhido, coleta solicitações mas não envia newsletters automaticamente. Antes de ativar, revisar transparência, consentimento, retenção, cancelamento e mecanismo de confirmação.
+
+## Regra editorial e laboratório
+
+Só publicar notícias com fonte, data e URL real. Testes com candles fechados devem separar hipótese, retorno retrospectivo, avaliação prospectiva, erro, custo e execução efetiva.
+
+O relatório inicial sobre seis ativos é uma fotografia de 30/10/2026 às 18:44:59 BRT (RelEGI V1.8 (2), +3 candles 15m). +6/+12 permaneciam pendentes no relatório de origem. Não constitui sinal de execução.
+
+## Backup recomendado
+
+1. GitHub → Code → Download ZIP: salva a versão do código.
+2. Guardar o Manual Mestre em HTML (botão **Salvar HTML** na Central).
+3. Se usar o Caderno de Evolução no manual, exportar as notas JSON/TXT. **Anotações locais não são sincronizadas com o GitHub**.
+4. Arquivar, fora do repositório público, relatórios EGI de origem e backups privados; nunca publicar chaves ou listas de assinantes.
+
+## Histórico
+
+- **V1.1 — 01/11/2026:** identidade, vídeos/roteiro, notícias preparadas, laboratório de seis ativos, cadastro inativo e privacidade.
+- **V1.2 — 01/11/2026:** RSS público, área Novidades, links de compartilhamento, Manual Mestre HTML, instruções de backup e caderno de evolução offline.
+
+Para atualizações futuras: mudar o índice principal, README, manual e RSS quando houver nova publicação. Registrar decisões e falhas antes de substituir versões.
+
+**Conteúdo educacional. Sem ordens e sem promessa de lucro.**
