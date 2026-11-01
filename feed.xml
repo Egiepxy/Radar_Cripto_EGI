@@ -7,6 +7,12 @@
     <language>pt-BR</language>
     <atom:link href="https://egiepxy.github.io/Radar_Cripto_EGI/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
+      <title>Radar Cripto EGI V1.4.1 — Área editorial privada</title>
+      <link>https://egiepxy.github.io/Radar_Cripto_EGI/manual-mestre.html#editorial</link>
+      <guid isPermaLink="false">radar-cripto-egi-v1-4-1-area-privada-2026-11-01</guid>
+      <description>O editor funcional saiu da Central pública e foi preservado em repositório privado. O endereço antigo serve somente para recuperar rascunhos locais em JSON; Manual Mestre atualizado.</description>
+    </item>
+    <item>
       <title>Radar Cripto EGI V1.4 — Kit de gravação do episódio 01</title>
       <link>https://egiepxy.github.io/Radar_Cripto_EGI/producao-episodio-01.html</link>
       <guid isPermaLink="false">radar-cripto-egi-v1-4-producao-episodio-01</guid>
@@ -20,9 +26,9 @@
     </item>
     <item>
       <title>Radar Cripto EGI V1.3 — Painel Editorial e canais WhatsApp/Telegram</title>
-      <link>https://egiepxy.github.io/Radar_Cripto_EGI/painel-editorial.html</link>
+      <link>https://egiepxy.github.io/Radar_Cripto_EGI/manual-mestre.html#historico</link>
       <guid isPermaLink="false">radar-cripto-egi-v1-3-2026-11-01</guid>
-      <description>Painel Editorial HTML para preparar publicações e exportar backups. O portal dá prioridade a WhatsApp e Telegram; os links dos canais oficiais ainda não foram configurados. O formulário de e-mail foi retirado.</description>
+      <description>Registro histórico da V1.3. O editor funcional foi posteriormente movido para uma área privada na V1.4.1. O link público antigo agora serve apenas para exportar rascunhos locais.</description>
     </item>
     <item>
       <title>Radar Cripto EGI V1.2 — Central de publicações e feed RSS</title>
