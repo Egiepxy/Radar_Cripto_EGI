@@ -1,4 +1,4 @@
-# Radar Cripto EGI — Central V1.2 (01/11/2026)
+# Radar Cripto EGI — Central V1.3 (01/11/2026)
 
 **O mercado fala. Nós investigamos.**
 
@@ -13,6 +13,7 @@ Projeto público independente dos aplicativos operacionais EGI. Portal de vídeo
 
 - `index.html`: portal público responsivo, laboratório, notícias, novidades, avisos, compartilhamento.
 - `manual-mestre.html`: **apostila oficial V1.2**, com história, tutorial de publicação, segurança, rotina editorial, backup, recuperação e caderno de evolução.
+- `painel-editorial.html`: Painel Editorial V1.3 de rascunhos locais com exportação JSON/TXT e compartilhamento manual. NÃO publica automaticamente.
 - `feed.xml`: RSS de novidades. Atualizar MANUALMENTE a cada publicação real.
 - `config.js`: links verdadeiros do canal YouTube, Telegram público, fornecedor de formulário e notícias verificadas. Não colocar segredos.
 - `privacidade.html`: política e estágio de coleta de dados.
@@ -25,11 +26,14 @@ Settings → Pages → Build and deployment → Deploy from a branch → `main` 
 
 Verificar após cada mudança o endereço `https://egiepxy.github.io/Radar_Cripto_EGI/`. Se houver 404, conferir o nome do repositório, branch, pasta, index.html e publicação.
 
-## Inscrições / notificações
+## Acompanhamento por WhatsApp e Telegram (V1.3)
 
-- **RSS ativo:** URL `feed.xml`; um leitor de RSS permite seguir alterações, mas não envia e-mail por si só.
-- **YouTube / Telegram público:** os links continuam vazios até criação e confirmação dos canais. Não confundir com o Telegram privado dos sinais EGI.
-- **Cadastro de e-mail inativo:** o `config.js` ainda não tem endpoint real ou contato de privacidade. Não afirmar que a newsletter funciona. Formspree, se escolhido, coleta solicitações mas não envia newsletters automaticamente. Antes de ativar, revisar transparência, consentimento, retenção, cancelamento e mecanismo de confirmação.
+- **Canal do WhatsApp (prioritário):** criar e confirmar o link público do canal; colocá-lo em `config.js → whatsappChannelUrl`. As notificações de canais podem vir silenciadas.
+- **Telegram público (prioritário):** criar canal separado dos alertas privados EGI; colocar `telegramUrl` real em `config.js`.
+- **YouTube:** adicionar `youtubeUrl` apenas quando o canal oficial existir.
+- **RSS:** `feed.xml` continua funcionando em leitores de notícias; deve ser atualizado manualmente.
+- **E-mail:** não é prioridade e o formulário foi removido da Central V1.3; nenhuma coleta ativa.
+- As publicações são manuais. O GitHub Pages não envia mensagens por conta própria.
 
 ## Regra editorial e laboratório
 
@@ -41,13 +45,14 @@ O relatório inicial sobre seis ativos é uma fotografia de 30/10/2026 às 18:44
 
 1. GitHub → Code → Download ZIP: salva a versão do código.
 2. Guardar o Manual Mestre em HTML (botão **Salvar HTML** na Central).
-3. Se usar o Caderno de Evolução no manual, exportar as notas JSON/TXT. **Anotações locais não são sincronizadas com o GitHub**.
+3. Se usar o Caderno de Evolução no manual, exportar as notas JSON/TXT e, separadamente, os registros JSON/TXT do Painel Editorial. **Anotações locais não são sincronizadas com o GitHub**.
 4. Arquivar, fora do repositório público, relatórios EGI de origem e backups privados; nunca publicar chaves ou listas de assinantes.
 
 ## Histórico
 
 - **V1.1 — 01/11/2026:** identidade, vídeos/roteiro, notícias preparadas, laboratório de seis ativos, cadastro inativo e privacidade.
 - **V1.2 — 01/11/2026:** RSS público, área Novidades, links de compartilhamento, Manual Mestre HTML, instruções de backup e caderno de evolução offline.
+- **V1.3 — 01/11/2026:** Painel Editorial offline (rascunhos e backups), WhatsApp e Telegram prioritários, sem formulário de e-mail. Links dos canais ainda não configurados.
 
 Para atualizações futuras: mudar o índice principal, README, manual e RSS quando houver nova publicação. Registrar decisões e falhas antes de substituir versões.
 
