@@ -1,4 +1,4 @@
-# Radar Cripto EGI — Central V1.4.1 (01/11/2026)
+# Radar Cripto EGI — Central V1.4.2 (01/11/2026)
 
 **O mercado fala. Nós investigamos.**
 
@@ -15,7 +15,7 @@ Projeto público independente dos aplicativos operacionais EGI. Portal de vídeo
 
 - `producao-episodio-01.html`: kit V1.4 com roteiro, teleprompter, chamada curta, descrição para YouTube/WhatsApp e checklist, sem vídeo gerado ou publicado.
 - `index.html`: portal público responsivo, laboratório, notícias, novidades, avisos, compartilhamento.
-- `manual-mestre.html`: **apostila oficial V1.4.1**, com história, tutorial de publicação, segurança, rotina editorial, backup, recuperação e caderno de evolução.
+- `manual-mestre.html`: **apostila oficial V1.4.2**, com história, tutorial de publicação, segurança, rotina editorial, backup, recuperação e caderno de evolução.
 - `painel-editorial.html`: agora somente resgate de JSON de rascunhos antigos armazenados no próprio navegador. O editor funcional e o backup da Central V1.4 estão preservados na pasta `Radar_Cripto_EGI_Privado/` do repositório **privado** `Egiepxy/Meus_Projetos` e são usados via download do HTML, offline.
 - `feed.xml`: RSS de novidades. Atualizar MANUALMENTE a cada publicação real.
 - `config.js`: links verdadeiros do canal YouTube, Telegram público, fornecedor de formulário e notícias verificadas. Não colocar segredos.
@@ -33,7 +33,7 @@ Verificar após cada mudança o endereço `https://egiepxy.github.io/Radar_Cript
 
 - **Canal do WhatsApp (ativo):** link oficial informado e registrado em `config.js → whatsappChannelUrl`: https://whatsapp.com/channel/0029VbDM7Z51SWsxzjtKLb18. Há um botão verde destacado na página inicial e outro na seção Avisos. As notificações de canais podem vir silenciadas.
 - **Telegram público (prioritário):** criar canal separado dos alertas privados EGI; colocar `telegramUrl` real em `config.js`.
-- **YouTube:** adicionar `youtubeUrl` apenas quando o canal oficial existir.
+- **YouTube oficial (vinculado):** https://www.youtube.com/channel/UCVAEATJ2sE3-DD2beC5BnTg. Inscreva-se e ative o sininho. O episódio 01 continua em preparação.
 - **RSS:** `feed.xml` continua funcionando em leitores de notícias; deve ser atualizado manualmente.
 - **E-mail:** não é prioridade e o formulário foi removido da Central V1.3; nenhuma coleta ativa.
 - As publicações são manuais. O GitHub Pages não envia mensagens por conta própria.
@@ -94,3 +94,5 @@ O roteiro está em pré-produção. Os estudos históricos de 30/10/2026 não s�
 Para atualizações futuras: mudar o índice principal, README, manual e RSS quando houver nova publicação. Registrar decisões e falhas antes de substituir versões.
 
 **Conteúdo educacional. Sem ordens e sem promessa de lucro.**
+
+- **V1.4.2 — 01/11/2026:** YouTube oficial vinculado, botão inicial e seção Avisos atualizados; WhatsApp, FP, manual e área editorial preservados.
