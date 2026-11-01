@@ -1,4 +1,4 @@
-# Radar Cripto EGI — Central V1.3 (01/11/2026)
+# Radar Cripto EGI — Central V1.3.1 (01/11/2026)
 
 **O mercado fala. Nós investigamos.**
 
@@ -6,6 +6,7 @@ Projeto público independente dos aplicativos operacionais EGI. Portal de vídeo
 
 - Central oficial: https://egiepxy.github.io/Radar_Cripto_EGI/
 - Manual Mestre HTML: https://egiepxy.github.io/Radar_Cripto_EGI/manual-mestre.html
+- Canal oficial WhatsApp: https://whatsapp.com/channel/0029VbDM7Z51SWsxzjtKLb18
 - Feed RSS: https://egiepxy.github.io/Radar_Cripto_EGI/feed.xml
 - Roteiro do episódio 01: https://egiepxy.github.io/Radar_Cripto_EGI/roteiro-episodio-01.html
 
@@ -26,9 +27,9 @@ Settings → Pages → Build and deployment → Deploy from a branch → `main` 
 
 Verificar após cada mudança o endereço `https://egiepxy.github.io/Radar_Cripto_EGI/`. Se houver 404, conferir o nome do repositório, branch, pasta, index.html e publicação.
 
-## Acompanhamento por WhatsApp e Telegram (V1.3)
+## Acompanhamento por WhatsApp e Telegram (V1.3.1)
 
-- **Canal do WhatsApp (prioritário):** criar e confirmar o link público do canal; colocá-lo em `config.js → whatsappChannelUrl`. As notificações de canais podem vir silenciadas.
+- **Canal do WhatsApp (ativo):** link oficial informado e registrado em `config.js → whatsappChannelUrl`: https://whatsapp.com/channel/0029VbDM7Z51SWsxzjtKLb18. Há um botão verde destacado na página inicial e outro na seção Avisos. As notificações de canais podem vir silenciadas.
 - **Telegram público (prioritário):** criar canal separado dos alertas privados EGI; colocar `telegramUrl` real em `config.js`.
 - **YouTube:** adicionar `youtubeUrl` apenas quando o canal oficial existir.
 - **RSS:** `feed.xml` continua funcionando em leitores de notícias; deve ser atualizado manualmente.
@@ -52,7 +53,8 @@ O relatório inicial sobre seis ativos é uma fotografia de 30/10/2026 às 18:44
 
 - **V1.1 — 01/11/2026:** identidade, vídeos/roteiro, notícias preparadas, laboratório de seis ativos, cadastro inativo e privacidade.
 - **V1.2 — 01/11/2026:** RSS público, área Novidades, links de compartilhamento, Manual Mestre HTML, instruções de backup e caderno de evolução offline.
-- **V1.3 — 01/11/2026:** Painel Editorial offline (rascunhos e backups), WhatsApp e Telegram prioritários, sem formulário de e-mail. Links dos canais ainda não configurados.
+- **V1.3 — 01/11/2026:** Painel Editorial offline (rascunhos e backups), WhatsApp e Telegram prioritários, sem formulário de e-mail. Links ainda não configurados nessa versão.
+- **V1.3.1 — 01/11/2026:** Canal oficial do WhatsApp vinculado, botão de destaque na página inicial e Manual Mestre atualizado. Sem notificações automáticas nem coleta de números.
 
 Para atualizações futuras: mudar o índice principal, README, manual e RSS quando houver nova publicação. Registrar decisões e falhas antes de substituir versões.
 
