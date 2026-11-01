@@ -71,7 +71,13 @@ function output(o){return [
 '',
 'RESULTADO E LIMITAÇÕES\n'+(o.result||'não informados'),
 '',
-'Conteúdo educacional. Hipóteses não são ordens nem lucro realizado.'
+'⚠️ FP — RADAR CRIPTO EGI',
+'Tudo o que apresento aqui faz parte dos meus estudos, experiências e decisões pessoais. Não é recomendação de compra ou venda.',
+'Opero com meu próprio dinheiro, assumo meus riscos e também aprendo com meus erros.',
+'O conselho que dou a mim mesmo todos os dias é: estude antes de investir, calcule o risco, proteja seu capital e nunca deixe a emoção decidir por você.',
+'Compartilho essa experiência porque acredito que podemos aprender juntos, tanto com os acertos quanto com os erros.',
+'Se essa mensagem fizer sentido para você, siga essa ideia: primeiro proteja seu dinheiro, depois pense no lucro.',
+'Radar Cripto EGI — O mercado fala. Nós investigamos.'
 ].join('\n')}
 function paint(){el('preview').textContent=output(values());el('count').textContent=String(rows.length);el('list').replaceChildren(...rows.map(r=>{const b=document.createElement('button');b.className='record';b.type='button';b.textContent=(r.title||'Sem título');const sm=document.createElement('small');sm.textContent=(r.date||'s/data')+' · '+(r.type||'')+' · '+(r.stage||'');b.appendChild(sm);b.addEventListener('click',()=>{current=r.id;ids.forEach(k=>el(k).value=r[k]||'');paint();el('message').textContent='Rascunho aberto. Edite e salve novamente.';window.scrollTo({top:0,behavior:'smooth'})});return b}))}
 function store(){try{localStorage.setItem(KEY,JSON.stringify(rows));return true}catch{el('message').textContent='Sem espaço no navegador: exporte JSON e libere espaço.';return false}}
