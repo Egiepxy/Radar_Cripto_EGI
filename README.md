@@ -1,4 +1,4 @@
-# Radar Cripto EGI — Central V1.3.1 (01/11/2026)
+# Radar Cripto EGI — Central V1.3.2 (01/11/2026)
 
 **O mercado fala. Nós investigamos.**
 
@@ -13,7 +13,7 @@ Projeto público independente dos aplicativos operacionais EGI. Portal de vídeo
 ## Arquivos preservados
 
 - `index.html`: portal público responsivo, laboratório, notícias, novidades, avisos, compartilhamento.
-- `manual-mestre.html`: **apostila oficial V1.2**, com história, tutorial de publicação, segurança, rotina editorial, backup, recuperação e caderno de evolução.
+- `manual-mestre.html`: **apostila oficial V1.3.2**, com história, tutorial de publicação, segurança, rotina editorial, backup, recuperação e caderno de evolução.
 - `painel-editorial.html`: Painel Editorial V1.3 de rascunhos locais com exportação JSON/TXT e compartilhamento manual. NÃO publica automaticamente.
 - `feed.xml`: RSS de novidades. Atualizar MANUALMENTE a cada publicação real.
 - `config.js`: links verdadeiros do canal YouTube, Telegram público, fornecedor de formulário e notícias verificadas. Não colocar segredos.
@@ -36,6 +36,24 @@ Verificar após cada mudança o endereço `https://egiepxy.github.io/Radar_Cript
 - **E-mail:** não é prioridade e o formulário foi removido da Central V1.3; nenhuma coleta ativa.
 - As publicações são manuais. O GitHub Pages não envia mensagens por conta própria.
 
+## FP — Frase Padrão oficial EGI
+
+A mensagem completa está na seção “FP” da Central e no capítulo 13 do Manual Mestre. Texto-base:
+
+> Tudo o que apresento aqui faz parte dos meus estudos, experiências e decisões pessoais. Não é recomendação de compra ou venda.
+>
+> Opero com meu próprio dinheiro, assumo meus riscos e também aprendo com meus erros.
+>
+> O conselho que dou a mim mesmo todos os dias é: estude antes de investir, calcule o risco, proteja seu capital e nunca deixe a emoção decidir por você.
+>
+> Compartilho essa experiência porque acredito que podemos aprender juntos, tanto com os acertos quanto com os erros.
+>
+> **Se essa mensagem fizer sentido para você, siga essa ideia: primeiro proteja seu dinheiro, depois pense no lucro.**
+>
+> Radar Cripto EGI — O mercado fala. Nós investigamos.
+
+Versão curta nos roteiros de vídeos e no rodapé. Colocar a FP manualmente ao publicar no WhatsApp; não existe envio automático. A FP não substitui transparência, resultados verificáveis ou obrigações legais aplicáveis.
+
 ## Regra editorial e laboratório
 
 Só publicar notícias com fonte, data e URL real. Testes com candles fechados devem separar hipótese, retorno retrospectivo, avaliação prospectiva, erro, custo e execução efetiva.
@@ -55,6 +73,7 @@ O relatório inicial sobre seis ativos é uma fotografia de 30/10/2026 às 18:44
 - **V1.2 — 01/11/2026:** RSS público, área Novidades, links de compartilhamento, Manual Mestre HTML, instruções de backup e caderno de evolução offline.
 - **V1.3 — 01/11/2026:** Painel Editorial offline (rascunhos e backups), WhatsApp e Telegram prioritários, sem formulário de e-mail. Links ainda não configurados nessa versão.
 - **V1.3.1 — 01/11/2026:** Canal oficial do WhatsApp vinculado, botão de destaque na página inicial e Manual Mestre atualizado. Sem notificações automáticas nem coleta de números.
+- **V1.3.2 — 01/11/2026:** FP institucionalizada, com página pública, rodapé, roteiro de vídeo e saída editorial. Manual Mestre e histórico atualizados.
 
 Para atualizações futuras: mudar o índice principal, README, manual e RSS quando houver nova publicação. Registrar decisões e falhas antes de substituir versões.
 
