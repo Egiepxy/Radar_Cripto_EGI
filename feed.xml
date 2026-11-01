@@ -7,6 +7,12 @@
     <language>pt-BR</language>
     <atom:link href="https://egiepxy.github.io/Radar_Cripto_EGI/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
+      <title>Radar Cripto EGI V1.3 — Painel Editorial e canais WhatsApp/Telegram</title>
+      <link>https://egiepxy.github.io/Radar_Cripto_EGI/painel-editorial.html</link>
+      <guid isPermaLink="false">radar-cripto-egi-v1-3-2026-11-01</guid>
+      <description>Painel Editorial HTML para preparar publicações e exportar backups. O portal dá prioridade a WhatsApp e Telegram; os links dos canais oficiais ainda não foram configurados. O formulário de e-mail foi retirado.</description>
+    </item>
+    <item>
       <title>Radar Cripto EGI V1.2 — Central de publicações e feed RSS</title>
       <link>https://egiepxy.github.io/Radar_Cripto_EGI/#novidades</link>
       <guid isPermaLink="false">radar-cripto-egi-v1-2-feed-2026-11-01</guid>
@@ -18,11 +24,6 @@
       <guid isPermaLink="false">radar-cripto-egi-roteiro-episodio-01-2026-11-01</guid>
       <description>Roteiro: BTC em alerta? Notícias, análise e seis altcoins em teste. Este item indica apenas o roteiro; o vídeo ainda não foi publicado.</description>
     </item>
-    <item>
-      <title>Radar Cripto EGI V1.3 — Painel Editorial e canais WhatsApp/Telegram</title>
-      <link>https://egiepxy.github.io/Radar_Cripto_EGI/painel-editorial.html</link>
-      <guid isPermaLink="false">radar-cripto-egi-v1-3-2026-11-01</guid>
-      <description>Painel Editorial HTML para preparar publicações e exportar backups. O portal dá prioridade a WhatsApp e Telegram; os links dos canais oficiais ainda não foram configurados. O formulário de e-mail foi retirado.</description>
-    </item>
+
   </channel>
 </rss>
