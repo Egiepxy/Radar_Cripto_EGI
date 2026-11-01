@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Radar Cripto EGI — Novidades</title>
+    <link>https://egiepxy.github.io/Radar_Cripto_EGI/</link>
+    <description>Publicações e atualizações oficiais do Radar Cripto EGI. Estudos de Bitcoin, altcoins e Laboratório EGI; conteúdo educacional, sem recomendações de investimento.</description>
+    <language>pt-BR</language>
+    <atom:link href="https://egiepxy.github.io/Radar_Cripto_EGI/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Radar Cripto EGI V1.2 — Central de publicações e feed RSS</title>
+      <link>https://egiepxy.github.io/Radar_Cripto_EGI/#novidades</link>
+      <guid isPermaLink="false">radar-cripto-egi-v1-2-feed-2026-11-01</guid>
+      <description>Atualização do site em 01/11/2026: área de novidades, compartilhamento e feed RSS para leitores de notícias. Não é um episódio de vídeo publicado; newsletter por e-mail ainda não está ativa.</description>
+    </item>
+    <item>
+      <title>Episódio 01 — Roteiro disponível para leitura</title>
+      <link>https://egiepxy.github.io/Radar_Cripto_EGI/roteiro-episodio-01.html</link>
+      <guid isPermaLink="false">radar-cripto-egi-roteiro-episodio-01-2026-11-01</guid>
+      <description>Roteiro: BTC em alerta? Notícias, análise e seis altcoins em teste. Este item indica apenas o roteiro; o vídeo ainda não foi publicado.</description>
+    </item>
+  </channel>
+</rss>
