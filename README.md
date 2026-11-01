@@ -1,4 +1,4 @@
-# Radar Cripto EGI — Central V1.4 (01/11/2026)
+# Radar Cripto EGI — Central V1.4.1 (01/11/2026)
 
 **O mercado fala. Nós investigamos.**
 
@@ -15,8 +15,8 @@ Projeto público independente dos aplicativos operacionais EGI. Portal de vídeo
 
 - `producao-episodio-01.html`: kit V1.4 com roteiro, teleprompter, chamada curta, descrição para YouTube/WhatsApp e checklist, sem vídeo gerado ou publicado.
 - `index.html`: portal público responsivo, laboratório, notícias, novidades, avisos, compartilhamento.
-- `manual-mestre.html`: **apostila oficial V1.4**, com história, tutorial de publicação, segurança, rotina editorial, backup, recuperação e caderno de evolução.
-- `painel-editorial.html`: Painel Editorial V1.3 de rascunhos locais com exportação JSON/TXT e compartilhamento manual. NÃO publica automaticamente.
+- `manual-mestre.html`: **apostila oficial V1.4.1**, com história, tutorial de publicação, segurança, rotina editorial, backup, recuperação e caderno de evolução.
+- `painel-editorial.html`: agora somente resgate de JSON de rascunhos antigos armazenados no próprio navegador. O editor funcional e o backup da Central V1.4 estão preservados na pasta `Radar_Cripto_EGI_Privado/` do repositório **privado** `Egiepxy/Meus_Projetos` e são usados via download do HTML, offline.
 - `feed.xml`: RSS de novidades. Atualizar MANUALMENTE a cada publicação real.
 - `config.js`: links verdadeiros do canal YouTube, Telegram público, fornecedor de formulário e notícias verificadas. Não colocar segredos.
 - `privacidade.html`: política e estágio de coleta de dados.
@@ -62,6 +62,14 @@ Só publicar notícias com fonte, data e URL real. Testes com candles fechados d
 
 O relatório inicial sobre seis ativos é uma fotografia de 30/10/2026 às 18:44:59 BRT (RelEGI V1.8 (2), +3 candles 15m). +6/+12 permaneciam pendentes no relatório de origem. Não constitui sinal de execução.
 
+## Área editorial privada e migração
+
+- **Código operacional:** repositório privado `Egiepxy/Meus_Projetos`, pasta `Radar_Cripto_EGI_Privado/`. Somente quem possui permissão ao repositório consegue acessar os arquivos na versão atual.
+- **Resgate de dados antigos:** abrir `https://egiepxy.github.io/Radar_Cripto_EGI/painel-editorial.html` no MESMO navegador/aparelho/perfil em que se utilizava o editor público, selecionar **Exportar meus rascunhos JSON** e guardar o arquivo.
+- **Uso privado:** baixar `painel-editorial.html` do GitHub privado, abrir localmente e usar **Restaurar JSON anteriormente exportado**. O armazenamento do arquivo local não compartilha automaticamente os dados do site público.
+- **Backup original:** a pasta privada inclui também `backup-index-publico-v1.4.html` e um `README.md` interno.
+- A página pública de resgate lê apenas o `localStorage` do próprio navegador e não envia rascunhos ao GitHub. O editor anterior pode continuar no histórico de commits público; nunca colocar segredos em arquivos públicos.
+
 ## Backup recomendado
 
 1. GitHub → Code → Download ZIP: salva a versão do código.
@@ -77,6 +85,7 @@ O relatório inicial sobre seis ativos é uma fotografia de 30/10/2026 às 18:44
 - **V1.3.1 — 01/11/2026:** Canal oficial do WhatsApp vinculado, botão de destaque na página inicial e Manual Mestre atualizado. Sem notificações automáticas nem coleta de números.
 - **V1.3.2 — 01/11/2026:** FP institucionalizada, com página pública, rodapé, roteiro de vídeo e saída editorial. Manual Mestre e histórico atualizados.
 - **V1.4 — 01/11/2026:** kit do episódio piloto (teleprompter e textos), links na Central, documentação atualizada; vídeo ainda não publicado.
+- **V1.4.1 — 01/11/2026:** editor funcional isolado no repositório privado, snapshot do index V1.4 preservado e página pública anterior transformada apenas em exportador local de JSON. Links retirados da Central; Manual atualizado.
 
 ## Primeiro vídeo
 
