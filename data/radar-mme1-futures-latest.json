@@ -1,11 +1,11 @@
 {
   "app": "RadarMME1 Multimercados LAB V1.1",
-  "generated_at_utc": "2026-11-08T18:22:45.705Z",
+  "generated_at_utc": "2026-11-08T18:26:05.594Z",
   "status": "FONTE_INDISPONIVEL",
   "source": "Binance USD-M Futures",
   "errors": [
     {
-      "error": "/fapi/v1/ticker/bookTicker: Resposta vazia HTTP 202 de https://fapi1.binance.com/fapi/v1/ticker/bookTicker"
+      "error": "/fapi/v1/exchangeInfo: Resposta vazia HTTP 202 de https://fapi1.binance.com/fapi/v1/exchangeInfo"
     }
   ],
   "readings": [],
