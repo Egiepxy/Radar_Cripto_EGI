@@ -1,0 +1,44 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Robô RadarMME1 EGI — 15m + 1h/4h</title><style>
+:root{color-scheme:dark}*{box-sizing:border-box}body{background:#09111e;color:#edf5ff;font:15px system-ui,sans-serif;margin:0}
+main{max-width:1200px;padding:18px;margin:auto}a{color:#78d8ff}h1{font-size:clamp(23px,4vw,35px);margin:5px 0}h2{font-size:19px;margin:0 0 10px}
+.muted{color:#adbfda}.small{font-size:13px}.eyebrow{color:#70ddc8;text-transform:uppercase;letter-spacing:.1em;font-size:12px}
+header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}.btn,button{padding:10px 13px;background:#173450;color:white;border:1px solid #446788;border-radius:9px;text-decoration:none;cursor:pointer}
+section{border:1px solid #294463;background:#121f34;border-radius:14px;padding:16px;margin:14px 0}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:16px 0}
+.kpi{background:#172b43;border:1px solid #314d69;border-radius:12px;padding:12px}.kpi b{display:block;font-size:23px;margin-top:5px}.kpi small{color:#acc1d7}
+.scroll{overflow:auto}table{border-collapse:collapse;width:100%;min-width:800px}th,td{text-align:left;border-bottom:1px solid #2d4360;padding:11px 8px;white-space:nowrap;font-size:13px}th{color:#b5c7db}
+.good{color:#5ee6aa}.warn{color:#f5d277}.bad{color:#ff9da9}.item{background:#0e1b2e;padding:12px;border:1px solid #284365;margin:8px 0;border-radius:10px}
+.pill{display:inline-block;border:1px solid #536f8f;border-radius:24px;padding:2px 8px;font-size:12px}
+.filters{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0}.filters button.selected{background:#247153;border-color:#60d6a2}
+</style></head><body><main>
+<header><div><div class="eyebrow">Radar Cripto EGI • Robô LAB</div><h1>📡 Robô RadarMME1</h1><div class="muted">MME9/21 • 15m gatilho • 1h/4h contexto • IQE + RelOk + pivô técnico</div></div><div><button onclick="refresh()">🔄 Atualizar</button> <a class="btn" href="https://ntfy.sh/RadarMME1_11" target="_blank" rel="noopener">ntfy RadarMME1_11</a></div></header>
+<p id="status" class="muted small">Carregando último snapshot...</p><div class="kpis" id="kpis"></div>
+<section><h2>Top 10 — qualidade RelOk</h2><p class="muted small">Classificação de estudo; score alto não substitui confirmação humana/GPT nem indica probabilidade de lucro.</p><div id="top10">Aguardando dados.</div></section>
+<section><h2>Radar dos ativos</h2><p class="muted small">Estados do motor original RadarMME1 Light V9.1.1. BTC presente caso faça parte do top por volume.</p>
+<div class="filters"><button class="selected" data-filter="ALL">Todos</button><button data-filter="LONG">LONG</button><button data-filter="SHORT">SHORT</button><button data-filter="PREPARAR">PREPARAR</button><button data-filter="RISCO">RISCO</button><button data-filter="LATERAL">Lateral</button></div>
+<div class="scroll"><table><thead><tr><th>Ativo</th><th>15m</th><th>RelOk</th><th>IQE</th><th>MME9/21</th><th>1h</th><th>4h</th><th>Candle fechado</th><th>Gráfico</th></tr></thead><tbody id="table"><tr><td colspan="9">Sem snapshot.</td></tr></tbody></table></div></section>
+<section><h2>Auditoria das operações hipotéticas</h2><p class="muted small">Registro virtual de sinais com stop, 1R e 2R. Candles com stop e alvo simultâneos ficam INDETERMINADOS. Não existe execução real nem cálculo completo de slippage/taxas.</p><div id="trades">Aguardando primeiro resultado.</div></section>
+<section><h2>Manual do robô</h2><p>O cruzamento de MME9/21 <b>não é compra nem venda</b>. A leitura PREPARAR exige reação posterior à região das médias e inclinações coerentes. Para o aviso LONG/SHORT, o robô exige candle 15m fechado, Parecer RelOk APROVADO com pontuação mínima 97, IQE, stop válido por pivô confirmado e filtro de risco. O parecer final humano/GPT permanece pendente.</p>
+<p>O agendamento do GitHub tenta executar a cada 15 minutos, sujeito a atrasos e falhas da plataforma. O GitHub Pages mostra o último arquivo de coleta, não uma cotação tick a tick.</p>
+<p><a href="https://github.com/Egiepxy/Radar_Cripto_EGI/actions/workflows/radar-mme1-egi.yml" target="_blank" rel="noopener">Execuções no GitHub Actions</a> · <a href="./README.md">Manual técnico completo</a></p></section>
+<footer class="muted small">O indicador sugere; o candle fechado confirma. Estudo experimental; sem recomendações nem envio de ordens.</footer></main><script>
+let snapshot=null,filter='ALL';
+const esc=x=>String(x??'—').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const n=(v,d=2)=>v==null||!Number.isFinite(Number(v))?'—':Number(v).toLocaleString('pt-BR',{maximumFractionDigits:d});
+const date=t=>t?new Date(t).toLocaleString('pt-BR',{timeZone:'America/Sao_Paulo'}):'—';
+const cls=s=>s==='LONG'?'good':s==='SHORT'?'bad':'warn';
+function render(d){
+ const r=d.readings||[],count=d.configuration?.top_n||50;
+ document.querySelector('#status').textContent='Última coleta: '+date(d.generated_at_utc)+' BRT • '+r.length+'/'+d.expected_assets+' analisados • Erros de API '+(d.errors||[]).length;
+ const tiles=[['Universo por volume',count],['Analisados',d.analyzed_assets],['LONG/SHORT elegíveis',d.alerts_candidates],['PREPARAR',d.prepared_count],['Estudos abertos',d.open_studies]];
+ document.querySelector('#kpis').innerHTML=tiles.map(x=>'<div class="kpi"><small>'+esc(x[0])+'</small><b>'+esc(x[1])+'</b></div>').join('');
+ document.querySelector('#top10').innerHTML=(d.top10||[]).map((x,i)=>'<div class="item"><b>'+(i+1)+'º '+esc(x.symbol.replace('USDT',''))+'</b> • <span class="'+cls(x.state)+'">'+esc(x.state)+'</span> • RelOk '+n(x.relok,0)+'/100 • IQE '+n(x.iqe,0)+'/100 • '+(x.eligible?'✅ Candidato técnico':'⏳ Observação')+'</div>').join('')||'Sem dados.';
+ const subset=r.filter(x=>filter==='ALL'||x.state===filter);
+ document.querySelector('#table').innerHTML=subset.map(x=>'<tr><td><b>'+esc(x.symbol.replace('USDT',''))+'</b></td><td class="'+cls(x.state)+'">'+esc(x.state)+'</td><td>'+n(x.relok,0)+'</td><td>'+n(x.iqe,0)+'</td><td>'+n(x.fast,8)+' / '+n(x.slow,8)+'</td><td>'+esc(x.context?.['1h']?.state)+'</td><td>'+esc(x.context?.['4h']?.state)+'</td><td>'+date(x.close_time)+'</td><td><a target="_blank" rel="noopener" href="https://www.tradingview.com/chart/?symbol=BINANCE%3A'+encodeURIComponent(x.symbol)+'&interval=15">Abrir</a></td></tr>').join('')||'<tr><td colspan="9">Sem resultados para este filtro.</td></tr>';
+ document.querySelector('#trades').innerHTML=(d.trades||[]).slice(-25).reverse().map(t=>'<div class="item"><b>'+esc(t.symbol)+' '+esc(t.direction)+'</b> • <span class="'+(t.status==='2R'?'good':t.status==='STOP'?'bad':'warn')+'">'+esc(t.status)+'</span> • Resultado '+(t.result_r===null?'—':n(t.result_r)+'R')+'<div class="small muted">Entrada '+n(t.entry,9)+' • Stop '+n(t.stop,9)+' • 1R '+n(t.r1,9)+' • 2R '+n(t.r2,9)+'</div></div>').join('')||'Ainda não existem operações hipotéticas.';
+}
+async function refresh(){try{const res=await fetch('../data/radar-mme1-latest.json?ts='+Date.now(),{cache:'no-store'});if(!res.ok)throw Error('HTTP '+res.status);snapshot=await res.json();render(snapshot)}catch(e){document.querySelector('#status').textContent='Snapshot ainda não publicado: '+e.message+'. Verifique GitHub Actions.'}}
+document.querySelectorAll('[data-filter]').forEach(b=>b.onclick=()=>{filter=b.dataset.filter;document.querySelectorAll('[data-filter]').forEach(x=>x.classList.toggle('selected',x===b));if(snapshot)render(snapshot)});
+refresh();
+</script></body></html>
