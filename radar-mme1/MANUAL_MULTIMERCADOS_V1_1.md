@@ -41,7 +41,9 @@ O novo robô usa endpoints públicos da Binance Futures e não usa chaves, auten
 
 ## Diagnóstico e segurança
 
-- HTTP 451 ou qualquer bloqueio da API: marca a fonte como indisponível. **Não inventa preços e não confunde última coleta com dados ao vivo.**
+- HTTP 202 vazio/HTTP 451, JSON invalido ou indisponibilidade do `exchangeInfo`/tickers: esses metadados sao registrados por endpoint, e o robo tenta os candles de cada contrato separadamente. **Se nao vier candle valido, o contrato fica sem leitura; sem bid/ask validado, nao ha candidato elegivel nem alerta de entrada.**
+- Nenhum candle de Futures disponivel: snapshot `FONTE_INDISPONIVEL` e execucao em erro; isso **nao altera** o robo Spot, que usa outro workflow e fonte `/api/v3`.
+- O SetupDT usa outra rota de estudo para OIL: primeiro MEXC `UKOIL_USDT`, depois Yahoo Finance `BZ=F`. **Nao sao o contrato Binance `BZUSDT` e nao devem ser fundidos como se fossem a mesma serie.** Uma fonte alternativa para OIL exigira um modulo separado e identificacao de origem.
 - Símbolo sem negociação ativa: fica sem sinal. Coleta incompleta: status PARCIAL.
 - Histórico e dados são públicos no repositório; o tópico ntfy também é público. Nunca adicionar informações pessoais.
 - O mercado de ações americano tem horários próprios. Contratos Binance TradFi Perps funcionam 24/7, mas liquidez, preço e spread podem variar nos períodos sem negociação da ação subjacente.
