@@ -1,0 +1,51 @@
+name: RadarMME1 PONTE Multimercados LAB
+
+on:
+  push:
+    branches:
+      - fix/radarmme1-futures-coleta-independente-20261108
+    paths:
+      - 'radar-mme1/ponte-multimercados-lab.js'
+      - 'radar-mme1/test_ponte_multimercados_lab.js'
+      - '.github/workflows/radar-mme1-ponte-lab.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validar-ponte:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Checkout LAB
+        uses: actions/checkout@v4
+      - name: Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Testes offline do motor EGI e da PONTE LAB
+        run: |
+          node radar-mme1/test_robot.js
+          node radar-mme1/test_ponte_multimercados_lab.js
+      - name: Coletar e simular sinais no GitHub (sem ordens e sem ntfy)
+        id: ponte
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          node radar-mme1/ponte-multimercados-lab.js 2>&1 | tee radar-mme1-ponte-lab.log
+      - name: Guardar historico e diagnosticos da execucao
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: radar-mme1-ponte-lab
+          path: |
+            radar-mme1-ponte-lab.log
+            data/radar-mme1-ponte-lab-latest.json
+            data/radar-mme1-ponte-lab-state.json
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Reportar erro de coleta (sem afetar o Spot)
+        if: always()
+        run: |
+          test "${{ steps.ponte.outcome }}" = "success"
