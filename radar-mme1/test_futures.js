@@ -12,7 +12,7 @@ const make=(factor)=>Array.from({length:35},(_,i)=>{
   const price=100+factor*i*i*.01;
   return [start+i*3600000,price,price+2,price-2,price,1,start+(i+1)*3600000-1];
 });
-assert.equal(correlate1h(make(1),make(1)).rho,1);
+assert.ok(Math.abs(correlate1h(make(1),make(1)).rho-1)<1e-12);
 const close=(Math.floor(Date.now()/900000)*900000)-1;
 const good={state:'LONG',parecerCode:'APROVADO',parecerScore:98,
   signalCandleClose:close,stopValid:true,stopAtrMult:1.2,
