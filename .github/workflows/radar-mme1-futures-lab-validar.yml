@@ -33,6 +33,9 @@ jobs:
         run: |
           set -o pipefail
           node radar-mme1/futures-robot.js 2>&1 | tee radar-mme1-futures-lab-diagnostico.log
+      - name: Diagnosticar fontes alternativas independentes
+        if: always()
+        run: node radar-mme1/source-probe-lab.js | tee radar-mme1-sources-lab.json
       - name: Guardar snapshot e log para auditoria
         if: always()
         uses: actions/upload-artifact@v4
@@ -40,6 +43,7 @@ jobs:
           name: radar-mme1-futures-lab-diagnostico
           path: |
             radar-mme1-futures-lab-diagnostico.log
+            radar-mme1-sources-lab.json
             data/radar-mme1-futures-latest.json
             data/radar-mme1-futures-history.json
             data/radar-mme1-futures-state.json
