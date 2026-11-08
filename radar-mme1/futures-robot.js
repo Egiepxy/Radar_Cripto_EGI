@@ -43,7 +43,12 @@ async function api(endpoint,params={}) {
         if(response.status===451) throw new Error('HTTP 451: acesso Binance Futures restrito por região');
         if(response.status===429 || response.status===418) {last=new Error('HTTP '+response.status);await sleep(1800);continue;}
         if(!response.ok) throw new Error('HTTP '+response.status);
-        return await response.json();
+        // Alguns endpoints retornam HTTP 200 com corpo vazio/truncado.
+        // Registrar a falha real e tentar o outro host, sem criar precos ficticios.
+        const raw=await response.text();
+        if(!raw.trim())throw new Error('Resposta vazia HTTP '+response.status+' de '+host+endpoint);
+        try {return JSON.parse(raw);}
+        catch {throw new Error('JSON invalido HTTP '+response.status+' de '+host+endpoint+' ('+raw.length+' caracteres)');}
       } catch(err) {last=err; if(String(err.message).includes('451')) break;}
     }
   }
