@@ -1,6 +1,24 @@
 'use strict';
 const assert=require('node:assert/strict');
-const {WATCH,TF,pearson,correlate1h,eligible,evaluateStudy}=require('./futures-robot.js');
+const {WATCH,TF,pearson,correlate1h,eligible,evaluateStudy,marketMetadata}=require('./futures-robot.js');
+// Regressao: exchangeInfo 202/vazio nao deve interromper a coleta dos candles.
+const parcial=marketMetadata([
+  {status:'rejected',reason:new Error('Resposta vazia HTTP 202')},
+  {status:'fulfilled',value:[{symbol:'BTCUSDT',bidPrice:'100',askPrice:'101'}]},
+  {status:'rejected',reason:new Error('HTTP 451')}
+]);
+assert.equal(parcial.info,null);
+assert.equal(parcial.book24.length,1);
+assert.equal(parcial.volume24.length,0);
+assert.equal(parcial.errors.length,2);
+assert.match(parcial.errors[0].error,/202/);
+const completo=marketMetadata([
+  {status:'fulfilled',value:{symbols:[{symbol:'BTCUSDT',status:'TRADING'}]}},
+  {status:'fulfilled',value:[]},
+  {status:'fulfilled',value:[]}
+]);
+assert.equal(completo.errors.length,0);
+assert.equal(completo.info.symbols[0].symbol,'BTCUSDT');
 assert.equal(WATCH.length,8);
 assert.equal(WATCH.filter(x=>x.group==='ACOES').length,5);
 assert.deepEqual(TF,['15m','1h','2h','4h']);
