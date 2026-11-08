@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RadarMME1 EGI V1.1 LAB — Cripto + Multimercados</title>
+<style>
+:root{color-scheme:dark;--bg:#07111e;--panel:#13243a;--line:#304a64;--txt:#eff6fe;--muted:#adc1d9;--green:#6ae8b0;--yellow:#ffde81;--red:#ff9cab;--blue:#8bd5ff}
+*{box-sizing:border-box}body{background:var(--bg);color:var(--txt);font:15px system-ui,-apple-system,Segoe UI,sans-serif;margin:0}
+main{max-width:1220px;margin:auto;padding:15px}header{display:flex;gap:15px;justify-content:space-between;align-items:center;flex-wrap:wrap}
+h1{font-size:clamp(22px,4vw,32px);margin:6px 0}h2{font-size:18px;margin:0 0 10px}
+.muted{color:var(--muted)}.small{font-size:12px}.eyebrow{font-size:11px;color:#69dec7;letter-spacing:.1em;text-transform:uppercase}
+button,.btn{border:1px solid #52708b;color:white;background:#24445f;border-radius:9px;padding:10px 12px;text-decoration:none;cursor:pointer;font:inherit}
+button.active{background:#166f55;border-color:#55d4a4}button:hover,.btn:hover{filter:brightness(1.15)}
+nav{display:flex;flex-wrap:wrap;gap:7px;margin:16px 0}
+section{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:15px;margin:14px 0}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:9px;margin:16px 0}
+.kpi{background:#1a314a;border:1px solid #334e6d;border-radius:10px;padding:12px}
+.kpi b{display:block;font-size:24px;margin:6px 0}.kpi small{color:var(--muted)}
+.good{color:var(--green)}.bad{color:var(--red)}.warn{color:var(--yellow)}.blue{color:var(--blue)}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px}
+.item{background:#0d1b2d;border:1px solid #35506a;border-radius:10px;padding:12px;margin:8px 0}
+table{width:100%;border-collapse:collapse;min-width:850px}th,td{padding:10px 8px;text-align:left;border-bottom:1px solid var(--line);font-size:12px;white-space:nowrap}th{color:#b8cadd}
+.scroll{overflow-x:auto}.tag{border:1px solid #456b86;border-radius:12px;padding:2px 7px;white-space:nowrap;font-size:11px}
+a{color:#91ddff}.warning{background:#432b22;border-color:#89653c}.hidden{display:none}
+footer{text-align:center;padding:12px 0 25px}p{line-height:1.55}
+</style></head>
+<body><main>
+<header>
+<div><div class="eyebrow">Radar Cripto EGI • Laboratório sem ordens</div>
+<h1>📡 RadarMME1 EGI V1.1</h1><div class="muted">Painel único • Binance Spot + Binance Futuros • MME9/21</div></div>
+<div><button id="refresh">↻ Atualizar painel</button> <a class="btn" href="https://ntfy.sh/RadarMME1_11" target="_blank" rel="noopener">🔔 ntfy</a></div>
+</header>
+<p class="muted small" id="status">Consultando os últimos snapshots publicados no GitHub Pages...</p>
+<div class="kpis" id="kpis"></div>
+<section><h2>🧭 Contexto: BTC e ações americanas</h2><div id="macro" class="cols">Aguardando dados...</div>
+<p class="muted small">Força relativa e correlação são observações, não ordens. A cesta de ações não substitui o Nasdaq. O BTC é referência, mas não bloqueia nenhum ativo.</p></section>
+<nav aria-label="Visualização dos ativos">
+<button data-group="ALL" class="active">Tudo junto</button>
+<button data-group="SPOT">Cripto Spot</button>
+<button data-group="FUTURES">Futuros especiais</button>
+</nav>
+<section><h2>Radar dos sinais</h2>
+<div style="display:flex;flex-wrap:wrap;gap:7px;margin:12px 0">
+<button data-state="ALL" class="active">Todos</button>
+<button data-state="LONG">LONG</button>
+<button data-state="SHORT">SHORT</button>
+<button data-state="PREPARAR">PREPARAR</button>
+<button data-state="RISCO">RISCO</button>
+</div>
+<div class="scroll"><table><thead><tr><th>Mercado</th><th>Ativo</th><th>15m</th><th>RelOk</th><th>IQE</th><th>1h</th><th>2h</th><th>4h</th><th>Corr. BTC 1h</th><th>Fechamento</th><th>Gráfico</th></tr></thead><tbody id="rows"><tr><td colspan="11">Aguardando coleta.</td></tr></tbody></table></div>
+<p class="muted small">Candidato técnico somente com RelOk ≥97, candle 15m fechado, stop e risco válidos. PREPARAR não é entrada. A leitura de 2h está no coletor de Futuros; o Spot original continua 15m/1h/4h.</p></section>
+<section><h2>📒 Auditoria de sinais hipotéticos</h2><div id="audit">Aguardando histórico...</div>
+<p class="muted small">O robô acompanha 1R, 2R e STOP. Se stop e alvo forem tocados no mesmo candle, o resultado é INDETERMINADO. Nenhuma sequência de STOPs bloqueia novas observações.</p></section>
+<section id="errors-section" class="hidden warning"><h2>⚠️ Diagnóstico da coleta</h2><div id="errors"></div></section>
+<section><h2>Manual rápido</h2>
+<p><b>1.</b> O robô Spot continua monitorando o Top 50 Binance Spot. O novo coletor busca MU, SNDK, SPCX, NVDA, TSLA, Brent (BZ), ouro (XAU) e BTC como referência na Binance USD-M Futures.</p>
+<p><b>2.</b> Um cruzamento das MMEs 9/21 pode gerar PREPARAR. O sinal LONG/SHORT exige pullback/rejeição, pontuação RelOk e filtro de risco, sempre com candle fechado. O resultado é um <b>estudo</b>.</p>
+<p><b>3.</b> A coluna de correlação compara os retornos horários do contrato com BTCUSDT Futures nos candles coincidentes disponíveis. Próximo de +1 significa maior associação na mesma direção; próximo de −1 significa direção oposta; perto de zero indica relação linear fraca. A correlação varia e não prevê o próximo candle.</p>
+<p><b>4.</b> Derivativos de ações e commodities funcionam 24/7 na Binance, mas podem apresentar dinâmica de preço e liquidez diferente quando o mercado americano está fechado. Um snapshot antigo ou erro de API nunca deve ser interpretado como preço atual.</p>
+<p><b>5.</b> Se surgir HTTP 451, o Futures está restringindo a consulta a partir do servidor: o painel mostrará a falha em vez de inventar preços ou buscar dados de outra bolsa.</p>
+<p><a href="https://github.com/Egiepxy/Radar_Cripto_EGI/actions/workflows/radar-mme1-futures-egi.yml" target="_blank" rel="noopener">Ver execução do novo coletor no GitHub</a> ·
+<a href="https://github.com/Egiepxy/Radar_Cripto_EGI/actions/workflows/radar-mme1-egi.yml" target="_blank" rel="noopener">Robô Spot original</a> ·
+<a href="./README.md" target="_blank" rel="noopener">Manual técnico V1.0</a></p>
+</section>
+<footer class="muted small">O indicador sugere; o candle fechado confirma. Estudo LAB, sem ordens, alavancagem ou promessa de acerto.</footer>
+</main><script>
+'use strict';
+const URLS={spot:'../data/radar-mme1-latest.json',multi:'../data/radar-mme1-futures-latest.json'};
+let db={spot:null,multi:null},group='ALL',state='ALL';
+const el=id=>document.getElementById(id);
+const esc=s=>String(s??'—').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const num=(x,d=2)=>x==null||!Number.isFinite(Number(x))?'—':Number(x).toLocaleString('pt-BR',{maximumFractionDigits:d});
+const date=x=>x?new Date(x).toLocaleString('pt-BR',{timeZone:'America/Sao_Paulo'}):'—';
+const cls=x=>x==='LONG'?'good':x==='SHORT'?'bad':x==='PREPARAR'?'warn':'blue';
+const ago=x=>x?(Date.now()-Date.parse(x))/60000:1e9;
+const ageLabel=x=>!x?'Sem dados':ago(x)>45?'ATRASADO':'Atualizado';
+const stateMatch=x=>state==='ALL'||x===state||(state==='RISCO'&&['RISCO','ESTICADO'].includes(x));
+function rows() {
+ const spot=(db.spot?.readings||[]).map(x=>({...x,market:'SPOT'}));
+ const future=(db.multi?.readings||[]).filter(x=>x.symbol!=='BTCUSDT').map(x=>({...x,market:'FUTURES'}));
+ const missing=(db.multi?.watchlist||[]).filter(x=>x.group!=='REFERENCIA'&&!future.some(y=>y.symbol===x.symbol))
+    .map(x=>({...x,market:'FUTURES',state:'SEM DADOS',context:{},unavailable:true}));
+ const data=[...(group==='FUTURES'?[]:spot),...(group==='SPOT'?[]:future.concat(missing))];
+ const subset=data.filter(x=>stateMatch(x.state));
+ el('rows').innerHTML=subset.map(x=>{
+   const fut=x.market==='FUTURES',url=fut?'https://www.binance.com/pt/futures/'+encodeURIComponent(x.symbol):
+     'https://www.tradingview.com/chart/?symbol=BINANCE%3A'+encodeURIComponent(x.symbol)+'&interval=15';
+   const corr=x.correlation_btc_1h?.rho, count=x.correlation_btc_1h?.pairs;
+   const corrText=corr==null?'—':(corr>0?'+':'')+num(corr,2)+' ('+count+')';
+   return '<tr><td>'+esc(fut?'Futuros':'Spot')+'</td><td><b>'+esc(x.name||x.symbol)+'</b> <span class="tag">'+esc(x.symbol)+'</span></td>'+
+     '<td class="'+cls(x.state)+'">'+esc(x.state)+(x.eligible?' ✓':'')+'</td>'+
+     '<td>'+num(x.relok,0)+'</td><td>'+num(x.iqe,0)+'</td>'+
+     '<td>'+esc(x.context?.['1h']?.state)+'</td><td>'+esc(x.context?.['2h']?.state)+'</td><td>'+esc(x.context?.['4h']?.state)+'</td>'+
+     '<td>'+corrText+'</td><td>'+date(x.close_time)+'</td><td><a href="'+url+'" target="_blank" rel="noopener">Abrir</a></td></tr>';
+ }).join('')||'<tr><td colspan="11">Sem ativos nesse filtro.</td></tr>';
+}
+function render() {
+ const a=db.spot,b=db.multi;
+ const tiles=[
+  ['Spot analisados',a?.analyzed_assets??'—'],
+  ['Futuros especiais',b?.readings?.filter(x=>x.group!=='REFERENCIA').length??'—'],
+  ['Candidatos Spot',a?.alerts_candidates??'—'],
+  ['Candidatos Futuros',b?.candidates??'—'],
+  ['PREPARAR total',(a?.prepared_count??0)+(b?.prepared??0)]
+ ];
+ el('kpis').innerHTML=tiles.map(x=>'<div class="kpi"><small>'+esc(x[0])+'</small><b>'+esc(x[1])+'</b></div>').join('');
+ const spota=a?.btc,btcf=b?.btc,bas=b?.stock_basket_1h;
+ el('macro').innerHTML=
+  '<div class="item"><b>₿ BTC Spot</b><p>15m: <b class="'+cls(spota?.state)+'">'+esc(spota?.state)+'</b> · 1h: '+esc(spota?.context?.['1h']?.state)+
+  ' · 4h: '+esc(spota?.context?.['4h']?.state)+'</p><div class="muted small">Preço '+num(spota?.price,2)+' USDT · '+(a?ageLabel(a.generated_at_utc):'Sem dados')+'</div></div>'+
+  '<div class="item"><b>₿ BTC Futures</b><p>15m: <b class="'+cls(btcf?.state)+'">'+esc(btcf?.state)+'</b> · 2h: '+esc(btcf?.context?.['2h']?.state)+'</p>'+
+  '<div class="muted small">Preço '+num(btcf?.price,2)+' USDT · '+(b?ageLabel(b.generated_at_utc):'Sem dados')+'</div></div>'+
+  '<div class="item"><b>🇺🇸 Cesta de 5 ações Futures</b><p>1h LONG: <span class="good">'+num(bas?.long,0)+'</span> · SHORT: <span class="bad">'+num(bas?.short,0)+'</span></p>'+
+  '<div class="muted small">MU, SNDK, SPCX, NVDA e TSLA. Somente estados confirmados, não representa Nasdaq.</div></div>';
+ const status=[];
+ if(a)status.push('Spot '+date(a.generated_at_utc)+' ('+ageLabel(a.generated_at_utc)+')');
+ else status.push('Spot indisponível');
+ if(b)status.push('Futuros '+date(b.generated_at_utc)+' ('+ageLabel(b.generated_at_utc)+') · '+b.status);
+ else status.push('Futuros ainda sem snapshot');
+ el('status').textContent=status.join(' | ')+' — atualização manual mostra apenas o último JSON publicado.';
+ rows();
+ const trades=[...(a?.trades||[]).map(x=>({...x,market:'Spot'})),...(b?.trades||[]).map(x=>({...x,market:'Futuros'}))];
+ el('audit').innerHTML=trades.slice(-15).reverse().map(x=>'<div class="item"><b>'+esc(x.market)+' · '+esc(x.symbol)+' '+esc(x.direction)+'</b> <span class="'+(x.status==='2R'?'good':x.status==='STOP'?'bad':'warn')+'">'+esc(x.status)+'</span> · '+(x.result_r==null?'—':num(x.result_r)+'R')+
+ '<div class="small muted">Entrada '+num(x.entry,7)+' · Stop '+num(x.stop,7)+' · 1R '+num(x.r1,7)+' · 2R '+num(x.r2,7)+'</div></div>').join('')||'<p class="muted">Nenhum estudo hipotético concluído ou aberto até este snapshot.</p>';
+ const errors=[...(a?.errors||[]).map(x=>'Spot: '+JSON.stringify(x)),...(b?.errors||[]).map(x=>'Futuros: '+JSON.stringify(x)),
+ ...(b?.notes||[]).filter(x=>x.includes('não está TRADING')||x.includes('ntfy:'))];
+ el('errors-section').classList.toggle('hidden',errors.length===0&&b?.status!=='FONTE_INDISPONIVEL');
+ el('errors').innerHTML=errors.slice(0,12).map(x=>'<p class="small">'+esc(x)+'</p>').join('')||'A fonte Binance Futuros está indisponível neste snapshot.';
+}
+async function refresh(){
+ const res=await Promise.all(Object.entries(URLS).map(async([k,url])=>{
+  try{const x=await fetch(url+'?t='+Date.now(),{cache:'no-store'});if(!x.ok)throw Error('HTTP '+x.status);return [k,await x.json()];}
+  catch(e){return [k,null];}
+ }));
+ for(const [k,x] of res)db[k]=x;
+ render();
+}
+el('refresh').onclick=refresh;
+document.querySelectorAll('[data-group]').forEach(b=>b.onclick=()=>{
+ group=b.dataset.group;document.querySelectorAll('[data-group]').forEach(c=>c.classList.toggle('active',c===b));rows();
+});
+document.querySelectorAll('[data-state]').forEach(b=>b.onclick=()=>{
+ state=b.dataset.state;document.querySelectorAll('[data-state]').forEach(c=>c.classList.toggle('active',c===b));rows();
+});
+refresh();
+</script></body></html>
