@@ -54,6 +54,21 @@ async function api(endpoint,params={}) {
   }
   throw new Error(endpoint+': '+(last?.message||'falha na API'));
 }
+// A consulta do HTML diagnostico e independente por endpoint. Uma falha em
+// exchangeInfo ou nos tickers nao deve impedir a tentativa de candles.
+// Sem bid/ask verificado, a regra eligible() continua impedindo alertas.
+function marketMetadata(outcomes) {
+  const names=['exchangeInfo','ticker/bookTicker','ticker/24hr'];
+  const valid=[x=>!!x&&Array.isArray(x.symbols),Array.isArray,Array.isArray];
+  const values=[null,[],[]],errors=[];
+  for(let i=0;i<names.length;i++) {
+    const r=outcomes[i];
+    if(r?.status==='fulfilled'&&valid[i](r.value))values[i]=r.value;
+    else errors.push({endpoint:'/fapi/v1/'+names[i],
+      error:r?.status==='rejected'?String(r.reason?.message||r.reason):'JSON sem estrutura esperada'});
+  }
+  return {info:values[0],book24:values[1],volume24:values[2],errors};
+}
 async function gather(jobs,worker,limit=4) {
   const result=[],errors=[]; let i=0;
   await Promise.all(Array.from({length:Math.min(limit,jobs.length)},async()=>{
@@ -132,25 +147,22 @@ async function run() {
   const state=load(FILE.state,{initialized:false,status:{},pending:[],trades:[],events:[]});
   const previous=load(FILE.latest,null);
   const errors=[],notes=[];
-  let info,book24,volume24;
-  try {
-    [info,book24,volume24]=await Promise.all([
-      api('/fapi/v1/exchangeInfo'),api('/fapi/v1/ticker/bookTicker'),api('/fapi/v1/ticker/24hr')]);
-    if(!Array.isArray(info.symbols)||!Array.isArray(book24)||!Array.isArray(volume24))throw Error('Resposta Binance Futures inválida');
-  } catch(e) {
-    errors.push({error:String(e.message||e)});
-    // Nunca publicar dados antigos como dados atuais.
-    save(FILE.latest,{app:'RadarMME1 Multimercados LAB V1.1',generated_at_utc:now,
-      status:'FONTE_INDISPONIVEL',source:'Binance USD-M Futures',errors,
-      readings:[],last_good_utc:previous?.status==='OK'?previous.generated_at_utc:previous?.last_good_utc||null});
-    process.exitCode=1;
-    console.error(errors[0].error);
-    return;
-  }
-  const listed=new Map(info.symbols.map(x=>[x.symbol,x]));
+  // Nao depender de exchangeInfo nem de tickers em bloco para estudar candles.
+  // HTTP 202 vazio pode ocorrer em um endpoint mesmo quando outro responde.
+  const meta=marketMetadata(await Promise.allSettled([
+    api('/fapi/v1/exchangeInfo'),
+    api('/fapi/v1/ticker/bookTicker'),
+    api('/fapi/v1/ticker/24hr')
+  ]));
+  errors.push(...meta.errors);
+  const info=meta.info,book24=meta.book24,volume24=meta.volume24;
+  const listed=new Map((info?.symbols||[]).map(x=>[x.symbol,x]));
   const books=new Map(book24.map(x=>[x.symbol,x]));
   const volumes=new Map(volume24.map(x=>[x.symbol,x]));
-  const available=WATCH.filter(x=>listed.get(x.symbol)?.status==='TRADING');
+  // Quando exchangeInfo falha, consultar candles individualmente: sem presumir
+  // que um contrato existe. Somente os que retornarem klines validos serao analisados.
+  const available=WATCH.filter(x=>!info||listed.get(x.symbol)?.status==='TRADING');
+  if(!info)notes.push('exchangeInfo indisponivel; validando contratos por candles.');
   for(const x of WATCH)if(!available.includes(x))notes.push(x.symbol+' não está TRADING na API; sem sinal.');
   const jobs=available.flatMap(x=>TF.map(tf=>({...x,tf})));
   const result=await gather(jobs,async job=>{
@@ -224,7 +236,7 @@ async function run() {
   const stockUp=equities.filter(x=>x.context['1h']?.state==='LONG').length;
   const stockDown=equities.filter(x=>x.context['1h']?.state==='SHORT').length;
   const snapshot={app:'RadarMME1 Multimercados LAB V1.1',generated_at_utc:now,
-    source:'Binance USD-M Futures /fapi/v1',status:readings.length===WATCH.length&&!errors.length?'OK':'PARCIAL',
+    source:'Binance USD-M Futures /fapi/v1',status:!readings.length?'FONTE_INDISPONIVEL':readings.length===WATCH.length&&!errors.length?'OK':'PARCIAL',
     tf:'15m',contexts:['1h','2h','4h'],topic:TOPIC,expected_assets:WATCH.length,
     analyzed_assets:readings.length,watchlist:WATCH,readings,btc,
     stock_basket_1h:{total:equities.length,long:stockUp,short:stockDown,
@@ -232,9 +244,11 @@ async function run() {
     candidates:readings.filter(x=>x.eligible).length,prepared:readings.filter(x=>x.state==='PREPARAR').length,
     open_studies:studies.filter(x=>x.status==='ABERTA').length,trades:studies.slice(-100),
     errors,notes,warning:'Contratos derivados. Correlação histórica não é previsão. Sinais simulados, sem ordens ou garantia de ganho.'};
-  state.initialized=true;state.status={...(state.status||{}),...status};
+  if(readings.length)state.initialized=true;state.status={...(state.status||{}),...status};
   state.pending=unsent.slice(-40);state.trades=studies.slice(-200);state.events=state.events.slice(-250);
   state.last_checked=now;
+  if(!readings.length)notes.push('Nenhum candle validado; verificar bloqueio regional da Binance Futures no runner GitHub.');
+  snapshot.last_good_utc=snapshot.status==='OK'?now:(previous?.status==='OK'?previous.generated_at_utc:previous?.last_good_utc||null);
   save(FILE.latest,snapshot);
   save(FILE.history,{events:state.events,trades:state.trades});
   save(FILE.state,state);
@@ -243,4 +257,4 @@ async function run() {
   if(!readings.length)process.exitCode=1;
 }
 if(require.main===module)run().catch(e=>{console.error(e);process.exitCode=1;});
-module.exports={WATCH,TF,pearson,correlate1h,eligible,evaluateStudy,closedBars};
+module.exports={WATCH,TF,pearson,correlate1h,eligible,evaluateStudy,closedBars,marketMetadata};
