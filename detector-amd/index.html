@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Robô Detector AMD EGI — Painel 24h</title>
+<style>
+:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#09111e;color:#e9f0f9;font:15px system-ui,Arial,sans-serif}
+main{max-width:1180px;margin:auto;padding:18px}header{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center}
+h1{font-size:clamp(21px,4vw,32px);margin:4px 0}h2{font-size:19px;margin:0 0 12px}.muted{color:#abc0d7}.eyebrow{color:#5ed5d2;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+button,a.btn{border:1px solid #416580;background:#162e46;color:white;padding:11px 14px;border-radius:10px;cursor:pointer;text-decoration:none}
+a{color:#84d7ff}section{background:#122139;border:1px solid #243d5c;border-radius:15px;padding:16px;margin:15px 0}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:14px}
+.kpi{background:#101c2f;border:1px solid #29405b;border-radius:12px;padding:14px}.kpi small{display:block;color:#a6c0d9}.kpi strong{display:block;font-size:23px;margin:5px 0}
+.good{color:#5cdeb5}.bad{color:#ff9d9d}.warn{color:#f1c981}.small{font-size:13px}
+.scroller{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:14px;min-width:690px}
+td,th{padding:11px 9px;text-align:left;border-bottom:1px solid #263c56}th{color:#afc6df;font-weight:500}
+article{padding:13px;background:#0d1c30;border-radius:11px;margin:10px 0;border:1px solid #2a415e}
+footer{color:#abc0d7;font-size:13px;margin:22px 0}.pill{display:inline-block;border:1px solid #476682;border-radius:99px;padding:3px 10px;font-size:12px}
+</style></head><body><main>
+<header><div><div class="eyebrow">Radar Cripto EGI • Robô LAB</div><h1>📡 Detector AMD EGI 24h</h1><div class="muted">BTC + XRP, SOL, ETH, LINK e PEPE • 15m / 1h / 2h / 4h / diário</div></div><div><button onclick="refresh()">🔄 Atualizar painel</button> <a class="btn" href="https://ntfy.sh/DetectorAmd_11" target="_blank" rel="noopener">ntfy DetectorAmd_11</a></div></header>
+<div id="status" class="muted small" style="margin-top:14px">Carregando resultados do robô...</div>
+<div class="kpis" id="kpis"></div>
+<section><h2>Ranking de força relativa contra BTC</h2><p class="muted small">Score ponderado dos retornos de candles fechados, em pontos percentuais. Ser mais forte que o BTC não confirma tendência de alta.</p>
+<div class="scroller"><table><thead><tr><th>Ativo</th><th>15m</th><th>1h</th><th>2h</th><th>4h</th><th>Diário UTC</th><th>Score</th><th>Leitura</th></tr></thead><tbody id="ranking"><tr><td colspan="8">Aguardando primeira execução.</td></tr></tbody></table></div></section>
+<section><h2>Estrutura AMD — candles fechados</h2><div id="amd">Aguardando primeira execução.</div></section>
+<section><h2>Auditoria das hipóteses</h2><p class="muted small">Comparação posterior do preço 2h, 4h e 24h após eventos. 'Favorável' indica apenas direção observada, não lucro, taxa de acerto ou recomendação.</p><div id="events">Aguardando dados.</div></section>
+<section><h2>Manual rápido</h2><p><b>A?</b> compressão da faixa; <b>M?</b> varredura de máxima/mínima e retorno; <b>D?</b> rompimento com volume relativo de pelo menos 1,3×. São <b>heurísticas</b>, não prova de atuação institucional.</p>
+<p>O GitHub Actions tenta coletar a cada 15 minutos, mesmo com o celular fechado. O painel recebe snapshots aproximadamente de hora em hora ou após eventos; horários de execução podem atrasar. O robô não envia ordens.</p>
+<p>Notificações: instale o aplicativo <a href="https://ntfy.sh/">ntfy</a> e inscreva-se em <b>DetectorAmd_11</b>. O tópico é público e não contém informações de carteira.</p>
+<p><a href="https://github.com/Egiepxy/Radar_Cripto_EGI/actions/workflows/detector-amd-egi.yml" target="_blank" rel="noopener">Ver execuções no GitHub Actions</a> · <a href="README.md">Manual completo</a></p></section>
+<footer>O indicador sugere; o candle fechado confirma. • Dados da Binance Spot. Estudo experimental, sem aconselhamento financeiro.</footer>
+</main><script>
+const frames=['15m','1h','2h','4h','1d'];
+const esc=x=>String(x??'—').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt=(n,d=3)=>n==null||!Number.isFinite(Number(n))?'—':Number(n).toLocaleString('pt-BR',{maximumFractionDigits:d});
+const pp=n=>n==null?'—':(n>=0?'+':'')+fmt(n,3)+' pp';
+const date=n=>n?new Date(n).toLocaleString('pt-BR',{timeZone:'America/Sao_Paulo'}):'—';
+const color=n=>n>0?'good':n<0?'bad':'warn';
+const type=t=>({'NONE':'Sem evento','ACCUMULATION':'A? Compressão','SWEEP_LOW':'M? Varredura de mínima','SWEEP_HIGH':'M? Varredura de máxima','BREAK_UP':'D? Rompimento superior','BREAK_DOWN':'D? Rompimento inferior'})[t]||t;
+function draw(d){
+ const assets=d.readings||{}, ranks=d.ranking||[], btc=d.btc_regime||{};
+ document.getElementById('status').textContent='Último snapshot: '+date(d.generated_at_utc)+' BRT • Fonte: '+d.source+' • '+Object.keys(assets).length+'/6 ativos '+(d.errors?.length?' • '+d.errors.length+' falhas parciais':'');
+ const k=[['Semáforo BTC',btc.name||'—'],['Primeiro do ranking',ranks[0]?.symbol?.replace('USDT','')||'—'],['Eventos registrados',d.event_count??0],['Notificações', 'ntfy DetectorAmd_11']];
+ document.getElementById('kpis').innerHTML=k.map(x=>'<div class="kpi"><small>'+esc(x[0])+'</small><strong>'+esc(x[1])+'</strong></div>').join('');
+ document.getElementById('ranking').innerHTML=ranks.map(r=>{
+ const z=assets[r.symbol]||{};const vals=frames.map(tf=>{let v=z.strength?.[tf]?.relative_pp;return '<td class="'+color(v)+'">'+pp(v)+'</td>'}).join('');
+ return '<tr><td><b>'+esc(r.symbol.replace('USDT',''))+'</b></td>'+vals+'<td>'+pp(r.score_pp)+'</td><td>'+esc(r.class)+'</td></tr>';
+ }).join('')||'<tr><td colspan="8">Sem ranking completo.</td></tr>';
+ document.getElementById('amd').innerHTML=Object.entries(assets).map(([symbol,z])=>{
+ const a=z.amd?.['2h'],b=z.amd?.['4h'];return '<article><b>'+esc(symbol.replace('USDT',''))+'</b> • preço 4h '+fmt(z.price,10)+
+ '<div class="small muted">2h: '+esc(type(a?.type))+' | fechou '+date(a?.close_time)+' | Vol.rel '+fmt(a?.volume_relative,2)+'× | Suporte '+fmt(a?.support,10)+' / Resistência '+fmt(a?.resistance,10)+'</div>'+
+ '<div class="small muted">4h: '+esc(type(b?.type))+' | fechou '+date(b?.close_time)+' | Vol.rel '+fmt(b?.volume_relative,2)+'×</div></article>';
+ }).join('')||'Sem dados';
+ const e=(d.events||[]).slice(-12).reverse();
+ document.getElementById('events').innerHTML=e.map(x=>{
+ const audit=['2h','4h','24h'].map(tf=>{let v=x.audit?.[tf];return tf+': '+(!v?'PENDENTE':v.status==='MEDIDO'?(v.direction_favorable?'favorável ':'contra ')+fmt(v.change_pct,3)+'%':v.status)}).join(' | ');
+ return '<article><b>'+esc(x.symbol.replace('USDT',''))+' '+esc(x.timeframe)+' • '+esc(type(x.phase))+'</b><div class="small muted">'+date(x.close_time)+' • Hipótese '+esc(x.hypothesis)+' • '+audit+'</div></article>';
+ }).join('')||'Nenhum evento auditável registrado até agora.';
+}
+async function refresh(){
+ const el=document.getElementById('status');
+ try{const r=await fetch('../data/detector-amd-latest.json?nocache='+Date.now(),{cache:'no-store'});
+ if(!r.ok)throw Error('HTTP '+r.status+' • primeira execução pode estar pendente');
+ draw(await r.json());}
+ catch(e){el.textContent='Não há snapshot publicado ainda: '+e.message+'. Confira a primeira execução em GitHub Actions.';}
+}
+refresh();
+</script></body></html>

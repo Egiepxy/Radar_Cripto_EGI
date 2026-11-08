@@ -1,0 +1,42 @@
+name: Robo Detector AMD EGI
+on:
+  schedule:
+    - cron: "7,22,37,52 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: detector-amd-egi
+  cancel-in-progress: false
+
+jobs:
+  coletar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Coletar candles, atualizar auditoria e avisar ntfy
+        env:
+          NTFY_ENABLED: "true"
+          NTFY_TOPIC: DetectorAmd_11
+        run: python detector-amd/robot.py
+      - name: Guardar snapshots no repositorio
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/detector-amd-latest.json data/detector-amd-history.json data/detector-amd-state.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(amd): atualizar candles fechados e auditoria"
+            git push
+          else
+            echo "Nenhum arquivo de dados alterado"
+          fi
