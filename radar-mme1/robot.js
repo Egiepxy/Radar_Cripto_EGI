@@ -9,7 +9,7 @@ const fs=require('fs'),path=require('path');
 const {analyze,egiFreshness,egiRiskGate}=require('./engine-original.js');
 const ROOT=path.resolve(__dirname,'..'), DATA=path.join(ROOT,'data');
 const FILES={snapshot:path.join(DATA,'radar-mme1-latest.json'),state:path.join(DATA,'radar-mme1-state.json'),history:path.join(DATA,'radar-mme1-history.json')};
-const TOP_N=50, TFS=['15m','1h','4h'], MIN_RELOK=97, TOL=0.35, STRETCH=1.5, NTFY_TOPIC='RadarMME1_11';
+const TOP_N=50, TF='15m', TFS=['15m','1h','4h'], MIN_RELOK=97, TOL=0.35, STRETCH=1.5, NTFY_TOPIC='RadarMME1_11';
 const HOSTS=['https://data-api.binance.vision','https://api.binance.com'];
 const STABLE=new Set(['USDC','FDUSD','TUSD','USDP','DAI','EUR','TRY','BRL','AEUR','EURI','USD1','USDE','PYUSD','BFUSD']);
 const load=(p,defaultValue)=>{try{return JSON.parse(fs.readFileSync(p,'utf8'))}catch{return defaultValue}};
