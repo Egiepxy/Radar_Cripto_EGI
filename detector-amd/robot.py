@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Detector AMD EGI Robô V1.0 LAB. Monitoramento educativo; nunca envia ordens."""
+"""Detector AMD EGI Robô V1.1 LAB. Monitoramento educativo; nunca envia ordens."""
 import concurrent.futures
 import datetime as dt
 import json
@@ -16,7 +16,10 @@ DATA = ROOT / "data"
 LATEST = DATA / "detector-amd-latest.json"
 STATE = DATA / "detector-amd-state.json"
 HISTORY = DATA / "detector-amd-history.json"
-SYMBOLS = ("BTCUSDT", "XRPUSDT", "SOLUSDT", "ETHUSDT", "LINKUSDT", "PEPEUSDT")
+SYMBOLS = ("BTCUSDT", "ETHUSDT", "SOLUSDT", "BNBUSDT", "XRPUSDT", "LINKUSDT",
+           "ADAUSDT", "DOGEUSDT", "AVAXUSDT", "AAVEUSDT", "UNIUSDT", "ONDOUSDT",
+           "SUIUSDT", "NEARUSDT", "WLDUSDT", "ETHFIUSDT", "TIAUSDT",
+           "PEPEUSDT", "FLOKIUSDT", "RAYUSDT")
 FRAMES = ("15m", "1h", "2h", "4h", "1d")
 WEIGHTS = {"15m": 1, "1h": 1.5, "2h": 2.5, "4h": 3, "1d": 2}
 HOSTS = ("https://data-api.binance.vision", "https://api.binance.com")
@@ -44,7 +47,7 @@ def fetch(symbol, frame):
     errors = []
     for host in HOSTS:
         try:
-            req = urllib.request.Request(host + "/api/v3/klines?" + args, headers={"User-Agent": "Detector-AMD-EGI/1.0"})
+            req = urllib.request.Request(host + "/api/v3/klines?" + args, headers={"User-Agent": "Detector-AMD-EGI/1.1"})
             with urllib.request.urlopen(req, timeout=13) as res:
                 raw = json.load(res)
             if not isinstance(raw, list):
@@ -224,6 +227,26 @@ def send_ntfy(message):
     return True
 
 
+def should_notify_amd(symbol, row, frame, event, top_symbols, weak_symbols):
+    """Filtro conservador para a notificação, diferente do registro de eventos."""
+    typ = event["type"]
+    volume = event["volume_relative"] or 0
+    if volume < (1.3 if typ.startswith("BREAK") else 1.1):
+        return False
+    if symbol == "BTCUSDT":
+        return True
+    rel2 = row["strength"]["2h"]
+    rel4 = row["strength"]["4h"]
+    if rel2 is None or rel4 is None:
+        return False
+    up = typ in ("BREAK_UP", "SWEEP_LOW")
+    if up:
+        return (symbol in top_symbols and
+                rel2["relative_pp"] >= THRESHOLD and rel4["relative_pp"] > 0)
+    return (symbol in weak_symbols and
+            rel2["relative_pp"] <= -THRESHOLD and rel4["relative_pp"] < 0)
+
+
 def run():
     jobs = [(s, tf) for s in SYMBOLS for tf in FRAMES]
     raw = {s: {} for s in SYMBOLS}
@@ -246,6 +269,9 @@ def run():
     initial = not state.get("bootstrapped", False)
     changes = update_audits(history, raw)
     alerts = []
+    # Monitorar 20 ativos, mas notificar apenas condições de volume + contexto relativo.
+    top_symbols = {x["symbol"] for x in ranking[:5]}
+    weak_symbols = {x["symbol"] for x in ranking[-5:]}
     for symbol, row in readings.items():
         for frame in ("2h", "4h"):
             a = row["amd"][frame]
@@ -257,11 +283,11 @@ def run():
             history.append(event)
             seen.add(event["id"])
             changes = True
-            if not initial:
+            if not initial and should_notify_amd(symbol, row, frame, a, top_symbols, weak_symbols):
                 alerts.append("EGI AMD " + symbol.replace("USDT", "") + " " + frame +
                               ": " + a["type"] + "\nPreço " + str(a["price"]) +
                               " | Vol. rel " + str(round(a["volume_relative"] or 0, 2)) +
-                              "x\nCandle fechado. Hipótese; não é ordem.")
+                              "x\nCandle fechado + força relativa alinhada. Hipótese; não é ordem.")
     if not initial and state.get("regime") and state["regime"] != btc_regime["name"]:
         alerts.insert(0, "EGI BTC: semáforo " + state["regime"] + " -> " + btc_regime["name"] +
                       ". Verifique 2h, 4h, diário e volume.")
@@ -273,12 +299,19 @@ def run():
         category = classification(s2["relative_pp"] if s2 else None)
         new_classes[symbol] = {"class": category, "closed": row["close_2h"]}
         previous = state.get("strength_classes", {}).get(symbol)
+        s4 = row["strength"]["4h"]
+        strength_aligned = (s2 is not None and s4 is not None and
+                            ((category == "FORTE" and symbol in top_symbols and
+                              s4["relative_pp"] > 0) or
+                             (category == "FRACO" and symbol in weak_symbols and
+                              s4["relative_pp"] < 0)))
+        volume_ok = (row["amd"]["2h"]["volume_relative"] or 0) >= 1.3
         if (not initial and previous and previous.get("class") != category
                 and previous.get("closed") != row["close_2h"]
-                and category in ("FORTE", "FRACO")):
+                and strength_aligned and volume_ok):
             alerts.append("EGI Força " + symbol.replace("USDT", "") + " 2h: " +
                           category + " vs BTC (" + str(round(s2["relative_pp"], 3)) +
-                          " p.p.). Avaliar BTC e estrutura AMD.")
+                          " p.p.). 4h alinhado + volume 2h >=1,3x. Verificar estrutura.")
     # Limitar fila; garantir que falhas de envio sejam reapresentadas, sem duplicar eventos.
     pending = list(state.get("pending", []))
     for msg in alerts:
@@ -300,13 +333,15 @@ def run():
                   "last_bucket": bucket})
     history = history[-250:]
     if should_publish:
-        snapshot = {"app": "Robô Detector AMD EGI V1.0 LAB",
+        snapshot = {"app": "Robô Detector AMD EGI V1.1 LAB • 20 ativos",
                     "generated_at_utc": dt.datetime.now(dt.timezone.utc).isoformat(),
                     "source": "Binance Spot - candles fechados",
                     "timeframes": list(FRAMES), "btc_regime": btc_regime,
                     "readings": readings, "ranking": ranking,
+                    "top5": ranking[:5], "expected_assets": len(SYMBOLS),
+                    "collected_assets": len(readings),
                     "events": history[-30:], "event_count": len(history),
-                    "errors": errors, "note": "AMD heurística. Força é retorno do candle menos BTC; diário UTC. Sem ordens."}
+                    "errors": errors, "note": "AMD heurística. Score é força relativa, não chance de lucro. Diário UTC. Sem ordens."}
         write(LATEST, snapshot)
         write(HISTORY, history)
         write(STATE, state)
