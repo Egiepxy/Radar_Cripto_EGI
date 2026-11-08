@@ -1,0 +1,84 @@
+{
+  "bootstrapped": true,
+  "regime": "MISTO",
+  "strength_classes": {
+    "ETHUSDT": {
+      "class": "NEUTRO",
+      "closed": 1794139199999
+    },
+    "SOLUSDT": {
+      "class": "NEUTRO",
+      "closed": 1794139199999
+    },
+    "BNBUSDT": {
+      "class": "NEUTRO",
+      "closed": 1794139199999
+    },
+    "XRPUSDT": {
+      "class": "NEUTRO",
+      "closed": 1794139199999
+    },
+    "LINKUSDT": {
+      "class": "NEUTRO",
+      "closed": 1794139199999
+    },
+    "ADAUSDT": {
+      "class": "NEUTRO",
+      "closed": 1794139199999
+    },
+    "DOGEUSDT": {
+      "class": "NEUTRO",
+      "closed": 1794139199999
+    },
+    "AVAXUSDT": {
+      "class": "NEUTRO",
+      "closed": 1794139199999
+    },
+    "AAVEUSDT": {
+      "class": "NEUTRO",
+      "closed": 1794139199999
+    },
+    "UNIUSDT": {
+      "class": "NEUTRO",
+      "closed": 1794139199999
+    },
+    "ONDOUSDT": {
+      "class": "FORTE",
+      "closed": 1794139199999
+    },
+    "SUIUSDT": {
+      "class": "NEUTRO",
+      "closed": 1794139199999
+    },
+    "NEARUSDT": {
+      "class": "NEUTRO",
+      "closed": 1794139199999
+    },
+    "WLDUSDT": {
+      "class": "NEUTRO",
+      "closed": 1794139199999
+    },
+    "ETHFIUSDT": {
+      "class": "FORTE",
+      "closed": 1794139199999
+    },
+    "TIAUSDT": {
+      "class": "NEUTRO",
+      "closed": 1794139199999
+    },
+    "PEPEUSDT": {
+      "class": "FORTE",
+      "closed": 1794139199999
+    },
+    "FLOKIUSDT": {
+      "class": "NEUTRO",
+      "closed": 1794139199999
+    },
+    "RAYUSDT": {
+      "class": "NEUTRO",
+      "closed": 1794139199999
+    }
+  },
+  "pending": [],
+  "last_bucket": 498373
+}

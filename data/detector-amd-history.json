@@ -1,0 +1,54 @@
+[
+  {
+    "id": "SUIUSDT:2h:1794139199999:SWEEP_LOW",
+    "symbol": "SUIUSDT",
+    "timeframe": "2h",
+    "phase": "SWEEP_LOW",
+    "close_time": 1794139199999,
+    "reference_price": 0.8536,
+    "volume_relative": 1.163249467536382,
+    "support": 0.8471,
+    "resistance": 0.8786,
+    "hypothesis": "ALTA",
+    "audit": {}
+  },
+  {
+    "id": "WLDUSDT:4h:1794139199999:SWEEP_LOW",
+    "symbol": "WLDUSDT",
+    "timeframe": "4h",
+    "phase": "SWEEP_LOW",
+    "close_time": 1794139199999,
+    "reference_price": 0.3295,
+    "volume_relative": 0.6031585153460292,
+    "support": 0.3282,
+    "resistance": 0.3824,
+    "hypothesis": "ALTA",
+    "audit": {}
+  },
+  {
+    "id": "TIAUSDT:2h:1794139199999:SWEEP_LOW",
+    "symbol": "TIAUSDT",
+    "timeframe": "2h",
+    "phase": "SWEEP_LOW",
+    "close_time": 1794139199999,
+    "reference_price": 0.4263,
+    "volume_relative": 0.8067343851490761,
+    "support": 0.4252,
+    "resistance": 0.4484,
+    "hypothesis": "ALTA",
+    "audit": {}
+  },
+  {
+    "id": "FLOKIUSDT:2h:1794139199999:SWEEP_LOW",
+    "symbol": "FLOKIUSDT",
+    "timeframe": "2h",
+    "phase": "SWEEP_LOW",
+    "close_time": 1794139199999,
+    "reference_price": 2.127e-05,
+    "volume_relative": 1.2605273307006426,
+    "support": 2.114e-05,
+    "resistance": 2.198e-05,
+    "hypothesis": "ALTA",
+    "audit": {}
+  }
+]
