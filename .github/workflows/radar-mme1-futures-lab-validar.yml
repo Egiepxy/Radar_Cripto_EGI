@@ -36,6 +36,9 @@ jobs:
       - name: Diagnosticar fontes alternativas independentes
         if: always()
         run: node radar-mme1/source-probe-lab.js | tee radar-mme1-sources-lab.json
+      - name: Identificar mercados MEXC sem confundir derivativos
+        if: always()
+        run: node radar-mme1/stock-probe-lab.js | tee radar-mme1-stocks-lab.json
       - name: Guardar snapshot e log para auditoria
         if: always()
         uses: actions/upload-artifact@v4
@@ -44,6 +47,7 @@ jobs:
           path: |
             radar-mme1-futures-lab-diagnostico.log
             radar-mme1-sources-lab.json
+            radar-mme1-stocks-lab.json
             data/radar-mme1-futures-latest.json
             data/radar-mme1-futures-history.json
             data/radar-mme1-futures-state.json
