@@ -1,0 +1,55 @@
+name: RadarMME1 Futures LAB - validacao isolada
+
+on:
+  push:
+    branches:
+      - fix/radarmme1-futures-coleta-independente-20261108
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 13
+    steps:
+      - name: Checkout da branch LAB
+        uses: actions/checkout@v4
+      - name: Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Testes offline - motor original e Futures
+        run: |
+          node radar-mme1/test_robot.js
+          node radar-mme1/test_futures.js
+      - name: Coletar Futures (LAB, sem notificar nem negociar)
+        id: coleta
+        continue-on-error: true
+        env:
+          NTFY_ENABLED: "false"
+          NTFY_TOPIC: RadarMME1_11
+        run: |
+          set -o pipefail
+          node radar-mme1/futures-robot.js 2>&1 | tee radar-mme1-futures-lab-diagnostico.log
+      - name: Guardar snapshot e log para auditoria
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: radar-mme1-futures-lab-diagnostico
+          path: |
+            radar-mme1-futures-lab-diagnostico.log
+            data/radar-mme1-futures-latest.json
+            data/radar-mme1-futures-history.json
+            data/radar-mme1-futures-state.json
+          if-no-files-found: warn
+          retention-days: 7
+      - name: Resultado final da coleta LAB
+        if: always()
+        run: |
+          if [ "${{ steps.coleta.outcome }}" != "success" ]; then
+            echo "Fonte Futures indisponivel ou coleta falhou. Confira artifact."
+            exit 1
+          fi
+          echo "Coleta LAB executada; confira status e validade das leituras no JSON."
