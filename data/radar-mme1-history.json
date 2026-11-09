@@ -1,4 +1,58 @@
 {
-  "events": [],
-  "trades": []
+  "events": [
+    {
+      "id": "ETHUSDT:15m:1794188699999:SHORT",
+      "time": 1794188699999,
+      "symbol": "ETHUSDT",
+      "type": "SINAL",
+      "direction": "SHORT",
+      "relok": 100
+    },
+    {
+      "id": "XRPUSDT:15m:1794188699999:SHORT",
+      "time": 1794188699999,
+      "symbol": "XRPUSDT",
+      "type": "SINAL",
+      "direction": "SHORT",
+      "relok": 100
+    }
+  ],
+  "trades": [
+    {
+      "id": "ETHUSDT:15m:1794188699999:SHORT",
+      "symbol": "ETHUSDT",
+      "tf": "15m",
+      "direction": "SHORT",
+      "signal_close": 1794188699999,
+      "entry": 2143.6,
+      "stop": 2170.807107142857,
+      "r1": 2116.3928928571427,
+      "r2": 2089.1857857142854,
+      "relok": 100,
+      "iqe": 100,
+      "status": "ABERTA",
+      "checked_to": 1794188699999,
+      "hit1r": false,
+      "result_r": null,
+      "exit_time": null
+    },
+    {
+      "id": "XRPUSDT:15m:1794188699999:SHORT",
+      "symbol": "XRPUSDT",
+      "tf": "15m",
+      "direction": "SHORT",
+      "signal_close": 1794188699999,
+      "entry": 1.1168,
+      "stop": 1.1279514285714287,
+      "r1": 1.1056485714285713,
+      "r2": 1.0944971428571426,
+      "relok": 100,
+      "iqe": 100,
+      "status": "ABERTA",
+      "checked_to": 1794188699999,
+      "hit1r": false,
+      "result_r": null,
+      "exit_time": null
+    }
+  ]
 }
