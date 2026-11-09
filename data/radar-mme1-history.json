@@ -30,11 +30,11 @@
       "r2": 2089.1857857142854,
       "relok": 100,
       "iqe": 100,
-      "status": "ABERTA",
-      "checked_to": 1794188699999,
-      "hit1r": false,
-      "result_r": null,
-      "exit_time": null
+      "status": "2R",
+      "checked_to": 1794208499999,
+      "hit1r": true,
+      "result_r": 2,
+      "exit_time": 1794208499999
     },
     {
       "id": "XRPUSDT:15m:1794188699999:SHORT",
@@ -48,11 +48,11 @@
       "r2": 1.0944971428571426,
       "relok": 100,
       "iqe": 100,
-      "status": "ABERTA",
-      "checked_to": 1794188699999,
-      "hit1r": false,
-      "result_r": null,
-      "exit_time": null
+      "status": "2R",
+      "checked_to": 1794203999999,
+      "hit1r": true,
+      "result_r": 2,
+      "exit_time": 1794203999999
     }
   ]
 }
