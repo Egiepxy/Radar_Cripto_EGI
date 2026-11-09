@@ -15,6 +15,22 @@
       "type": "SINAL",
       "direction": "SHORT",
       "relok": 100
+    },
+    {
+      "id": "NEARUSDT:15m:1794254399999:LONG",
+      "time": 1794254399999,
+      "symbol": "NEARUSDT",
+      "type": "SINAL",
+      "direction": "LONG",
+      "relok": 99
+    },
+    {
+      "id": "MUBUSDT:15m:1794254399999:LONG",
+      "time": 1794254399999,
+      "symbol": "MUBUSDT",
+      "type": "SINAL",
+      "direction": "LONG",
+      "relok": 98
     }
   ],
   "trades": [
@@ -53,6 +69,42 @@
       "hit1r": true,
       "result_r": 2,
       "exit_time": 1794203999999
+    },
+    {
+      "id": "NEARUSDT:15m:1794254399999:LONG",
+      "symbol": "NEARUSDT",
+      "tf": "15m",
+      "direction": "LONG",
+      "signal_close": 1794254399999,
+      "entry": 3.614,
+      "stop": 3.560867857142857,
+      "r1": 3.6671321428571426,
+      "r2": 3.7202642857142854,
+      "relok": 99,
+      "iqe": 99,
+      "status": "ABERTA",
+      "checked_to": 1794254399999,
+      "hit1r": false,
+      "result_r": null,
+      "exit_time": null
+    },
+    {
+      "id": "MUBUSDT:15m:1794254399999:LONG",
+      "symbol": "MUBUSDT",
+      "tf": "15m",
+      "direction": "LONG",
+      "signal_close": 1794254399999,
+      "entry": 730.25,
+      "stop": 725.053,
+      "r1": 735.447,
+      "r2": 740.644,
+      "relok": 98,
+      "iqe": 98,
+      "status": "ABERTA",
+      "checked_to": 1794254399999,
+      "hit1r": false,
+      "result_r": null,
+      "exit_time": null
     }
   ]
 }
