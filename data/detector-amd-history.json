@@ -1558,6 +1558,12 @@
         "observed_close": 1794225599999,
         "change_pct": 1.10503,
         "direction_favorable": false
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1794297599999,
+        "change_pct": 2.23225,
+        "direction_favorable": false
       }
     }
   },
@@ -1583,6 +1589,12 @@
         "status": "MEDIDO",
         "observed_close": 1794225599999,
         "change_pct": 1.10503,
+        "direction_favorable": false
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1794297599999,
+        "change_pct": 2.23225,
         "direction_favorable": false
       }
     }
@@ -1610,6 +1622,12 @@
         "observed_close": 1794225599999,
         "change_pct": -0.29515,
         "direction_favorable": true
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1794297599999,
+        "change_pct": 1.08836,
+        "direction_favorable": false
       }
     }
   },
@@ -1636,6 +1654,12 @@
         "observed_close": 1794225599999,
         "change_pct": -0.29515,
         "direction_favorable": true
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1794297599999,
+        "change_pct": 1.08836,
+        "direction_favorable": false
       }
     }
   },
@@ -1794,5 +1818,31 @@
         "direction_favorable": true
       }
     }
+  },
+  {
+    "id": "SOLUSDT:2h:1794304799999:SWEEP_LOW",
+    "symbol": "SOLUSDT",
+    "timeframe": "2h",
+    "phase": "SWEEP_LOW",
+    "close_time": 1794304799999,
+    "reference_price": 85.59,
+    "volume_relative": 1.086161990749387,
+    "support": 85.02,
+    "resistance": 90.01,
+    "hypothesis": "ALTA",
+    "audit": {}
+  },
+  {
+    "id": "ETHFIUSDT:4h:1794297599999:SWEEP_HIGH",
+    "symbol": "ETHFIUSDT",
+    "timeframe": "4h",
+    "phase": "SWEEP_HIGH",
+    "close_time": 1794297599999,
+    "reference_price": 0.6329,
+    "volume_relative": 0.7872184721464673,
+    "support": 0.5594,
+    "resistance": 0.6366,
+    "hypothesis": "BAIXA",
+    "audit": {}
   }
 ]
