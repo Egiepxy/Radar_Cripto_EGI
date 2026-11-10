@@ -31,6 +31,22 @@
       "type": "SINAL",
       "direction": "LONG",
       "relok": 98
+    },
+    {
+      "id": "NVDABUSDT:15m:1794278699999:LONG",
+      "time": 1794278699999,
+      "symbol": "NVDABUSDT",
+      "type": "SINAL",
+      "direction": "LONG",
+      "relok": 99
+    },
+    {
+      "id": "SNDKBUSDT:15m:1794278699999:SHORT",
+      "time": 1794278699999,
+      "symbol": "SNDKBUSDT",
+      "type": "SINAL",
+      "direction": "SHORT",
+      "relok": 99
     }
   ],
   "trades": [
@@ -82,11 +98,11 @@
       "r2": 3.7202642857142854,
       "relok": 99,
       "iqe": 99,
-      "status": "ABERTA",
-      "checked_to": 1794254399999,
-      "hit1r": false,
-      "result_r": null,
-      "exit_time": null
+      "status": "STOP",
+      "checked_to": 1794278699999,
+      "hit1r": true,
+      "result_r": -1,
+      "exit_time": 1794278699999
     },
     {
       "id": "MUBUSDT:15m:1794254399999:LONG",
@@ -100,8 +116,44 @@
       "r2": 740.644,
       "relok": 98,
       "iqe": 98,
+      "status": "2R",
+      "checked_to": 1794256199999,
+      "hit1r": true,
+      "result_r": 2,
+      "exit_time": 1794256199999
+    },
+    {
+      "id": "NVDABUSDT:15m:1794278699999:LONG",
+      "symbol": "NVDABUSDT",
+      "tf": "15m",
+      "direction": "LONG",
+      "signal_close": 1794278699999,
+      "entry": 181.48,
+      "stop": 179.86310714285713,
+      "r1": 183.09689285714285,
+      "r2": 184.7137857142857,
+      "relok": 99,
+      "iqe": 99,
       "status": "ABERTA",
-      "checked_to": 1794254399999,
+      "checked_to": 1794278699999,
+      "hit1r": false,
+      "result_r": null,
+      "exit_time": null
+    },
+    {
+      "id": "SNDKBUSDT:15m:1794278699999:SHORT",
+      "symbol": "SNDKBUSDT",
+      "tf": "15m",
+      "direction": "SHORT",
+      "signal_close": 1794278699999,
+      "entry": 883.26,
+      "stop": 903.1567142857142,
+      "r1": 863.3632857142858,
+      "r2": 843.4665714285716,
+      "relok": 99,
+      "iqe": 99,
+      "status": "ABERTA",
+      "checked_to": 1794278699999,
       "hit1r": false,
       "result_r": null,
       "exit_time": null
