@@ -87,6 +87,30 @@
       "type": "SINAL",
       "direction": "SHORT",
       "relok": 98
+    },
+    {
+      "id": "UNIUSDT:15m:1794353399999:SHORT",
+      "time": 1794353399999,
+      "symbol": "UNIUSDT",
+      "type": "SINAL",
+      "direction": "SHORT",
+      "relok": 98
+    },
+    {
+      "id": "SPCXBUSDT:15m:1794353399999:LONG",
+      "time": 1794353399999,
+      "symbol": "SPCXBUSDT",
+      "type": "SINAL",
+      "direction": "LONG",
+      "relok": 98
+    },
+    {
+      "id": "GRAMUSDT:15m:1794353399999:LONG",
+      "time": 1794353399999,
+      "symbol": "GRAMUSDT",
+      "type": "SINAL",
+      "direction": "LONG",
+      "relok": 97
     }
   ],
   "trades": [
@@ -229,7 +253,7 @@
       "relok": 99,
       "iqe": 99,
       "status": "ABERTA",
-      "checked_to": 1794333599999,
+      "checked_to": 1794353399999,
       "hit1r": false,
       "result_r": null,
       "exit_time": null
@@ -246,11 +270,11 @@
       "r2": 3.3601357142857142,
       "relok": 99,
       "iqe": 99,
-      "status": "ABERTA",
-      "checked_to": 1794333599999,
+      "status": "STOP",
+      "checked_to": 1794336299999,
       "hit1r": false,
-      "result_r": null,
-      "exit_time": null
+      "result_r": -1,
+      "exit_time": 1794336299999
     },
     {
       "id": "XAUTUSDT:15m:1794333599999:SHORT",
@@ -265,7 +289,7 @@
       "relok": 98,
       "iqe": 98,
       "status": "ABERTA",
-      "checked_to": 1794333599999,
+      "checked_to": 1794353399999,
       "hit1r": false,
       "result_r": null,
       "exit_time": null
@@ -282,8 +306,62 @@
       "r2": 0.7964685714285713,
       "relok": 98,
       "iqe": 98,
+      "status": "STOP",
+      "checked_to": 1794342599999,
+      "hit1r": false,
+      "result_r": -1,
+      "exit_time": 1794342599999
+    },
+    {
+      "id": "UNIUSDT:15m:1794353399999:SHORT",
+      "symbol": "UNIUSDT",
+      "tf": "15m",
+      "direction": "SHORT",
+      "signal_close": 1794353399999,
+      "entry": 6.663,
+      "stop": 6.7812214285714285,
+      "r1": 6.544778571428572,
+      "r2": 6.426557142857144,
+      "relok": 98,
+      "iqe": 98,
       "status": "ABERTA",
-      "checked_to": 1794333599999,
+      "checked_to": 1794353399999,
+      "hit1r": false,
+      "result_r": null,
+      "exit_time": null
+    },
+    {
+      "id": "SPCXBUSDT:15m:1794353399999:LONG",
+      "symbol": "SPCXBUSDT",
+      "tf": "15m",
+      "direction": "LONG",
+      "signal_close": 1794353399999,
+      "entry": 143.43,
+      "stop": 142.34932142857144,
+      "r1": 144.51067857142857,
+      "r2": 145.59135714285713,
+      "relok": 98,
+      "iqe": 98,
+      "status": "ABERTA",
+      "checked_to": 1794353399999,
+      "hit1r": false,
+      "result_r": null,
+      "exit_time": null
+    },
+    {
+      "id": "GRAMUSDT:15m:1794353399999:LONG",
+      "symbol": "GRAMUSDT",
+      "tf": "15m",
+      "direction": "LONG",
+      "signal_close": 1794353399999,
+      "entry": 1.139,
+      "stop": 1.1114607142857145,
+      "r1": 1.1665392857142856,
+      "r2": 1.194078571428571,
+      "relok": 97,
+      "iqe": 97,
+      "status": "ABERTA",
+      "checked_to": 1794353399999,
       "hit1r": false,
       "result_r": null,
       "exit_time": null
