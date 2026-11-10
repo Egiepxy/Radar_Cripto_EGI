@@ -47,6 +47,14 @@
       "type": "SINAL",
       "direction": "SHORT",
       "relok": 99
+    },
+    {
+      "id": "SOLUSDT:15m:1794306599999:SHORT",
+      "time": 1794306599999,
+      "symbol": "SOLUSDT",
+      "type": "SINAL",
+      "direction": "SHORT",
+      "relok": 100
     }
   ],
   "trades": [
@@ -134,11 +142,11 @@
       "r2": 184.7137857142857,
       "relok": 99,
       "iqe": 99,
-      "status": "ABERTA",
-      "checked_to": 1794278699999,
+      "status": "STOP",
+      "checked_to": 1794282299999,
       "hit1r": false,
-      "result_r": null,
-      "exit_time": null
+      "result_r": -1,
+      "exit_time": 1794282299999
     },
     {
       "id": "SNDKBUSDT:15m:1794278699999:SHORT",
@@ -153,7 +161,25 @@
       "relok": 99,
       "iqe": 99,
       "status": "ABERTA",
-      "checked_to": 1794278699999,
+      "checked_to": 1794306599999,
+      "hit1r": false,
+      "result_r": null,
+      "exit_time": null
+    },
+    {
+      "id": "SOLUSDT:15m:1794306599999:SHORT",
+      "symbol": "SOLUSDT",
+      "tf": "15m",
+      "direction": "SHORT",
+      "signal_close": 1794306599999,
+      "entry": 85.3,
+      "stop": 85.7549642857143,
+      "r1": 84.8450357142857,
+      "r2": 84.3900714285714,
+      "relok": 100,
+      "iqe": 100,
+      "status": "ABERTA",
+      "checked_to": 1794306599999,
       "hit1r": false,
       "result_r": null,
       "exit_time": null
