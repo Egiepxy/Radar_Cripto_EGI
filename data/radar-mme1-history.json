@@ -252,11 +252,11 @@
       "r2": 662.1951428571426,
       "relok": 99,
       "iqe": 99,
-      "status": "ABERTA",
-      "checked_to": 1794353399999,
+      "status": "STOP",
+      "checked_to": 1794354299999,
       "hit1r": false,
-      "result_r": null,
-      "exit_time": null
+      "result_r": -1,
+      "exit_time": 1794354299999
     },
     {
       "id": "NEARUSDT:15m:1794333599999:SHORT",
@@ -288,11 +288,11 @@
       "r2": 3939.819000000001,
       "relok": 98,
       "iqe": 98,
-      "status": "ABERTA",
-      "checked_to": 1794353399999,
+      "status": "STOP",
+      "checked_to": 1794361499999,
       "hit1r": false,
-      "result_r": null,
-      "exit_time": null
+      "result_r": -1,
+      "exit_time": 1794361499999
     },
     {
       "id": "SUIUSDT:15m:1794333599999:SHORT",
@@ -324,11 +324,11 @@
       "r2": 6.426557142857144,
       "relok": 98,
       "iqe": 98,
-      "status": "ABERTA",
-      "checked_to": 1794353399999,
+      "status": "STOP",
+      "checked_to": 1794361499999,
       "hit1r": false,
-      "result_r": null,
-      "exit_time": null
+      "result_r": -1,
+      "exit_time": 1794361499999
     },
     {
       "id": "SPCXBUSDT:15m:1794353399999:LONG",
@@ -343,8 +343,8 @@
       "relok": 98,
       "iqe": 98,
       "status": "ABERTA",
-      "checked_to": 1794353399999,
-      "hit1r": false,
+      "checked_to": 1794365099999,
+      "hit1r": true,
       "result_r": null,
       "exit_time": null
     },
@@ -361,7 +361,7 @@
       "relok": 97,
       "iqe": 97,
       "status": "ABERTA",
-      "checked_to": 1794353399999,
+      "checked_to": 1794365099999,
       "hit1r": false,
       "result_r": null,
       "exit_time": null
