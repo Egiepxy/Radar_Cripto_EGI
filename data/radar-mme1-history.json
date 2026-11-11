@@ -342,11 +342,11 @@
       "r2": 145.59135714285713,
       "relok": 98,
       "iqe": 98,
-      "status": "ABERTA",
-      "checked_to": 1794365099999,
+      "status": "2R",
+      "checked_to": 1794374999999,
       "hit1r": true,
-      "result_r": null,
-      "exit_time": null
+      "result_r": 2,
+      "exit_time": 1794374999999
     },
     {
       "id": "GRAMUSDT:15m:1794353399999:LONG",
@@ -360,11 +360,11 @@
       "r2": 1.194078571428571,
       "relok": 97,
       "iqe": 97,
-      "status": "ABERTA",
-      "checked_to": 1794365099999,
-      "hit1r": false,
-      "result_r": null,
-      "exit_time": null
+      "status": "2R",
+      "checked_to": 1794392099999,
+      "hit1r": true,
+      "result_r": 2,
+      "exit_time": 1794392099999
     }
   ]
 }
