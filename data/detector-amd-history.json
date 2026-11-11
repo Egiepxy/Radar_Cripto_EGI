@@ -1878,6 +1878,12 @@
         "observed_close": 1794319199999,
         "change_pct": -1.70581,
         "direction_favorable": false
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1794391199999,
+        "change_pct": -2.32504,
+        "direction_favorable": false
       }
     }
   },
@@ -1904,6 +1910,12 @@
         "observed_close": 1794311999999,
         "change_pct": -1.42203,
         "direction_favorable": true
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1794383999999,
+        "change_pct": 0.53721,
+        "direction_favorable": false
       }
     }
   },
@@ -2490,6 +2502,58 @@
     "support": 6.612,
     "resistance": 7.245,
     "hypothesis": "ALTA",
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794362399999,
+        "change_pct": 0.70454,
+        "direction_favorable": true
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794369599999,
+        "change_pct": 0.44971,
+        "direction_favorable": true
+      }
+    }
+  },
+  {
+    "id": "UNIUSDT:2h:1794391199999:SWEEP_LOW",
+    "symbol": "UNIUSDT",
+    "timeframe": "2h",
+    "phase": "SWEEP_LOW",
+    "close_time": 1794391199999,
+    "reference_price": 6.398,
+    "volume_relative": 1.3552684715351717,
+    "support": 6.376,
+    "resistance": 7.16,
+    "hypothesis": "ALTA",
+    "audit": {}
+  },
+  {
+    "id": "UNIUSDT:4h:1794383999999:BREAK_DOWN",
+    "symbol": "UNIUSDT",
+    "timeframe": "4h",
+    "phase": "BREAK_DOWN",
+    "close_time": 1794383999999,
+    "reference_price": 6.472,
+    "volume_relative": 2.522440380385771,
+    "support": 6.611,
+    "resistance": 7.245,
+    "hypothesis": "BAIXA",
+    "audit": {}
+  },
+  {
+    "id": "PEPEUSDT:2h:1794391199999:BREAK_DOWN",
+    "symbol": "PEPEUSDT",
+    "timeframe": "2h",
+    "phase": "BREAK_DOWN",
+    "close_time": 1794391199999,
+    "reference_price": 5.04e-06,
+    "volume_relative": 2.001642455653035,
+    "support": 5.06e-06,
+    "resistance": 5.62e-06,
+    "hypothesis": "BAIXA",
     "audit": {}
   }
 ]
