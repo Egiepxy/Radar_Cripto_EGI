@@ -2,76 +2,76 @@
   "initialized": true,
   "status": {
     "BTCUSDT": {
-      "state": "RISCO",
-      "close_time": 1794444299999
+      "state": "LATERAL",
+      "close_time": 1794469499999
     },
     "ETHUSDT": {
-      "state": "RISCO",
-      "close_time": 1794444299999
+      "state": "LATERAL",
+      "close_time": 1794469499999
     },
     "ZECUSDT": {
-      "state": "PULLBACK",
-      "close_time": 1794444299999
+      "state": "LATERAL",
+      "close_time": 1794469499999
     },
     "SOLUSDT": {
-      "state": "PULLBACK",
-      "close_time": 1794444299999
+      "state": "SHORT",
+      "close_time": 1794469499999
     },
     "XRPUSDT": {
       "state": "RISCO",
-      "close_time": 1794444299999
+      "close_time": 1794469499999
     },
     "ONEUSDT": {
-      "state": "SHORT",
-      "close_time": 1794444299999
+      "state": "ESTICADO",
+      "close_time": 1794469499999
     },
     "BNBUSDT": {
-      "state": "RISCO",
-      "close_time": 1794444299999
+      "state": "SHORT",
+      "close_time": 1794469499999
     },
     "NEARUSDT": {
-      "state": "RISCO",
-      "close_time": 1794444299999
+      "state": "SHORT",
+      "close_time": 1794469499999
     },
     "XAUTUSDT": {
-      "state": "LATERAL",
-      "close_time": 1794444299999
+      "state": "SHORT",
+      "close_time": 1794469499999
     },
     "UNIUSDT": {
-      "state": "PULLBACK",
-      "close_time": 1794444299999
+      "state": "SINAL_SHORT",
+      "close_time": 1794469499999
     },
     "PEPEUSDT": {
-      "state": "PULLBACK",
-      "close_time": 1794444299999
+      "state": "SHORT",
+      "close_time": 1794469499999
     },
     "HYPEUSDT": {
-      "state": "RISCO",
-      "close_time": 1794444299999
+      "state": "SINAL_SHORT",
+      "close_time": 1794469499999
     },
     "UUSDT": {
       "state": "LATERAL",
-      "close_time": 1794444299999
+      "close_time": 1794469499999
     },
     "ENAUSDT": {
-      "state": "PULLBACK",
-      "close_time": 1794444299999
+      "state": "SHORT",
+      "close_time": 1794469499999
     },
     "DOGEUSDT": {
-      "state": "RISCO",
-      "close_time": 1794444299999
+      "state": "SHORT",
+      "close_time": 1794469499999
     },
     "SUIUSDT": {
-      "state": "RISCO",
-      "close_time": 1794444299999
+      "state": "SHORT",
+      "close_time": 1794469499999
     },
     "PUMPUSDT": {
-      "state": "PULLBACK",
-      "close_time": 1794444299999
+      "state": "RISCO",
+      "close_time": 1794469499999
     },
     "RLUSDUSDT": {
       "state": "LATERAL",
-      "close_time": 1794444299999
+      "close_time": 1794469499999
     },
     "BMTUSDT": {
       "state": "RISCO",
@@ -79,31 +79,31 @@
     },
     "TRXUSDT": {
       "state": "LATERAL",
-      "close_time": 1794444299999
+      "close_time": 1794469499999
     },
     "WLDUSDT": {
       "state": "RISCO",
-      "close_time": 1794444299999
+      "close_time": 1794469499999
     },
     "METUSDT": {
       "state": "PREPARAR_SHORT",
       "close_time": 1794176999999
     },
     "LINKUSDT": {
-      "state": "SHORT",
-      "close_time": 1794444299999
+      "state": "PULLBACK",
+      "close_time": 1794469499999
     },
     "RWUSDUSDT": {
       "state": "LATERAL",
       "close_time": 1794444299999
     },
     "INJUSDT": {
-      "state": "PULLBACK",
-      "close_time": 1794444299999
+      "state": "SHORT",
+      "close_time": 1794469499999
     },
     "AAVEUSDT": {
-      "state": "SHORT",
-      "close_time": 1794444299999
+      "state": "PULLBACK",
+      "close_time": 1794469499999
     },
     "ACTUSDT": {
       "state": "SHORT",
@@ -111,7 +111,7 @@
     },
     "LTCUSDT": {
       "state": "RISCO",
-      "close_time": 1794444299999
+      "close_time": 1794469499999
     },
     "BCHUSDT": {
       "state": "SHORT",
@@ -119,11 +119,11 @@
     },
     "ARBUSDT": {
       "state": "SHORT",
-      "close_time": 1794444299999
+      "close_time": 1794469499999
     },
     "SOXLBUSDT": {
-      "state": "SINAL_SHORT",
-      "close_time": 1794444299999
+      "state": "RISCO",
+      "close_time": 1794469499999
     },
     "HOTUSDT": {
       "state": "ESTICADO",
@@ -131,27 +131,27 @@
     },
     "ADAUSDT": {
       "state": "RISCO",
-      "close_time": 1794444299999
+      "close_time": 1794469499999
     },
     "QNTUSDT": {
-      "state": "SHORT",
-      "close_time": 1794393899999
+      "state": "PULLBACK",
+      "close_time": 1794469499999
     },
     "HMSTRUSDT": {
       "state": "RISCO",
       "close_time": 1794163499999
     },
     "GRAMUSDT": {
-      "state": "PULLBACK",
-      "close_time": 1794444299999
+      "state": "PREPARAR_LONG",
+      "close_time": 1794469499999
     },
     "CYBERUSDT": {
       "state": "SHORT",
       "close_time": 1794393899999
     },
     "AVAXUSDT": {
-      "state": "RISCO",
-      "close_time": 1794444299999
+      "state": "LONG",
+      "close_time": 1794469499999
     },
     "MITOUSDT": {
       "state": "PULLBACK",
@@ -162,8 +162,8 @@
       "close_time": 1794148199999
     },
     "SNDKBUSDT": {
-      "state": "SINAL_SHORT",
-      "close_time": 1794444299999
+      "state": "SHORT",
+      "close_time": 1794469499999
     },
     "TRUMPUSDT": {
       "state": "PREPARAR_SHORT",
@@ -174,20 +174,20 @@
       "close_time": 1794163499999
     },
     "ERAUSDT": {
-      "state": "ESTICADO",
-      "close_time": 1794444299999
+      "state": "RISCO",
+      "close_time": 1794469499999
     },
     "XLMUSDT": {
-      "state": "RISCO",
-      "close_time": 1794444299999
+      "state": "SHORT",
+      "close_time": 1794469499999
     },
     "TAOUSDT": {
-      "state": "RISCO",
-      "close_time": 1794444299999
+      "state": "PULLBACK",
+      "close_time": 1794469499999
     },
     "FETUSDT": {
-      "state": "LONG",
-      "close_time": 1794419999999
+      "state": "LATERAL",
+      "close_time": 1794469499999
     },
     "RSRUSDT": {
       "state": "PREPARAR_LONG",
@@ -206,64 +206,64 @@
       "close_time": 1794216599999
     },
     "PAXGUSDT": {
-      "state": "LATERAL",
-      "close_time": 1794444299999
+      "state": "SHORT",
+      "close_time": 1794469499999
     },
     "NVDABUSDT": {
-      "state": "SHORT",
-      "close_time": 1794444299999
+      "state": "RISCO",
+      "close_time": 1794469499999
     },
     "MUBUSDT": {
-      "state": "SINAL_SHORT",
-      "close_time": 1794444299999
+      "state": "RISCO",
+      "close_time": 1794469499999
     },
     "ASTERUSDT": {
       "state": "LONG",
       "close_time": 1794254399999
     },
     "CRCLBUSDT": {
-      "state": "RISCO",
-      "close_time": 1794444299999
+      "state": "SHORT",
+      "close_time": 1794469499999
     },
     "MSTRBUSDT": {
-      "state": "RISCO",
-      "close_time": 1794444299999
+      "state": "SHORT",
+      "close_time": 1794469499999
     },
     "KORUBUSDT": {
       "state": "SHORT",
       "close_time": 1794444299999
     },
     "SPCXBUSDT": {
-      "state": "PULLBACK",
-      "close_time": 1794444299999
+      "state": "SHORT",
+      "close_time": 1794469499999
     },
     "XUSDUSDT": {
       "state": "LATERAL",
       "close_time": 1794216599999
     },
     "INTCBUSDT": {
-      "state": "PULLBACK",
-      "close_time": 1794444299999
+      "state": "RISCO",
+      "close_time": 1794469499999
     },
     "GOOGLBUSDT": {
       "state": "LATERAL",
-      "close_time": 1794444299999
+      "close_time": 1794469499999
     },
     "SKHYBUSDT": {
       "state": "SHORT",
-      "close_time": 1794444299999
+      "close_time": 1794469499999
     },
     "QQQBUSDT": {
-      "state": "SHORT",
-      "close_time": 1794444299999
+      "state": "LATERAL",
+      "close_time": 1794469499999
     },
     "PROMUSDT": {
       "state": "ESTICADO",
       "close_time": 1794333599999
     },
     "INITUSDT": {
-      "state": "ESTICADO",
-      "close_time": 1794444299999
+      "state": "RISCO",
+      "close_time": 1794469499999
     },
     "ZROUSDT": {
       "state": "SHORT",
@@ -274,20 +274,20 @@
       "close_time": 1794306599999
     },
     "TQQQBUSDT": {
-      "state": "SHORT",
-      "close_time": 1794444299999
+      "state": "RISCO",
+      "close_time": 1794469499999
     },
     "FILUSDT": {
       "state": "LONG",
       "close_time": 1794393899999
     },
     "SOXSBUSDT": {
-      "state": "LONG",
-      "close_time": 1794444299999
+      "state": "RISCO",
+      "close_time": 1794469499999
     },
     "OPGUSDT": {
-      "state": "RISCO",
-      "close_time": 1794444299999
+      "state": "LONG",
+      "close_time": 1794469499999
     },
     "WBETHUSDT": {
       "state": "PULLBACK",
@@ -295,18 +295,10 @@
     },
     "SNXXBUSDT": {
       "state": "SHORT",
-      "close_time": 1794444299999
+      "close_time": 1794469499999
     }
   },
   "pending": [
-    "🟡 RadarMME1 PREPARAR LONG • ARBUSDT 15m | Score 84 | Candle fechado. Esperar pullback + confirmação. NÃO É ENTRADA.",
-    "🟡 RadarMME1 PREPARAR SHORT • QNTUSDT 15m | Score 84 | Candle fechado. Esperar pullback + confirmação. NÃO É ENTRADA.",
-    "🟡 RadarMME1 PREPARAR LONG • FILUSDT 15m | Score 87 | Candle fechado. Esperar pullback + confirmação. NÃO É ENTRADA.",
-    "⛔ STOP (estudo) • NEARUSDT SHORT 15m | entrada 3.528 | stop 3.611932142857143",
-    "⛔ STOP (estudo) • SUIUSDT SHORT 15m | entrada 0.8126 | stop 0.8206657142857143",
-    "🟡 RadarMME1 PREPARAR SHORT • TRUMPUSDT 15m | Score 74 | Candle fechado. Esperar pullback + confirmação. NÃO É ENTRADA.",
-    "⛔ STOP (estudo) • BNBUSDT SHORT 15m | entrada 674.31 | stop 680.3674285714286",
-    "⛔ STOP (estudo) • XAUTUSDT SHORT 15m | entrada 4009.11 | stop 4043.7554999999998",
     "⛔ STOP (estudo) • UNIUSDT SHORT 15m | entrada 6.663 | stop 6.7812214285714285",
     "🎯 1R (estudo) • SPCXBUSDT LONG 15m | alvo 144.51067857142857",
     "🟡 RadarMME1 PREPARAR LONG • SOLUSDT 15m | Score 84 | Candle fechado. Esperar pullback + confirmação. NÃO É ENTRADA.",
@@ -338,7 +330,15 @@
     "⛔ STOP (estudo) • SOLUSDT LONG 15m | entrada 85.35 | stop 84.49932142857142",
     "⛔ STOP (estudo) • XRPUSDT LONG 15m | entrada 1.0691 | stop 1.0515439285714285",
     "⛔ STOP (estudo) • HYPEUSDT LONG 15m | entrada 73.99 | stop 73.46032142857142",
-    "⛔ STOP (estudo) • DOGEUSDT LONG 15m | entrada 0.06913 | stop 0.06861775"
+    "⛔ STOP (estudo) • DOGEUSDT LONG 15m | entrada 0.06913 | stop 0.06861775",
+    "📡 RadarMME1 SHORT • UNIUSDT 15m\nCandle fechado: 2026-11-12T07:44:59.999Z\nRelOk 99/100 • IQE 99/100 • Score 100\nPreço 6.158 | Stop 6.276917857142857 | 1R 6.0390821428571435 | 2R 5.920164285714287\n1h ESTICADO | 4h ESTICADO\nCandidato técnico, sem ordem. GPT/humano ainda não aprovou.",
+    "📡 RadarMME1 SHORT • HYPEUSDT 15m\nCandle fechado: 2026-11-12T07:44:59.999Z\nRelOk 98/100 • IQE 98/100 • Score 100\nPreço 71.27 | Stop 71.85028571428572 | 1R 70.68971428571427 | 2R 70.10942857142855\n1h SHORT | 4h SHORT\nCandidato técnico, sem ordem. GPT/humano ainda não aprovou.",
+    "🟡 RadarMME1 PREPARAR LONG • GRAMUSDT 15m | Score 87 | Candle fechado. Esperar pullback + confirmação. NÃO É ENTRADA.",
+    "⛔ STOP (estudo) • SNDKBUSDT SHORT 15m | entrada 960.03 | stop 973.1401785714286",
+    "🎯 1R (estudo) • SOXLBUSDT SHORT 15m | alvo 61.78771428571429",
+    "⛔ STOP (estudo) • SOXLBUSDT SHORT 15m | entrada 63 | stop 64.21228571428571",
+    "🎯 1R (estudo) • MUBUSDT SHORT 15m | alvo 787.0845714285713",
+    "⛔ STOP (estudo) • MUBUSDT SHORT 15m | entrada 796.3 | stop 805.5154285714286"
   ],
   "trades": [
     {
@@ -713,11 +713,11 @@
       "r2": 933.8096428571428,
       "relok": 99,
       "iqe": 99,
-      "status": "ABERTA",
-      "checked_to": 1794444299999,
+      "status": "STOP",
+      "checked_to": 1794450599999,
       "hit1r": false,
-      "result_r": null,
-      "exit_time": null
+      "result_r": -1,
+      "exit_time": 1794450599999
     },
     {
       "id": "SOXLBUSDT:15m:1794444299999:SHORT",
@@ -731,11 +731,11 @@
       "r2": 60.575428571428574,
       "relok": 99,
       "iqe": 99,
-      "status": "ABERTA",
-      "checked_to": 1794444299999,
-      "hit1r": false,
-      "result_r": null,
-      "exit_time": null
+      "status": "STOP",
+      "checked_to": 1794449699999,
+      "hit1r": true,
+      "result_r": -1,
+      "exit_time": 1794449699999
     },
     {
       "id": "MUBUSDT:15m:1794444299999:SHORT",
@@ -749,8 +749,44 @@
       "r2": 777.8691428571426,
       "relok": 98,
       "iqe": 98,
+      "status": "STOP",
+      "checked_to": 1794450599999,
+      "hit1r": true,
+      "result_r": -1,
+      "exit_time": 1794450599999
+    },
+    {
+      "id": "UNIUSDT:15m:1794469499999:SHORT",
+      "symbol": "UNIUSDT",
+      "tf": "15m",
+      "direction": "SHORT",
+      "signal_close": 1794469499999,
+      "entry": 6.158,
+      "stop": 6.276917857142857,
+      "r1": 6.0390821428571435,
+      "r2": 5.920164285714287,
+      "relok": 99,
+      "iqe": 99,
       "status": "ABERTA",
-      "checked_to": 1794444299999,
+      "checked_to": 1794469499999,
+      "hit1r": false,
+      "result_r": null,
+      "exit_time": null
+    },
+    {
+      "id": "HYPEUSDT:15m:1794469499999:SHORT",
+      "symbol": "HYPEUSDT",
+      "tf": "15m",
+      "direction": "SHORT",
+      "signal_close": 1794469499999,
+      "entry": 71.27,
+      "stop": 71.85028571428572,
+      "r1": 70.68971428571427,
+      "r2": 70.10942857142855,
+      "relok": 98,
+      "iqe": 98,
+      "status": "ABERTA",
+      "checked_to": 1794469499999,
       "hit1r": false,
       "result_r": null,
       "exit_time": null
@@ -940,8 +976,24 @@
       "type": "SINAL",
       "direction": "SHORT",
       "relok": 98
+    },
+    {
+      "id": "UNIUSDT:15m:1794469499999:SHORT",
+      "time": 1794469499999,
+      "symbol": "UNIUSDT",
+      "type": "SINAL",
+      "direction": "SHORT",
+      "relok": 99
+    },
+    {
+      "id": "HYPEUSDT:15m:1794469499999:SHORT",
+      "time": 1794469499999,
+      "symbol": "HYPEUSDT",
+      "type": "SINAL",
+      "direction": "SHORT",
+      "relok": 98
     }
   ],
-  "stop_streak": 6,
-  "last_checked": "2026-11-12T00:52:05.095Z"
+  "stop_streak": 9,
+  "last_checked": "2026-11-12T07:53:27.071Z"
 }
