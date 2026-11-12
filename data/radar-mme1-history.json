@@ -159,6 +159,30 @@
       "type": "SINAL",
       "direction": "LONG",
       "relok": 98
+    },
+    {
+      "id": "SNDKBUSDT:15m:1794444299999:SHORT",
+      "time": 1794444299999,
+      "symbol": "SNDKBUSDT",
+      "type": "SINAL",
+      "direction": "SHORT",
+      "relok": 99
+    },
+    {
+      "id": "SOXLBUSDT:15m:1794444299999:SHORT",
+      "time": 1794444299999,
+      "symbol": "SOXLBUSDT",
+      "type": "SINAL",
+      "direction": "SHORT",
+      "relok": 99
+    },
+    {
+      "id": "MUBUSDT:15m:1794444299999:SHORT",
+      "time": 1794444299999,
+      "symbol": "MUBUSDT",
+      "type": "SINAL",
+      "direction": "SHORT",
+      "relok": 98
     }
   ],
   "trades": [
@@ -426,11 +450,11 @@
       "r2": 75362.20971428572,
       "relok": 100,
       "iqe": 100,
-      "status": "ABERTA",
-      "checked_to": 1794419999999,
+      "status": "STOP",
+      "checked_to": 1794437099999,
       "hit1r": false,
-      "result_r": null,
-      "exit_time": null
+      "result_r": -1,
+      "exit_time": 1794437099999
     },
     {
       "id": "ZECUSDT:15m:1794419999999:LONG",
@@ -444,11 +468,11 @@
       "r2": 1032.8899999999999,
       "relok": 100,
       "iqe": 100,
-      "status": "ABERTA",
-      "checked_to": 1794419999999,
+      "status": "STOP",
+      "checked_to": 1794423599999,
       "hit1r": false,
-      "result_r": null,
-      "exit_time": null
+      "result_r": -1,
+      "exit_time": 1794423599999
     },
     {
       "id": "SOLUSDT:15m:1794419999999:LONG",
@@ -462,11 +486,11 @@
       "r2": 87.05135714285714,
       "relok": 100,
       "iqe": 100,
-      "status": "ABERTA",
-      "checked_to": 1794419999999,
+      "status": "STOP",
+      "checked_to": 1794436199999,
       "hit1r": false,
-      "result_r": null,
-      "exit_time": null
+      "result_r": -1,
+      "exit_time": 1794436199999
     },
     {
       "id": "XRPUSDT:15m:1794419999999:LONG",
@@ -480,11 +504,11 @@
       "r2": 1.1042121428571428,
       "relok": 100,
       "iqe": 100,
-      "status": "ABERTA",
-      "checked_to": 1794419999999,
+      "status": "STOP",
+      "checked_to": 1794437999999,
       "hit1r": false,
-      "result_r": null,
-      "exit_time": null
+      "result_r": -1,
+      "exit_time": 1794437999999
     },
     {
       "id": "HYPEUSDT:15m:1794419999999:LONG",
@@ -498,11 +522,11 @@
       "r2": 75.04935714285715,
       "relok": 98,
       "iqe": 98,
-      "status": "ABERTA",
-      "checked_to": 1794419999999,
+      "status": "STOP",
+      "checked_to": 1794423599999,
       "hit1r": false,
-      "result_r": null,
-      "exit_time": null
+      "result_r": -1,
+      "exit_time": 1794423599999
     },
     {
       "id": "DOGEUSDT:15m:1794419999999:LONG",
@@ -516,8 +540,62 @@
       "r2": 0.07015449999999998,
       "relok": 98,
       "iqe": 98,
+      "status": "STOP",
+      "checked_to": 1794424499999,
+      "hit1r": false,
+      "result_r": -1,
+      "exit_time": 1794424499999
+    },
+    {
+      "id": "SNDKBUSDT:15m:1794444299999:SHORT",
+      "symbol": "SNDKBUSDT",
+      "tf": "15m",
+      "direction": "SHORT",
+      "signal_close": 1794444299999,
+      "entry": 960.03,
+      "stop": 973.1401785714286,
+      "r1": 946.9198214285714,
+      "r2": 933.8096428571428,
+      "relok": 99,
+      "iqe": 99,
       "status": "ABERTA",
-      "checked_to": 1794419999999,
+      "checked_to": 1794444299999,
+      "hit1r": false,
+      "result_r": null,
+      "exit_time": null
+    },
+    {
+      "id": "SOXLBUSDT:15m:1794444299999:SHORT",
+      "symbol": "SOXLBUSDT",
+      "tf": "15m",
+      "direction": "SHORT",
+      "signal_close": 1794444299999,
+      "entry": 63,
+      "stop": 64.21228571428571,
+      "r1": 61.78771428571429,
+      "r2": 60.575428571428574,
+      "relok": 99,
+      "iqe": 99,
+      "status": "ABERTA",
+      "checked_to": 1794444299999,
+      "hit1r": false,
+      "result_r": null,
+      "exit_time": null
+    },
+    {
+      "id": "MUBUSDT:15m:1794444299999:SHORT",
+      "symbol": "MUBUSDT",
+      "tf": "15m",
+      "direction": "SHORT",
+      "signal_close": 1794444299999,
+      "entry": 796.3,
+      "stop": 805.5154285714286,
+      "r1": 787.0845714285713,
+      "r2": 777.8691428571426,
+      "relok": 98,
+      "iqe": 98,
+      "status": "ABERTA",
+      "checked_to": 1794444299999,
       "hit1r": false,
       "result_r": null,
       "exit_time": null
