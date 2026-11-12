@@ -215,6 +215,14 @@
       "type": "SINAL",
       "direction": "SHORT",
       "relok": 98
+    },
+    {
+      "id": "LINKUSDT:15m:1794521699999:LONG",
+      "time": 1794521699999,
+      "symbol": "LINKUSDT",
+      "type": "SINAL",
+      "direction": "LONG",
+      "relok": 98
     }
   ],
   "trades": [
@@ -645,7 +653,7 @@
       "relok": 99,
       "iqe": 99,
       "status": "ABERTA",
-      "checked_to": 1794501899999,
+      "checked_to": 1794521699999,
       "hit1r": true,
       "result_r": null,
       "exit_time": null
@@ -681,7 +689,7 @@
       "relok": 98,
       "iqe": 98,
       "status": "ABERTA",
-      "checked_to": 1794501899999,
+      "checked_to": 1794521699999,
       "hit1r": false,
       "result_r": null,
       "exit_time": null
@@ -699,7 +707,25 @@
       "relok": 98,
       "iqe": 98,
       "status": "ABERTA",
-      "checked_to": 1794501899999,
+      "checked_to": 1794521699999,
+      "hit1r": false,
+      "result_r": null,
+      "exit_time": null
+    },
+    {
+      "id": "LINKUSDT:15m:1794521699999:LONG",
+      "symbol": "LINKUSDT",
+      "tf": "15m",
+      "direction": "LONG",
+      "signal_close": 1794521699999,
+      "entry": 10.09,
+      "stop": 10.000335714285715,
+      "r1": 10.179664285714285,
+      "r2": 10.26932857142857,
+      "relok": 98,
+      "iqe": 98,
+      "status": "ABERTA",
+      "checked_to": 1794521699999,
       "hit1r": false,
       "result_r": null,
       "exit_time": null
