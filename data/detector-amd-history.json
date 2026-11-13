@@ -4470,6 +4470,12 @@
         "observed_close": 1794527999999,
         "change_pct": 1.33929,
         "direction_favorable": true
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1794599999999,
+        "change_pct": -0.22321,
+        "direction_favorable": false
       }
     }
   },
@@ -4796,7 +4802,20 @@
     "support": 0.5915,
     "resistance": 0.6507,
     "hypothesis": "BAIXA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794592799999,
+        "change_pct": -0.91206,
+        "direction_favorable": true
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794599999999,
+        "change_pct": 0.94648,
+        "direction_favorable": false
+      }
+    }
   },
   {
     "id": "ETHFIUSDT:4h:1794585599999:BREAK_DOWN",
@@ -4809,7 +4828,20 @@
     "support": 0.5915,
     "resistance": 0.6561,
     "hypothesis": "BAIXA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794592799999,
+        "change_pct": -0.91206,
+        "direction_favorable": true
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794599999999,
+        "change_pct": 0.94648,
+        "direction_favorable": false
+      }
+    }
   },
   {
     "id": "RAYUSDT:2h:1794585599999:SWEEP_LOW",
@@ -4822,7 +4854,20 @@
     "support": 1.5134,
     "resistance": 1.6499,
     "hypothesis": "ALTA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794592799999,
+        "change_pct": -1.06014,
+        "direction_favorable": false
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794599999999,
+        "change_pct": 0.17015,
+        "direction_favorable": true
+      }
+    }
   },
   {
     "id": "RAYUSDT:4h:1794585599999:SWEEP_LOW",
@@ -4835,6 +4880,19 @@
     "support": 1.5134,
     "resistance": 1.7126,
     "hypothesis": "ALTA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794592799999,
+        "change_pct": -1.06014,
+        "direction_favorable": false
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794599999999,
+        "change_pct": 0.17015,
+        "direction_favorable": true
+      }
+    }
   }
 ]
