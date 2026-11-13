@@ -652,11 +652,11 @@
       "r2": 5.920164285714287,
       "relok": 99,
       "iqe": 99,
-      "status": "ABERTA",
-      "checked_to": 1794521699999,
+      "status": "2R",
+      "checked_to": 1794537899999,
       "hit1r": true,
-      "result_r": null,
-      "exit_time": null
+      "result_r": 2,
+      "exit_time": 1794537899999
     },
     {
       "id": "HYPEUSDT:15m:1794469499999:SHORT",
@@ -688,11 +688,11 @@
       "r2": 3789.9898571428566,
       "relok": 98,
       "iqe": 98,
-      "status": "ABERTA",
-      "checked_to": 1794521699999,
+      "status": "STOP",
+      "checked_to": 1794533399999,
       "hit1r": false,
-      "result_r": null,
-      "exit_time": null
+      "result_r": -1,
+      "exit_time": 1794533399999
     },
     {
       "id": "AVAXUSDT:15m:1794501899999:SHORT",
@@ -707,8 +707,8 @@
       "relok": 98,
       "iqe": 98,
       "status": "ABERTA",
-      "checked_to": 1794521699999,
-      "hit1r": false,
+      "checked_to": 1794537899999,
+      "hit1r": true,
       "result_r": null,
       "exit_time": null
     },
@@ -724,11 +724,11 @@
       "r2": 10.26932857142857,
       "relok": 98,
       "iqe": 98,
-      "status": "ABERTA",
-      "checked_to": 1794521699999,
+      "status": "STOP",
+      "checked_to": 1794536999999,
       "hit1r": false,
-      "result_r": null,
-      "exit_time": null
+      "result_r": -1,
+      "exit_time": 1794536999999
     }
   ]
 }
