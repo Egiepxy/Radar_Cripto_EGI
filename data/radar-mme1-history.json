@@ -223,6 +223,30 @@
       "type": "SINAL",
       "direction": "LONG",
       "relok": 98
+    },
+    {
+      "id": "ZECUSDT:15m:1794566699999:LONG",
+      "time": 1794566699999,
+      "symbol": "ZECUSDT",
+      "type": "SINAL",
+      "direction": "LONG",
+      "relok": 100
+    },
+    {
+      "id": "SUIUSDT:15m:1794566699999:LONG",
+      "time": 1794566699999,
+      "symbol": "SUIUSDT",
+      "type": "SINAL",
+      "direction": "LONG",
+      "relok": 98
+    },
+    {
+      "id": "LINKUSDT:15m:1794566699999:LONG",
+      "time": 1794566699999,
+      "symbol": "LINKUSDT",
+      "type": "SINAL",
+      "direction": "LONG",
+      "relok": 98
     }
   ],
   "trades": [
@@ -706,11 +730,11 @@
       "r2": 8.139378571428571,
       "relok": 98,
       "iqe": 98,
-      "status": "ABERTA",
-      "checked_to": 1794537899999,
+      "status": "2R",
+      "checked_to": 1794540599999,
       "hit1r": true,
-      "result_r": null,
-      "exit_time": null
+      "result_r": 2,
+      "exit_time": 1794540599999
     },
     {
       "id": "LINKUSDT:15m:1794521699999:LONG",
@@ -729,6 +753,60 @@
       "hit1r": false,
       "result_r": -1,
       "exit_time": 1794536999999
+    },
+    {
+      "id": "ZECUSDT:15m:1794566699999:LONG",
+      "symbol": "ZECUSDT",
+      "tf": "15m",
+      "direction": "LONG",
+      "signal_close": 1794566699999,
+      "entry": 947.19,
+      "stop": 933.1223214285714,
+      "r1": 961.2576785714288,
+      "r2": 975.3253571428575,
+      "relok": 100,
+      "iqe": 100,
+      "status": "ABERTA",
+      "checked_to": 1794566699999,
+      "hit1r": false,
+      "result_r": null,
+      "exit_time": null
+    },
+    {
+      "id": "SUIUSDT:15m:1794566699999:LONG",
+      "symbol": "SUIUSDT",
+      "tf": "15m",
+      "direction": "LONG",
+      "signal_close": 1794566699999,
+      "entry": 0.8028,
+      "stop": 0.7938967857142857,
+      "r1": 0.8117032142857142,
+      "r2": 0.8206064285714285,
+      "relok": 98,
+      "iqe": 98,
+      "status": "ABERTA",
+      "checked_to": 1794566699999,
+      "hit1r": false,
+      "result_r": null,
+      "exit_time": null
+    },
+    {
+      "id": "LINKUSDT:15m:1794566699999:LONG",
+      "symbol": "LINKUSDT",
+      "tf": "15m",
+      "direction": "LONG",
+      "signal_close": 1794566699999,
+      "entry": 9.965,
+      "stop": 9.8871,
+      "r1": 10.0429,
+      "r2": 10.1208,
+      "relok": 98,
+      "iqe": 98,
+      "status": "ABERTA",
+      "checked_to": 1794566699999,
+      "hit1r": false,
+      "result_r": null,
+      "exit_time": null
     }
   ]
 }
