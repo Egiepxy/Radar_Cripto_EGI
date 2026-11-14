@@ -311,6 +311,46 @@
       "type": "SINAL",
       "direction": "SHORT",
       "relok": 98
+    },
+    {
+      "id": "SOXLBUSDT:15m:1794626999999:SHORT",
+      "time": 1794626999999,
+      "symbol": "SOXLBUSDT",
+      "type": "SINAL",
+      "direction": "SHORT",
+      "relok": 98
+    },
+    {
+      "id": "SUIUSDT:15m:1794626999999:SHORT",
+      "time": 1794626999999,
+      "symbol": "SUIUSDT",
+      "type": "SINAL",
+      "direction": "SHORT",
+      "relok": 98
+    },
+    {
+      "id": "LINKUSDT:15m:1794626999999:SHORT",
+      "time": 1794626999999,
+      "symbol": "LINKUSDT",
+      "type": "SINAL",
+      "direction": "SHORT",
+      "relok": 98
+    },
+    {
+      "id": "AVAXUSDT:15m:1794626999999:SHORT",
+      "time": 1794626999999,
+      "symbol": "AVAXUSDT",
+      "type": "SINAL",
+      "direction": "SHORT",
+      "relok": 98
+    },
+    {
+      "id": "ADAUSDT:15m:1794626999999:SHORT",
+      "time": 1794626999999,
+      "symbol": "ADAUSDT",
+      "type": "SINAL",
+      "direction": "SHORT",
+      "relok": 97
     }
   ],
   "trades": [
@@ -920,11 +960,11 @@
       "r2": 67369.79178571429,
       "relok": 98,
       "iqe": 98,
-      "status": "ABERTA",
-      "checked_to": 1794612599999,
-      "hit1r": false,
-      "result_r": null,
-      "exit_time": null
+      "status": "2R",
+      "checked_to": 1794623399999,
+      "hit1r": true,
+      "result_r": 2,
+      "exit_time": 1794623399999
     },
     {
       "id": "ETHUSDT:15m:1794612599999:SHORT",
@@ -938,11 +978,11 @@
       "r2": 1902.7744999999998,
       "relok": 100,
       "iqe": 100,
-      "status": "ABERTA",
-      "checked_to": 1794612599999,
+      "status": "STOP",
+      "checked_to": 1794615299999,
       "hit1r": false,
-      "result_r": null,
-      "exit_time": null
+      "result_r": -1,
+      "exit_time": 1794615299999
     },
     {
       "id": "NVDABUSDT:15m:1794612599999:SHORT",
@@ -956,11 +996,11 @@
       "r2": 158.34628571428573,
       "relok": 100,
       "iqe": 100,
-      "status": "ABERTA",
-      "checked_to": 1794612599999,
+      "status": "STOP",
+      "checked_to": 1794620699999,
       "hit1r": false,
-      "result_r": null,
-      "exit_time": null
+      "result_r": -1,
+      "exit_time": 1794620699999
     },
     {
       "id": "XRPUSDT:15m:1794612599999:SHORT",
@@ -975,8 +1015,8 @@
       "relok": 100,
       "iqe": 100,
       "status": "ABERTA",
-      "checked_to": 1794612599999,
-      "hit1r": false,
+      "checked_to": 1794626999999,
+      "hit1r": true,
       "result_r": null,
       "exit_time": null
     },
@@ -992,11 +1032,11 @@
       "r2": 622.0949285714285,
       "relok": 100,
       "iqe": 100,
-      "status": "ABERTA",
-      "checked_to": 1794612599999,
+      "status": "STOP",
+      "checked_to": 1794619799999,
       "hit1r": false,
-      "result_r": null,
-      "exit_time": null
+      "result_r": -1,
+      "exit_time": 1794619799999
     },
     {
       "id": "INJUSDT:15m:1794612599999:SHORT",
@@ -1010,8 +1050,98 @@
       "r2": 7.866092857142856,
       "relok": 98,
       "iqe": 98,
+      "status": "STOP",
+      "checked_to": 1794613499999,
+      "hit1r": false,
+      "result_r": -1,
+      "exit_time": 1794613499999
+    },
+    {
+      "id": "SOXLBUSDT:15m:1794626999999:SHORT",
+      "symbol": "SOXLBUSDT",
+      "tf": "15m",
+      "direction": "SHORT",
+      "signal_close": 1794626999999,
+      "entry": 56.01,
+      "stop": 56.46053571428571,
+      "r1": 55.559464285714284,
+      "r2": 55.10892857142857,
+      "relok": 98,
+      "iqe": 98,
       "status": "ABERTA",
-      "checked_to": 1794612599999,
+      "checked_to": 1794626999999,
+      "hit1r": false,
+      "result_r": null,
+      "exit_time": null
+    },
+    {
+      "id": "SUIUSDT:15m:1794626999999:SHORT",
+      "symbol": "SUIUSDT",
+      "tf": "15m",
+      "direction": "SHORT",
+      "signal_close": 1794626999999,
+      "entry": 0.7814,
+      "stop": 0.7987378571428572,
+      "r1": 0.7640621428571428,
+      "r2": 0.7467242857142856,
+      "relok": 98,
+      "iqe": 98,
+      "status": "ABERTA",
+      "checked_to": 1794626999999,
+      "hit1r": false,
+      "result_r": null,
+      "exit_time": null
+    },
+    {
+      "id": "LINKUSDT:15m:1794626999999:SHORT",
+      "symbol": "LINKUSDT",
+      "tf": "15m",
+      "direction": "SHORT",
+      "signal_close": 1794626999999,
+      "entry": 9.685,
+      "stop": 9.890492857142858,
+      "r1": 9.479507142857143,
+      "r2": 9.274014285714285,
+      "relok": 98,
+      "iqe": 98,
+      "status": "ABERTA",
+      "checked_to": 1794626999999,
+      "hit1r": false,
+      "result_r": null,
+      "exit_time": null
+    },
+    {
+      "id": "AVAXUSDT:15m:1794626999999:SHORT",
+      "symbol": "AVAXUSDT",
+      "tf": "15m",
+      "direction": "SHORT",
+      "signal_close": 1794626999999,
+      "entry": 8.125,
+      "stop": 8.261764285714285,
+      "r1": 7.9882357142857146,
+      "r2": 7.851471428571429,
+      "relok": 98,
+      "iqe": 98,
+      "status": "ABERTA",
+      "checked_to": 1794626999999,
+      "hit1r": false,
+      "result_r": null,
+      "exit_time": null
+    },
+    {
+      "id": "ADAUSDT:15m:1794626999999:SHORT",
+      "symbol": "ADAUSDT",
+      "tf": "15m",
+      "direction": "SHORT",
+      "signal_close": 1794626999999,
+      "entry": 0.1653,
+      "stop": 0.1691725,
+      "r1": 0.1614275,
+      "r2": 0.157555,
+      "relok": 97,
+      "iqe": 97,
+      "status": "ABERTA",
+      "checked_to": 1794626999999,
       "hit1r": false,
       "result_r": null,
       "exit_time": null
