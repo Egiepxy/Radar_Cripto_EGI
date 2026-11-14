@@ -351,6 +351,30 @@
       "type": "SINAL",
       "direction": "SHORT",
       "relok": 97
+    },
+    {
+      "id": "ZECUSDT:15m:1794653099999:SHORT",
+      "time": 1794653099999,
+      "symbol": "ZECUSDT",
+      "type": "SINAL",
+      "direction": "SHORT",
+      "relok": 100
+    },
+    {
+      "id": "UNIUSDT:15m:1794653099999:SHORT",
+      "time": 1794653099999,
+      "symbol": "UNIUSDT",
+      "type": "SINAL",
+      "direction": "SHORT",
+      "relok": 98
+    },
+    {
+      "id": "TAOUSDT:15m:1794653099999:SHORT",
+      "time": 1794653099999,
+      "symbol": "TAOUSDT",
+      "type": "SINAL",
+      "direction": "SHORT",
+      "relok": 98
     }
   ],
   "trades": [
@@ -1014,11 +1038,11 @@
       "r2": 0.9825828571428572,
       "relok": 100,
       "iqe": 100,
-      "status": "ABERTA",
-      "checked_to": 1794626999999,
+      "status": "2R",
+      "checked_to": 1794641399999,
       "hit1r": true,
-      "result_r": null,
-      "exit_time": null
+      "result_r": 2,
+      "exit_time": 1794641399999
     },
     {
       "id": "BNBUSDT:15m:1794612599999:SHORT",
@@ -1069,7 +1093,7 @@
       "relok": 98,
       "iqe": 98,
       "status": "ABERTA",
-      "checked_to": 1794626999999,
+      "checked_to": 1794653099999,
       "hit1r": false,
       "result_r": null,
       "exit_time": null
@@ -1087,7 +1111,7 @@
       "relok": 98,
       "iqe": 98,
       "status": "ABERTA",
-      "checked_to": 1794626999999,
+      "checked_to": 1794653099999,
       "hit1r": false,
       "result_r": null,
       "exit_time": null
@@ -1105,7 +1129,7 @@
       "relok": 98,
       "iqe": 98,
       "status": "ABERTA",
-      "checked_to": 1794626999999,
+      "checked_to": 1794653099999,
       "hit1r": false,
       "result_r": null,
       "exit_time": null
@@ -1123,8 +1147,8 @@
       "relok": 98,
       "iqe": 98,
       "status": "ABERTA",
-      "checked_to": 1794626999999,
-      "hit1r": false,
+      "checked_to": 1794653099999,
+      "hit1r": true,
       "result_r": null,
       "exit_time": null
     },
@@ -1141,7 +1165,61 @@
       "relok": 97,
       "iqe": 97,
       "status": "ABERTA",
-      "checked_to": 1794626999999,
+      "checked_to": 1794653099999,
+      "hit1r": false,
+      "result_r": null,
+      "exit_time": null
+    },
+    {
+      "id": "ZECUSDT:15m:1794653099999:SHORT",
+      "symbol": "ZECUSDT",
+      "tf": "15m",
+      "direction": "SHORT",
+      "signal_close": 1794653099999,
+      "entry": 906.8,
+      "stop": 918.462892857143,
+      "r1": 895.137107142857,
+      "r2": 883.474214285714,
+      "relok": 100,
+      "iqe": 100,
+      "status": "ABERTA",
+      "checked_to": 1794653099999,
+      "hit1r": false,
+      "result_r": null,
+      "exit_time": null
+    },
+    {
+      "id": "UNIUSDT:15m:1794653099999:SHORT",
+      "symbol": "UNIUSDT",
+      "tf": "15m",
+      "direction": "SHORT",
+      "signal_close": 1794653099999,
+      "entry": 5.523,
+      "stop": 5.563025,
+      "r1": 5.482975,
+      "r2": 5.44295,
+      "relok": 98,
+      "iqe": 98,
+      "status": "ABERTA",
+      "checked_to": 1794653099999,
+      "hit1r": false,
+      "result_r": null,
+      "exit_time": null
+    },
+    {
+      "id": "TAOUSDT:15m:1794653099999:SHORT",
+      "symbol": "TAOUSDT",
+      "tf": "15m",
+      "direction": "SHORT",
+      "signal_close": 1794653099999,
+      "entry": 207.8,
+      "stop": 209.18321428571429,
+      "r1": 206.41678571428574,
+      "r2": 205.03357142857146,
+      "relok": 98,
+      "iqe": 98,
+      "status": "ABERTA",
+      "checked_to": 1794653099999,
       "hit1r": false,
       "result_r": null,
       "exit_time": null
