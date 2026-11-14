@@ -5392,7 +5392,20 @@
     "support": 66456.0,
     "resistance": 71559.7,
     "hypothesis": "BAIXA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794679199999,
+        "change_pct": 0.24275,
+        "direction_favorable": false
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794686399999,
+        "change_pct": -0.0219,
+        "direction_favorable": true
+      }
+    }
   },
   {
     "id": "BTCUSDT:4h:1794671999999:BREAK_DOWN",
@@ -5405,7 +5418,20 @@
     "support": 66456.0,
     "resistance": 74811.45,
     "hypothesis": "BAIXA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794679199999,
+        "change_pct": 0.24275,
+        "direction_favorable": false
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794686399999,
+        "change_pct": -0.0219,
+        "direction_favorable": true
+      }
+    }
   },
   {
     "id": "ETHUSDT:2h:1794671999999:BREAK_DOWN",
@@ -5418,7 +5444,20 @@
     "support": 1878.0,
     "resistance": 2021.11,
     "hypothesis": "BAIXA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794679199999,
+        "change_pct": 0.11134,
+        "direction_favorable": false
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794686399999,
+        "change_pct": -0.33347,
+        "direction_favorable": true
+      }
+    }
   },
   {
     "id": "ETHUSDT:4h:1794671999999:BREAK_DOWN",
@@ -5431,7 +5470,20 @@
     "support": 1878.0,
     "resistance": 2103.78,
     "hypothesis": "BAIXA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794679199999,
+        "change_pct": 0.11134,
+        "direction_favorable": false
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794686399999,
+        "change_pct": -0.33347,
+        "direction_favorable": true
+      }
+    }
   },
   {
     "id": "SOLUSDT:2h:1794671999999:BREAK_DOWN",
@@ -5444,7 +5496,20 @@
     "support": 74.85,
     "resistance": 82.38,
     "hypothesis": "BAIXA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794679199999,
+        "change_pct": -1.39396,
+        "direction_favorable": true
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794686399999,
+        "change_pct": -2.23305,
+        "direction_favorable": true
+      }
+    }
   },
   {
     "id": "SOLUSDT:4h:1794671999999:BREAK_DOWN",
@@ -5457,7 +5522,20 @@
     "support": 74.85,
     "resistance": 85.85,
     "hypothesis": "BAIXA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794679199999,
+        "change_pct": -1.39396,
+        "direction_favorable": true
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794686399999,
+        "change_pct": -2.23305,
+        "direction_favorable": true
+      }
+    }
   },
   {
     "id": "BNBUSDT:2h:1794671999999:BREAK_DOWN",
@@ -5470,7 +5548,20 @@
     "support": 605.0,
     "resistance": 658.65,
     "hypothesis": "BAIXA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794679199999,
+        "change_pct": -1.3616,
+        "direction_favorable": true
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794686399999,
+        "change_pct": -1.38165,
+        "direction_favorable": true
+      }
+    }
   },
   {
     "id": "BNBUSDT:4h:1794671999999:BREAK_DOWN",
@@ -5483,7 +5574,20 @@
     "support": 612.65,
     "resistance": 689.3,
     "hypothesis": "BAIXA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794679199999,
+        "change_pct": -1.3616,
+        "direction_favorable": true
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794686399999,
+        "change_pct": -1.38165,
+        "direction_favorable": true
+      }
+    }
   },
   {
     "id": "XRPUSDT:2h:1794671999999:BREAK_DOWN",
@@ -5496,7 +5600,20 @@
     "support": 0.98,
     "resistance": 1.0439,
     "hypothesis": "BAIXA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794679199999,
+        "change_pct": -1.21412,
+        "direction_favorable": true
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794686399999,
+        "change_pct": -1.90349,
+        "direction_favorable": true
+      }
+    }
   },
   {
     "id": "XRPUSDT:4h:1794671999999:BREAK_DOWN",
@@ -5509,7 +5626,20 @@
     "support": 0.98,
     "resistance": 1.0808,
     "hypothesis": "BAIXA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794679199999,
+        "change_pct": -1.21412,
+        "direction_favorable": true
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794686399999,
+        "change_pct": -1.90349,
+        "direction_favorable": true
+      }
+    }
   },
   {
     "id": "LINKUSDT:2h:1794671999999:BREAK_DOWN",
@@ -5522,7 +5652,20 @@
     "support": 9.502,
     "resistance": 10.25,
     "hypothesis": "BAIXA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794679199999,
+        "change_pct": -1.18547,
+        "direction_favorable": true
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794686399999,
+        "change_pct": -2.24162,
+        "direction_favorable": true
+      }
+    }
   },
   {
     "id": "LINKUSDT:4h:1794671999999:BREAK_DOWN",
@@ -5535,7 +5678,20 @@
     "support": 9.512,
     "resistance": 10.592,
     "hypothesis": "BAIXA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794679199999,
+        "change_pct": -1.18547,
+        "direction_favorable": true
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794686399999,
+        "change_pct": -2.24162,
+        "direction_favorable": true
+      }
+    }
   },
   {
     "id": "ADAUSDT:2h:1794671999999:BREAK_DOWN",
@@ -5548,7 +5704,20 @@
     "support": 0.1606,
     "resistance": 0.1757,
     "hypothesis": "BAIXA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794679199999,
+        "change_pct": -1.01652,
+        "direction_favorable": true
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794686399999,
+        "change_pct": -2.03304,
+        "direction_favorable": true
+      }
+    }
   },
   {
     "id": "ADAUSDT:4h:1794671999999:BREAK_DOWN",
@@ -5561,7 +5730,20 @@
     "support": 0.1617,
     "resistance": 0.1809,
     "hypothesis": "BAIXA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794679199999,
+        "change_pct": -1.01652,
+        "direction_favorable": true
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794686399999,
+        "change_pct": -2.03304,
+        "direction_favorable": true
+      }
+    }
   },
   {
     "id": "DOGEUSDT:2h:1794671999999:BREAK_DOWN",
@@ -5574,7 +5756,20 @@
     "support": 0.0621,
     "resistance": 0.0667,
     "hypothesis": "BAIXA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794679199999,
+        "change_pct": -1.19437,
+        "direction_favorable": true
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794686399999,
+        "change_pct": -2.25785,
+        "direction_favorable": true
+      }
+    }
   },
   {
     "id": "DOGEUSDT:4h:1794671999999:BREAK_DOWN",
@@ -5587,7 +5782,20 @@
     "support": 0.0621,
     "resistance": 0.06957,
     "hypothesis": "BAIXA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794679199999,
+        "change_pct": -1.19437,
+        "direction_favorable": true
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794686399999,
+        "change_pct": -2.25785,
+        "direction_favorable": true
+      }
+    }
   },
   {
     "id": "AVAXUSDT:2h:1794671999999:BREAK_DOWN",
@@ -5600,7 +5808,20 @@
     "support": 7.922,
     "resistance": 8.636,
     "hypothesis": "BAIXA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794679199999,
+        "change_pct": -2.48698,
+        "direction_favorable": true
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794686399999,
+        "change_pct": -3.35937,
+        "direction_favorable": true
+      }
+    }
   },
   {
     "id": "AVAXUSDT:4h:1794671999999:BREAK_DOWN",
@@ -5613,7 +5834,20 @@
     "support": 7.942,
     "resistance": 8.741,
     "hypothesis": "BAIXA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794679199999,
+        "change_pct": -2.48698,
+        "direction_favorable": true
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794686399999,
+        "change_pct": -3.35937,
+        "direction_favorable": true
+      }
+    }
   },
   {
     "id": "AAVEUSDT:2h:1794671999999:BREAK_DOWN",
@@ -5626,7 +5860,20 @@
     "support": 105.5,
     "resistance": 115.55,
     "hypothesis": "BAIXA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794679199999,
+        "change_pct": -1.29422,
+        "direction_favorable": true
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794686399999,
+        "change_pct": -2.24331,
+        "direction_favorable": true
+      }
+    }
   },
   {
     "id": "AAVEUSDT:4h:1794671999999:BREAK_DOWN",
@@ -5639,7 +5886,20 @@
     "support": 106.91,
     "resistance": 125.37,
     "hypothesis": "BAIXA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794679199999,
+        "change_pct": -1.29422,
+        "direction_favorable": true
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794686399999,
+        "change_pct": -2.24331,
+        "direction_favorable": true
+      }
+    }
   },
   {
     "id": "UNIUSDT:2h:1794671999999:BREAK_DOWN",
@@ -5652,7 +5912,20 @@
     "support": 5.334,
     "resistance": 6.101,
     "hypothesis": "BAIXA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794679199999,
+        "change_pct": -1.81428,
+        "direction_favorable": true
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794686399999,
+        "change_pct": -4.03824,
+        "direction_favorable": true
+      }
+    }
   },
   {
     "id": "UNIUSDT:4h:1794671999999:BREAK_DOWN",
@@ -5665,7 +5938,20 @@
     "support": 5.464,
     "resistance": 6.727,
     "hypothesis": "BAIXA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794679199999,
+        "change_pct": -1.81428,
+        "direction_favorable": true
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794686399999,
+        "change_pct": -4.03824,
+        "direction_favorable": true
+      }
+    }
   },
   {
     "id": "ONDOUSDT:2h:1794671999999:BREAK_DOWN",
@@ -5678,7 +5964,20 @@
     "support": 0.3233,
     "resistance": 0.3549,
     "hypothesis": "BAIXA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794679199999,
+        "change_pct": -1.84244,
+        "direction_favorable": true
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794686399999,
+        "change_pct": -3.20839,
+        "direction_favorable": true
+      }
+    }
   },
   {
     "id": "ONDOUSDT:4h:1794671999999:BREAK_DOWN",
@@ -5691,7 +5990,20 @@
     "support": 0.325,
     "resistance": 0.3778,
     "hypothesis": "BAIXA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794679199999,
+        "change_pct": -1.84244,
+        "direction_favorable": true
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794686399999,
+        "change_pct": -3.20839,
+        "direction_favorable": true
+      }
+    }
   },
   {
     "id": "SUIUSDT:2h:1794671999999:BREAK_DOWN",
@@ -5704,7 +6016,20 @@
     "support": 0.7602,
     "resistance": 0.829,
     "hypothesis": "BAIXA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794679199999,
+        "change_pct": -1.45592,
+        "direction_favorable": true
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794686399999,
+        "change_pct": -2.1704,
+        "direction_favorable": true
+      }
+    }
   },
   {
     "id": "SUIUSDT:4h:1794671999999:BREAK_DOWN",
@@ -5717,7 +6042,20 @@
     "support": 0.765,
     "resistance": 0.8541,
     "hypothesis": "BAIXA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794679199999,
+        "change_pct": -1.45592,
+        "direction_favorable": true
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794686399999,
+        "change_pct": -2.1704,
+        "direction_favorable": true
+      }
+    }
   },
   {
     "id": "NEARUSDT:2h:1794671999999:BREAK_DOWN",
@@ -5730,7 +6068,20 @@
     "support": 3.265,
     "resistance": 3.639,
     "hypothesis": "BAIXA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794679199999,
+        "change_pct": -2.76483,
+        "direction_favorable": true
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794686399999,
+        "change_pct": -4.03852,
+        "direction_favorable": true
+      }
+    }
   },
   {
     "id": "NEARUSDT:4h:1794671999999:BREAK_DOWN",
@@ -5743,7 +6094,20 @@
     "support": 3.265,
     "resistance": 3.815,
     "hypothesis": "BAIXA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794679199999,
+        "change_pct": -2.76483,
+        "direction_favorable": true
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794686399999,
+        "change_pct": -4.03852,
+        "direction_favorable": true
+      }
+    }
   },
   {
     "id": "WLDUSDT:2h:1794671999999:BREAK_DOWN",
@@ -5756,7 +6120,20 @@
     "support": 0.2756,
     "resistance": 0.3075,
     "hypothesis": "BAIXA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794679199999,
+        "change_pct": -2.5405,
+        "direction_favorable": true
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794686399999,
+        "change_pct": -4.34462,
+        "direction_favorable": true
+      }
+    }
   },
   {
     "id": "WLDUSDT:4h:1794671999999:BREAK_DOWN",
@@ -5769,7 +6146,20 @@
     "support": 0.2777,
     "resistance": 0.3247,
     "hypothesis": "BAIXA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794679199999,
+        "change_pct": -2.5405,
+        "direction_favorable": true
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794686399999,
+        "change_pct": -4.34462,
+        "direction_favorable": true
+      }
+    }
   },
   {
     "id": "ETHFIUSDT:2h:1794671999999:BREAK_DOWN",
@@ -5782,7 +6172,20 @@
     "support": 0.5352,
     "resistance": 0.6419,
     "hypothesis": "BAIXA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794679199999,
+        "change_pct": -3.91933,
+        "direction_favorable": true
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794686399999,
+        "change_pct": -4.94673,
+        "direction_favorable": true
+      }
+    }
   },
   {
     "id": "ETHFIUSDT:4h:1794671999999:BREAK_DOWN",
@@ -5795,7 +6198,20 @@
     "support": 0.5435,
     "resistance": 0.6561,
     "hypothesis": "BAIXA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794679199999,
+        "change_pct": -3.91933,
+        "direction_favorable": true
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794686399999,
+        "change_pct": -4.94673,
+        "direction_favorable": true
+      }
+    }
   },
   {
     "id": "TIAUSDT:2h:1794671999999:BREAK_DOWN",
@@ -5808,7 +6224,20 @@
     "support": 0.3613,
     "resistance": 0.4454,
     "hypothesis": "BAIXA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794679199999,
+        "change_pct": -2.16066,
+        "direction_favorable": true
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794686399999,
+        "change_pct": -3.60111,
+        "direction_favorable": true
+      }
+    }
   },
   {
     "id": "TIAUSDT:4h:1794671999999:BREAK_DOWN",
@@ -5821,7 +6250,20 @@
     "support": 0.3613,
     "resistance": 0.48,
     "hypothesis": "BAIXA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794679199999,
+        "change_pct": -2.16066,
+        "direction_favorable": true
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794686399999,
+        "change_pct": -3.60111,
+        "direction_favorable": true
+      }
+    }
   },
   {
     "id": "PEPEUSDT:2h:1794671999999:BREAK_DOWN",
@@ -5834,7 +6276,20 @@
     "support": 4.15e-06,
     "resistance": 4.69e-06,
     "hypothesis": "BAIXA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794679199999,
+        "change_pct": -1.23762,
+        "direction_favorable": true
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794686399999,
+        "change_pct": -2.9703,
+        "direction_favorable": true
+      }
+    }
   },
   {
     "id": "FLOKIUSDT:2h:1794671999999:BREAK_DOWN",
@@ -5847,7 +6302,20 @@
     "support": 1.908e-05,
     "resistance": 2.044e-05,
     "hypothesis": "BAIXA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794679199999,
+        "change_pct": -1.60686,
+        "direction_favorable": true
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794686399999,
+        "change_pct": -2.78522,
+        "direction_favorable": true
+      }
+    }
   },
   {
     "id": "FLOKIUSDT:4h:1794671999999:BREAK_DOWN",
@@ -5860,7 +6328,20 @@
     "support": 1.911e-05,
     "resistance": 2.139e-05,
     "hypothesis": "BAIXA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794679199999,
+        "change_pct": -1.60686,
+        "direction_favorable": true
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794686399999,
+        "change_pct": -2.78522,
+        "direction_favorable": true
+      }
+    }
   },
   {
     "id": "RAYUSDT:2h:1794671999999:SWEEP_LOW",
@@ -5873,7 +6354,20 @@
     "support": 1.4281,
     "resistance": 1.6151,
     "hypothesis": "ALTA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794679199999,
+        "change_pct": -2.1555,
+        "direction_favorable": false
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794686399999,
+        "change_pct": -2.77836,
+        "direction_favorable": false
+      }
+    }
   },
   {
     "id": "RAYUSDT:4h:1794671999999:SWEEP_LOW",
@@ -5886,6 +6380,409 @@
     "support": 1.4281,
     "resistance": 1.6758,
     "hypothesis": "ALTA",
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794679199999,
+        "change_pct": -2.1555,
+        "direction_favorable": false
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794686399999,
+        "change_pct": -2.77836,
+        "direction_favorable": false
+      }
+    }
+  },
+  {
+    "id": "BTCUSDT:4h:1794686399999:SWEEP_LOW",
+    "symbol": "BTCUSDT",
+    "timeframe": "4h",
+    "phase": "SWEEP_LOW",
+    "close_time": 1794686399999,
+    "reference_price": 65727.61,
+    "volume_relative": 1.2285801116693496,
+    "support": 65066.66,
+    "resistance": 74811.45,
+    "hypothesis": "ALTA",
+    "audit": {}
+  },
+  {
+    "id": "ETHUSDT:4h:1794686399999:SWEEP_LOW",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "phase": "SWEEP_LOW",
+    "close_time": 1794686399999,
+    "reference_price": 1835.09,
+    "volume_relative": 1.668410155911572,
+    "support": 1824.46,
+    "resistance": 2103.78,
+    "hypothesis": "ALTA",
+    "audit": {}
+  },
+  {
+    "id": "SOLUSDT:2h:1794686399999:SWEEP_LOW",
+    "symbol": "SOLUSDT",
+    "timeframe": "2h",
+    "phase": "SWEEP_LOW",
+    "close_time": 1794686399999,
+    "reference_price": 72.24,
+    "volume_relative": 0.8914111449485173,
+    "support": 71.93,
+    "resistance": 82.38,
+    "hypothesis": "ALTA",
+    "audit": {}
+  },
+  {
+    "id": "SOLUSDT:4h:1794686399999:BREAK_DOWN",
+    "symbol": "SOLUSDT",
+    "timeframe": "4h",
+    "phase": "BREAK_DOWN",
+    "close_time": 1794686399999,
+    "reference_price": 72.24,
+    "volume_relative": 1.6968363984965136,
+    "support": 73.17,
+    "resistance": 85.85,
+    "hypothesis": "BAIXA",
+    "audit": {}
+  },
+  {
+    "id": "BNBUSDT:4h:1794686399999:BREAK_DOWN",
+    "symbol": "BNBUSDT",
+    "timeframe": "4h",
+    "phase": "BREAK_DOWN",
+    "close_time": 1794686399999,
+    "reference_price": 590.29,
+    "volume_relative": 2.28247580066397,
+    "support": 593.64,
+    "resistance": 689.3,
+    "hypothesis": "BAIXA",
+    "audit": {}
+  },
+  {
+    "id": "XRPUSDT:4h:1794686399999:BREAK_DOWN",
+    "symbol": "XRPUSDT",
+    "timeframe": "4h",
+    "phase": "BREAK_DOWN",
+    "close_time": 1794686399999,
+    "reference_price": 0.9534,
+    "volume_relative": 2.433617162486979,
+    "support": 0.9669,
+    "resistance": 1.0808,
+    "hypothesis": "BAIXA",
+    "audit": {}
+  },
+  {
+    "id": "LINKUSDT:2h:1794686399999:SWEEP_LOW",
+    "symbol": "LINKUSDT",
+    "timeframe": "2h",
+    "phase": "SWEEP_LOW",
+    "close_time": 1794686399999,
+    "reference_price": 9.071,
+    "volume_relative": 0.7993796248649554,
+    "support": 9.022,
+    "resistance": 10.25,
+    "hypothesis": "ALTA",
+    "audit": {}
+  },
+  {
+    "id": "LINKUSDT:4h:1794686399999:BREAK_DOWN",
+    "symbol": "LINKUSDT",
+    "timeframe": "4h",
+    "phase": "BREAK_DOWN",
+    "close_time": 1794686399999,
+    "reference_price": 9.071,
+    "volume_relative": 1.59451369491004,
+    "support": 9.184,
+    "resistance": 10.592,
+    "hypothesis": "BAIXA",
+    "audit": {}
+  },
+  {
+    "id": "ADAUSDT:2h:1794686399999:SWEEP_LOW",
+    "symbol": "ADAUSDT",
+    "timeframe": "2h",
+    "phase": "SWEEP_LOW",
+    "close_time": 1794686399999,
+    "reference_price": 0.1542,
+    "volume_relative": 1.0340706599003842,
+    "support": 0.1539,
+    "resistance": 0.1747,
+    "hypothesis": "ALTA",
+    "audit": {}
+  },
+  {
+    "id": "ADAUSDT:4h:1794686399999:BREAK_DOWN",
+    "symbol": "ADAUSDT",
+    "timeframe": "4h",
+    "phase": "BREAK_DOWN",
+    "close_time": 1794686399999,
+    "reference_price": 0.1542,
+    "volume_relative": 2.07354617398037,
+    "support": 0.1556,
+    "resistance": 0.1809,
+    "hypothesis": "BAIXA",
+    "audit": {}
+  },
+  {
+    "id": "DOGEUSDT:2h:1794686399999:SWEEP_LOW",
+    "symbol": "DOGEUSDT",
+    "timeframe": "2h",
+    "phase": "SWEEP_LOW",
+    "close_time": 1794686399999,
+    "reference_price": 0.05974,
+    "volume_relative": 0.9134139482698052,
+    "support": 0.05954,
+    "resistance": 0.06662,
+    "hypothesis": "ALTA",
+    "audit": {}
+  },
+  {
+    "id": "DOGEUSDT:4h:1794686399999:BREAK_DOWN",
+    "symbol": "DOGEUSDT",
+    "timeframe": "4h",
+    "phase": "BREAK_DOWN",
+    "close_time": 1794686399999,
+    "reference_price": 0.05974,
+    "volume_relative": 2.0183987067464644,
+    "support": 0.06036,
+    "resistance": 0.06957,
+    "hypothesis": "BAIXA",
+    "audit": {}
+  },
+  {
+    "id": "AVAXUSDT:4h:1794686399999:BREAK_DOWN",
+    "symbol": "AVAXUSDT",
+    "timeframe": "4h",
+    "phase": "BREAK_DOWN",
+    "close_time": 1794686399999,
+    "reference_price": 7.422,
+    "volume_relative": 1.7922163516037806,
+    "support": 7.606,
+    "resistance": 8.741,
+    "hypothesis": "BAIXA",
+    "audit": {}
+  },
+  {
+    "id": "AAVEUSDT:4h:1794686399999:BREAK_DOWN",
+    "symbol": "AAVEUSDT",
+    "timeframe": "4h",
+    "phase": "BREAK_DOWN",
+    "close_time": 1794686399999,
+    "reference_price": 101.97,
+    "volume_relative": 1.4292339021456433,
+    "support": 102.81,
+    "resistance": 125.25,
+    "hypothesis": "BAIXA",
+    "audit": {}
+  },
+  {
+    "id": "UNIUSDT:2h:1794686399999:SWEEP_LOW",
+    "symbol": "UNIUSDT",
+    "timeframe": "2h",
+    "phase": "SWEEP_LOW",
+    "close_time": 1794686399999,
+    "reference_price": 4.919,
+    "volume_relative": 0.9843580004689308,
+    "support": 4.913,
+    "resistance": 6.06,
+    "hypothesis": "ALTA",
+    "audit": {}
+  },
+  {
+    "id": "UNIUSDT:4h:1794686399999:BREAK_DOWN",
+    "symbol": "UNIUSDT",
+    "timeframe": "4h",
+    "phase": "BREAK_DOWN",
+    "close_time": 1794686399999,
+    "reference_price": 4.919,
+    "volume_relative": 2.327537245963836,
+    "support": 5.094,
+    "resistance": 6.683,
+    "hypothesis": "BAIXA",
+    "audit": {}
+  },
+  {
+    "id": "ONDOUSDT:2h:1794686399999:SWEEP_LOW",
+    "symbol": "ONDOUSDT",
+    "timeframe": "2h",
+    "phase": "SWEEP_LOW",
+    "close_time": 1794686399999,
+    "reference_price": 0.3047,
+    "volume_relative": 0.8070986272657354,
+    "support": 0.3041,
+    "resistance": 0.3548,
+    "hypothesis": "ALTA",
+    "audit": {}
+  },
+  {
+    "id": "ONDOUSDT:4h:1794686399999:BREAK_DOWN",
+    "symbol": "ONDOUSDT",
+    "timeframe": "4h",
+    "phase": "BREAK_DOWN",
+    "close_time": 1794686399999,
+    "reference_price": 0.3047,
+    "volume_relative": 1.8209694093778308,
+    "support": 0.311,
+    "resistance": 0.3778,
+    "hypothesis": "BAIXA",
+    "audit": {}
+  },
+  {
+    "id": "SUIUSDT:4h:1794686399999:BREAK_DOWN",
+    "symbol": "SUIUSDT",
+    "timeframe": "4h",
+    "phase": "BREAK_DOWN",
+    "close_time": 1794686399999,
+    "reference_price": 0.7257,
+    "volume_relative": 1.8102676711965349,
+    "support": 0.7339,
+    "resistance": 0.8541,
+    "hypothesis": "BAIXA",
+    "audit": {}
+  },
+  {
+    "id": "NEARUSDT:2h:1794686399999:SWEEP_LOW",
+    "symbol": "NEARUSDT",
+    "timeframe": "2h",
+    "phase": "SWEEP_LOW",
+    "close_time": 1794686399999,
+    "reference_price": 3.089,
+    "volume_relative": 0.9254955858990743,
+    "support": 3.076,
+    "resistance": 3.639,
+    "hypothesis": "ALTA",
+    "audit": {}
+  },
+  {
+    "id": "NEARUSDT:4h:1794686399999:BREAK_DOWN",
+    "symbol": "NEARUSDT",
+    "timeframe": "4h",
+    "phase": "BREAK_DOWN",
+    "close_time": 1794686399999,
+    "reference_price": 3.089,
+    "volume_relative": 2.013875592141515,
+    "support": 3.174,
+    "resistance": 3.815,
+    "hypothesis": "BAIXA",
+    "audit": {}
+  },
+  {
+    "id": "WLDUSDT:4h:1794686399999:BREAK_DOWN",
+    "symbol": "WLDUSDT",
+    "timeframe": "4h",
+    "phase": "BREAK_DOWN",
+    "close_time": 1794686399999,
+    "reference_price": 0.2598,
+    "volume_relative": 1.734151922881095,
+    "support": 0.2681,
+    "resistance": 0.3247,
+    "hypothesis": "BAIXA",
+    "audit": {}
+  },
+  {
+    "id": "ETHFIUSDT:2h:1794686399999:BREAK_DOWN",
+    "symbol": "ETHFIUSDT",
+    "timeframe": "2h",
+    "phase": "BREAK_DOWN",
+    "close_time": 1794686399999,
+    "reference_price": 0.4996,
+    "volume_relative": 1.6219063623635936,
+    "support": 0.5015,
+    "resistance": 0.6311,
+    "hypothesis": "BAIXA",
+    "audit": {}
+  },
+  {
+    "id": "ETHFIUSDT:4h:1794686399999:BREAK_DOWN",
+    "symbol": "ETHFIUSDT",
+    "timeframe": "4h",
+    "phase": "BREAK_DOWN",
+    "close_time": 1794686399999,
+    "reference_price": 0.4996,
+    "volume_relative": 2.77837914129825,
+    "support": 0.5171,
+    "resistance": 0.6561,
+    "hypothesis": "BAIXA",
+    "audit": {}
+  },
+  {
+    "id": "TIAUSDT:2h:1794686399999:SWEEP_LOW",
+    "symbol": "TIAUSDT",
+    "timeframe": "2h",
+    "phase": "SWEEP_LOW",
+    "close_time": 1794686399999,
+    "reference_price": 0.348,
+    "volume_relative": 0.4534264651617918,
+    "support": 0.347,
+    "resistance": 0.4387,
+    "hypothesis": "ALTA",
+    "audit": {}
+  },
+  {
+    "id": "PEPEUSDT:4h:1794686399999:BREAK_DOWN",
+    "symbol": "PEPEUSDT",
+    "timeframe": "4h",
+    "phase": "BREAK_DOWN",
+    "close_time": 1794686399999,
+    "reference_price": 3.92e-06,
+    "volume_relative": 1.5770746068539583,
+    "support": 4.03e-06,
+    "resistance": 5.27e-06,
+    "hypothesis": "BAIXA",
+    "audit": {}
+  },
+  {
+    "id": "FLOKIUSDT:2h:1794686399999:SWEEP_LOW",
+    "symbol": "FLOKIUSDT",
+    "timeframe": "2h",
+    "phase": "SWEEP_LOW",
+    "close_time": 1794686399999,
+    "reference_price": 1.815e-05,
+    "volume_relative": 1.1910568616316746,
+    "support": 1.81e-05,
+    "resistance": 2.044e-05,
+    "hypothesis": "ALTA",
+    "audit": {}
+  },
+  {
+    "id": "FLOKIUSDT:4h:1794686399999:BREAK_DOWN",
+    "symbol": "FLOKIUSDT",
+    "timeframe": "4h",
+    "phase": "BREAK_DOWN",
+    "close_time": 1794686399999,
+    "reference_price": 1.815e-05,
+    "volume_relative": 1.7710921752983368,
+    "support": 1.843e-05,
+    "resistance": 2.139e-05,
+    "hypothesis": "BAIXA",
+    "audit": {}
+  },
+  {
+    "id": "RAYUSDT:2h:1794686399999:SWEEP_LOW",
+    "symbol": "RAYUSDT",
+    "timeframe": "2h",
+    "phase": "SWEEP_LOW",
+    "close_time": 1794686399999,
+    "reference_price": 1.3892,
+    "volume_relative": 0.7445637056020386,
+    "support": 1.3802,
+    "resistance": 1.5977,
+    "hypothesis": "ALTA",
+    "audit": {}
+  },
+  {
+    "id": "RAYUSDT:4h:1794686399999:BREAK_DOWN",
+    "symbol": "RAYUSDT",
+    "timeframe": "4h",
+    "phase": "BREAK_DOWN",
+    "close_time": 1794686399999,
+    "reference_price": 1.3892,
+    "volume_relative": 1.778672829807998,
+    "support": 1.4072,
+    "resistance": 1.6758,
+    "hypothesis": "BAIXA",
     "audit": {}
   }
 ]
