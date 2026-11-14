@@ -375,6 +375,22 @@
       "type": "SINAL",
       "direction": "SHORT",
       "relok": 98
+    },
+    {
+      "id": "NVDABUSDT:15m:1794675599999:SHORT",
+      "time": 1794675599999,
+      "symbol": "NVDABUSDT",
+      "type": "SINAL",
+      "direction": "SHORT",
+      "relok": 98
+    },
+    {
+      "id": "TRXUSDT:15m:1794675599999:SHORT",
+      "time": 1794675599999,
+      "symbol": "TRXUSDT",
+      "type": "SINAL",
+      "direction": "SHORT",
+      "relok": 98
     }
   ],
   "trades": [
@@ -1092,11 +1108,11 @@
       "r2": 55.10892857142857,
       "relok": 98,
       "iqe": 98,
-      "status": "ABERTA",
-      "checked_to": 1794653099999,
-      "hit1r": false,
-      "result_r": null,
-      "exit_time": null
+      "status": "2R",
+      "checked_to": 1794671999999,
+      "hit1r": true,
+      "result_r": 2,
+      "exit_time": 1794671999999
     },
     {
       "id": "SUIUSDT:15m:1794626999999:SHORT",
@@ -1110,11 +1126,11 @@
       "r2": 0.7467242857142856,
       "relok": 98,
       "iqe": 98,
-      "status": "ABERTA",
-      "checked_to": 1794653099999,
-      "hit1r": false,
-      "result_r": null,
-      "exit_time": null
+      "status": "2R",
+      "checked_to": 1794666599999,
+      "hit1r": true,
+      "result_r": 2,
+      "exit_time": 1794666599999
     },
     {
       "id": "LINKUSDT:15m:1794626999999:SHORT",
@@ -1128,11 +1144,11 @@
       "r2": 9.274014285714285,
       "relok": 98,
       "iqe": 98,
-      "status": "ABERTA",
-      "checked_to": 1794653099999,
-      "hit1r": false,
-      "result_r": null,
-      "exit_time": null
+      "status": "2R",
+      "checked_to": 1794666599999,
+      "hit1r": true,
+      "result_r": 2,
+      "exit_time": 1794666599999
     },
     {
       "id": "AVAXUSDT:15m:1794626999999:SHORT",
@@ -1146,11 +1162,11 @@
       "r2": 7.851471428571429,
       "relok": 98,
       "iqe": 98,
-      "status": "ABERTA",
-      "checked_to": 1794653099999,
+      "status": "2R",
+      "checked_to": 1794665699999,
       "hit1r": true,
-      "result_r": null,
-      "exit_time": null
+      "result_r": 2,
+      "exit_time": 1794665699999
     },
     {
       "id": "ADAUSDT:15m:1794626999999:SHORT",
@@ -1164,11 +1180,11 @@
       "r2": 0.157555,
       "relok": 97,
       "iqe": 97,
-      "status": "ABERTA",
-      "checked_to": 1794653099999,
-      "hit1r": false,
-      "result_r": null,
-      "exit_time": null
+      "status": "2R",
+      "checked_to": 1794666599999,
+      "hit1r": true,
+      "result_r": 2,
+      "exit_time": 1794666599999
     },
     {
       "id": "ZECUSDT:15m:1794653099999:SHORT",
@@ -1182,11 +1198,11 @@
       "r2": 883.474214285714,
       "relok": 100,
       "iqe": 100,
-      "status": "ABERTA",
-      "checked_to": 1794653099999,
-      "hit1r": false,
-      "result_r": null,
-      "exit_time": null
+      "status": "2R",
+      "checked_to": 1794662099999,
+      "hit1r": true,
+      "result_r": 2,
+      "exit_time": 1794662099999
     },
     {
       "id": "UNIUSDT:15m:1794653099999:SHORT",
@@ -1200,11 +1216,11 @@
       "r2": 5.44295,
       "relok": 98,
       "iqe": 98,
-      "status": "ABERTA",
-      "checked_to": 1794653099999,
-      "hit1r": false,
-      "result_r": null,
-      "exit_time": null
+      "status": "2R",
+      "checked_to": 1794661199999,
+      "hit1r": true,
+      "result_r": 2,
+      "exit_time": 1794661199999
     },
     {
       "id": "TAOUSDT:15m:1794653099999:SHORT",
@@ -1218,8 +1234,44 @@
       "r2": 205.03357142857146,
       "relok": 98,
       "iqe": 98,
+      "status": "2R",
+      "checked_to": 1794662099999,
+      "hit1r": true,
+      "result_r": 2,
+      "exit_time": 1794662099999
+    },
+    {
+      "id": "NVDABUSDT:15m:1794675599999:SHORT",
+      "symbol": "NVDABUSDT",
+      "tf": "15m",
+      "direction": "SHORT",
+      "signal_close": 1794675599999,
+      "entry": 159.4,
+      "stop": 161.30239285714285,
+      "r1": 157.49760714285716,
+      "r2": 155.59521428571432,
+      "relok": 98,
+      "iqe": 98,
       "status": "ABERTA",
-      "checked_to": 1794653099999,
+      "checked_to": 1794675599999,
+      "hit1r": false,
+      "result_r": null,
+      "exit_time": null
+    },
+    {
+      "id": "TRXUSDT:15m:1794675599999:SHORT",
+      "symbol": "TRXUSDT",
+      "tf": "15m",
+      "direction": "SHORT",
+      "signal_close": 1794675599999,
+      "entry": 0.3089,
+      "stop": 0.3133092857142857,
+      "r1": 0.30449071428571434,
+      "r2": 0.30008142857142867,
+      "relok": 98,
+      "iqe": 98,
+      "status": "ABERTA",
+      "checked_to": 1794675599999,
       "hit1r": false,
       "result_r": null,
       "exit_time": null
