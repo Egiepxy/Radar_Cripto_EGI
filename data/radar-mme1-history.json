@@ -1252,11 +1252,11 @@
       "r2": 155.59521428571432,
       "relok": 98,
       "iqe": 98,
-      "status": "ABERTA",
-      "checked_to": 1794705299999,
+      "status": "STOP",
+      "checked_to": 1794713399999,
       "hit1r": true,
-      "result_r": null,
-      "exit_time": null
+      "result_r": -1,
+      "exit_time": 1794713399999
     },
     {
       "id": "TRXUSDT:15m:1794675599999:SHORT",
@@ -1271,7 +1271,7 @@
       "relok": 98,
       "iqe": 98,
       "status": "ABERTA",
-      "checked_to": 1794705299999,
+      "checked_to": 1794728699999,
       "hit1r": false,
       "result_r": null,
       "exit_time": null
