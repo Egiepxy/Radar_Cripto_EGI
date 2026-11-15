@@ -1271,8 +1271,8 @@
       "relok": 98,
       "iqe": 98,
       "status": "ABERTA",
-      "checked_to": 1794756599999,
-      "hit1r": false,
+      "checked_to": 1794774599999,
+      "hit1r": true,
       "result_r": null,
       "exit_time": null
     }
