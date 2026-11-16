@@ -455,6 +455,14 @@
       "type": "SINAL",
       "direction": "SHORT",
       "relok": 98
+    },
+    {
+      "id": "SPCXBUSDT:15m:1794847499999:SHORT",
+      "time": 1794847499999,
+      "symbol": "SPCXBUSDT",
+      "type": "SINAL",
+      "direction": "SHORT",
+      "relok": 99
     }
   ],
   "trades": [
@@ -1335,7 +1343,7 @@
       "relok": 98,
       "iqe": 98,
       "status": "ABERTA",
-      "checked_to": 1794811499999,
+      "checked_to": 1794847499999,
       "hit1r": true,
       "result_r": null,
       "exit_time": null
@@ -1442,11 +1450,11 @@
       "r2": 65.30971428571429,
       "relok": 98,
       "iqe": 98,
-      "status": "ABERTA",
-      "checked_to": 1794811499999,
+      "status": "STOP",
+      "checked_to": 1794815099999,
       "hit1r": false,
-      "result_r": null,
-      "exit_time": null
+      "result_r": -1,
+      "exit_time": 1794815099999
     },
     {
       "id": "SUIUSDT:15m:1794811499999:SHORT",
@@ -1460,11 +1468,11 @@
       "r2": 0.7066528571428571,
       "relok": 98,
       "iqe": 98,
-      "status": "ABERTA",
-      "checked_to": 1794811499999,
-      "hit1r": false,
-      "result_r": null,
-      "exit_time": null
+      "status": "STOP",
+      "checked_to": 1794840299999,
+      "hit1r": true,
+      "result_r": -1,
+      "exit_time": 1794840299999
     },
     {
       "id": "MUBUSDT:15m:1794811499999:SHORT",
@@ -1478,8 +1486,26 @@
       "r2": 724.1739285714286,
       "relok": 98,
       "iqe": 98,
+      "status": "2R",
+      "checked_to": 1794840299999,
+      "hit1r": true,
+      "result_r": 2,
+      "exit_time": 1794840299999
+    },
+    {
+      "id": "SPCXBUSDT:15m:1794847499999:SHORT",
+      "symbol": "SPCXBUSDT",
+      "tf": "15m",
+      "direction": "SHORT",
+      "signal_close": 1794847499999,
+      "entry": 136.75,
+      "stop": 137.67003571428572,
+      "r1": 135.82996428571428,
+      "r2": 134.90992857142857,
+      "relok": 99,
+      "iqe": 99,
       "status": "ABERTA",
-      "checked_to": 1794811499999,
+      "checked_to": 1794847499999,
       "hit1r": false,
       "result_r": null,
       "exit_time": null
