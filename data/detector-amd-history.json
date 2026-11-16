@@ -7798,6 +7798,12 @@
         "observed_close": 1794729599999,
         "change_pct": -1.25473,
         "direction_favorable": false
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1794801599999,
+        "change_pct": 0.44416,
+        "direction_favorable": true
       }
     }
   },
@@ -7824,6 +7830,12 @@
         "observed_close": 1794729599999,
         "change_pct": -2.01011,
         "direction_favorable": false
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1794801599999,
+        "change_pct": 0.49263,
+        "direction_favorable": true
       }
     }
   },
@@ -7850,6 +7862,12 @@
         "observed_close": 1794729599999,
         "change_pct": -1.97562,
         "direction_favorable": false
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1794801599999,
+        "change_pct": 1.12092,
+        "direction_favorable": true
       }
     }
   },
@@ -7875,6 +7893,12 @@
         "status": "MEDIDO",
         "observed_close": 1794729599999,
         "change_pct": -1.26868,
+        "direction_favorable": false
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1794801599999,
+        "change_pct": -0.03029,
         "direction_favorable": false
       }
     }
@@ -7902,6 +7926,12 @@
         "observed_close": 1794729599999,
         "change_pct": -0.53086,
         "direction_favorable": false
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1794801599999,
+        "change_pct": 2.25614,
+        "direction_favorable": true
       }
     }
   },
@@ -7928,6 +7958,12 @@
         "observed_close": 1794729599999,
         "change_pct": 0.0559,
         "direction_favorable": true
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1794801599999,
+        "change_pct": 1.0341,
+        "direction_favorable": true
       }
     }
   },
@@ -7953,6 +7989,12 @@
         "status": "MEDIDO",
         "observed_close": 1794729599999,
         "change_pct": 0.43203,
+        "direction_favorable": true
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1794801599999,
+        "change_pct": 5.00192,
         "direction_favorable": true
       }
     }
