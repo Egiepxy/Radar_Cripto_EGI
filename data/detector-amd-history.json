@@ -1,133 +1,5 @@
 [
   {
-    "id": "WLDUSDT:2h:1794175199999:BREAK_DOWN",
-    "symbol": "WLDUSDT",
-    "timeframe": "2h",
-    "phase": "BREAK_DOWN",
-    "close_time": 1794175199999,
-    "reference_price": 0.309,
-    "volume_relative": 3.824856296011512,
-    "support": 0.3195,
-    "resistance": 0.3426,
-    "hypothesis": "BAIXA",
-    "audit": {
-      "2h": {
-        "status": "MEDIDO",
-        "observed_close": 1794182399999,
-        "change_pct": 1.00324,
-        "direction_favorable": false
-      },
-      "4h": {
-        "status": "MEDIDO",
-        "observed_close": 1794189599999,
-        "change_pct": 3.49515,
-        "direction_favorable": false
-      },
-      "24h": {
-        "status": "MEDIDO",
-        "observed_close": 1794261599999,
-        "change_pct": 2.91262,
-        "direction_favorable": false
-      }
-    }
-  },
-  {
-    "id": "WLDUSDT:4h:1794167999999:BREAK_DOWN",
-    "symbol": "WLDUSDT",
-    "timeframe": "4h",
-    "phase": "BREAK_DOWN",
-    "close_time": 1794167999999,
-    "reference_price": 0.3226,
-    "volume_relative": 1.465058835090481,
-    "support": 0.3237,
-    "resistance": 0.3824,
-    "hypothesis": "BAIXA",
-    "audit": {
-      "2h": {
-        "status": "MEDIDO",
-        "observed_close": 1794175199999,
-        "change_pct": -4.21575,
-        "direction_favorable": true
-      },
-      "4h": {
-        "status": "MEDIDO",
-        "observed_close": 1794182399999,
-        "change_pct": -3.2548,
-        "direction_favorable": true
-      },
-      "24h": {
-        "status": "MEDIDO",
-        "observed_close": 1794254399999,
-        "change_pct": -0.46497,
-        "direction_favorable": true
-      }
-    }
-  },
-  {
-    "id": "ETHFIUSDT:2h:1794175199999:BREAK_DOWN",
-    "symbol": "ETHFIUSDT",
-    "timeframe": "2h",
-    "phase": "BREAK_DOWN",
-    "close_time": 1794175199999,
-    "reference_price": 0.5675,
-    "volume_relative": 1.665975827368739,
-    "support": 0.5756,
-    "resistance": 0.6042,
-    "hypothesis": "BAIXA",
-    "audit": {
-      "2h": {
-        "status": "MEDIDO",
-        "observed_close": 1794182399999,
-        "change_pct": 1.72687,
-        "direction_favorable": false
-      },
-      "4h": {
-        "status": "MEDIDO",
-        "observed_close": 1794189599999,
-        "change_pct": 5.163,
-        "direction_favorable": false
-      },
-      "24h": {
-        "status": "MEDIDO",
-        "observed_close": 1794261599999,
-        "change_pct": 11.06608,
-        "direction_favorable": false
-      }
-    }
-  },
-  {
-    "id": "TIAUSDT:2h:1794175199999:BREAK_DOWN",
-    "symbol": "TIAUSDT",
-    "timeframe": "2h",
-    "phase": "BREAK_DOWN",
-    "close_time": 1794175199999,
-    "reference_price": 0.4029,
-    "volume_relative": 3.181018148149442,
-    "support": 0.4159,
-    "resistance": 0.4484,
-    "hypothesis": "BAIXA",
-    "audit": {
-      "2h": {
-        "status": "MEDIDO",
-        "observed_close": 1794182399999,
-        "change_pct": 2.28345,
-        "direction_favorable": false
-      },
-      "4h": {
-        "status": "MEDIDO",
-        "observed_close": 1794189599999,
-        "change_pct": 4.31869,
-        "direction_favorable": false
-      },
-      "24h": {
-        "status": "MEDIDO",
-        "observed_close": 1794261599999,
-        "change_pct": 6.50285,
-        "direction_favorable": false
-      }
-    }
-  },
-  {
     "id": "FLOKIUSDT:2h:1794175199999:BREAK_DOWN",
     "symbol": "FLOKIUSDT",
     "timeframe": "2h",
@@ -7998,5 +7870,57 @@
         "direction_favorable": true
       }
     }
+  },
+  {
+    "id": "ETHUSDT:2h:1794844799999:SWEEP_HIGH",
+    "symbol": "ETHUSDT",
+    "timeframe": "2h",
+    "phase": "SWEEP_HIGH",
+    "close_time": 1794844799999,
+    "reference_price": 1820.0,
+    "volume_relative": 2.157344773127272,
+    "support": 1711.08,
+    "resistance": 1845.18,
+    "hypothesis": "BAIXA",
+    "audit": {}
+  },
+  {
+    "id": "AAVEUSDT:2h:1794844799999:SWEEP_HIGH",
+    "symbol": "AAVEUSDT",
+    "timeframe": "2h",
+    "phase": "SWEEP_HIGH",
+    "close_time": 1794844799999,
+    "reference_price": 108.04,
+    "volume_relative": 2.5170506318532,
+    "support": 96.6,
+    "resistance": 110.45,
+    "hypothesis": "BAIXA",
+    "audit": {}
+  },
+  {
+    "id": "NEARUSDT:2h:1794844799999:SWEEP_HIGH",
+    "symbol": "NEARUSDT",
+    "timeframe": "2h",
+    "phase": "SWEEP_HIGH",
+    "close_time": 1794844799999,
+    "reference_price": 3.148,
+    "volume_relative": 3.2070815144154587,
+    "support": 2.907,
+    "resistance": 3.242,
+    "hypothesis": "BAIXA",
+    "audit": {}
+  },
+  {
+    "id": "ETHFIUSDT:2h:1794844799999:SWEEP_LOW",
+    "symbol": "ETHFIUSDT",
+    "timeframe": "2h",
+    "phase": "SWEEP_LOW",
+    "close_time": 1794844799999,
+    "reference_price": 0.4737,
+    "volume_relative": 2.3724176269928208,
+    "support": 0.4699,
+    "resistance": 0.5153,
+    "hypothesis": "ALTA",
+    "audit": {}
   }
 ]
