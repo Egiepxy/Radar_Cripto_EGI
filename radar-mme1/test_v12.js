@@ -1,0 +1,14 @@
+'use strict';
+const assert=require('node:assert/strict');
+const {test,audit3,queueItem,classify,formatAlert}=require('./audit-v12');
+test();
+const t=()=>({direction:'LONG',stop:99,study3:{status:'ABERTA',target:103,checked_to:100,result_r:null}});
+const bar=(h,l,end=900100)=>[101,100,h,l,100,1,end];
+let x=t();audit3(x,[bar(104,100)],2000000);assert.equal(x.study3.result_r,3);
+x=t();audit3(x,[bar(104,98)],2000000);assert.equal(x.study3.status,'INDETERMINADA');
+x=t();audit3(x,[bar(104,100,1800100)],3000000);assert.equal(x.study3.gap,true);
+x=t();audit3(x,[bar(104,100)],500000);assert.equal(x.study3.status,'ABERTA');
+assert.equal(classify(queueItem('alerta antigo',100),100),'HISTORICO');
+assert.equal(classify({msg:'x',created:100},900101),'HISTORICO');
+assert.match(formatAlert('📡 RadarMME1 LONG • SOLUSDT 15m', [{id:'1',symbol:'SOLUSDT',status:'2R',result_r:2}]),/1\/1 gains/);
+console.log('V1.2: testes adicionais OK');
