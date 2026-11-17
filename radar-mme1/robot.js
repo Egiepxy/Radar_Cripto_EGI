@@ -5,7 +5,7 @@
   Motor de análise extraído do RadarMME1 Light V9.1.1,
   publicado separadamente, sem execução de ordens.
 */
-const {stats,delivery,audit3,queueItem,formatAlert,classify}=require('./audit-v12.js');
+const {stats,stats3,riskAfterAudit,delivery,audit3,queueItem,formatAlert,classify}=require('./audit-v12.js');
 const fs=require('fs'),path=require('path');
 const {analyze,egiFreshness,egiRiskGate}=require('./engine-original.js');
 const ROOT=path.resolve(__dirname,'..'), DATA=path.join(ROOT,'data');
@@ -148,7 +148,6 @@ async function main(){
  const readings=[],eventMessages=[],newStatus={},runtimeTrades=Array.isArray(previous.trades)?previous.trades:[];
  const notes=[],pending=Array.isArray(previous.pending)?previous.pending:[];
  // Atualizar auditoria virtual com o OHLC de candles já encerrados.
- let streak=Number(previous.stop_streak)||0;
  const newlyClosed=[];
  for(const trade of runtimeTrades){
   const kl=groups[trade.symbol]?.klines?.['15m'];
@@ -163,8 +162,7 @@ async function main(){
   if(trade.status==='STOP'||trade.status==='2R')newlyClosed.push(trade);
  }
  // Aplicar resultados em ordem cronológica antes de considerar novas entradas.
- for(const t of newlyClosed.sort((a,b)=>a.exit_time-b.exit_time||(a.status===b.status?0:a.status==='2R'?-1:1)))streak=t.status==='STOP'?streak+1:0;
- const entryBlocked=blocked(previous.stop_streak??0)||blocked(streak);
+ const {streak,blocked:entryBlocked}=riskAfterAudit(previous.stop_streak??0,newlyClosed);
 
  for(const symbol of symbols){
   const data=groups[symbol.symbol], k15=data?.klines?.['15m'];
@@ -250,7 +248,7 @@ async function main(){
   top10:records.slice(0,10),readings:records,
   risk_blocked:entryBlocked,stop_streak:streak,
   open_studies:runtimeTrades.filter(x=>x.status==='ABERTA').length,
-  trades:runtimeTrades.slice(-100),events:(previous.events||[]).slice(-100),statistics:stats(runtimeTrades),
+  trades:runtimeTrades.slice(-100),events:(previous.events||[]).slice(-100),statistics:stats(runtimeTrades),statistics3r:stats3(runtimeTrades),
   errors:errors.slice(0,30),notes:notes.slice(0,30),
   warning:'Estudo. RelOk automático não substitui aprovação humana/GPT; não há negociação nem taxas/slippage reais.'};
  previous.initialized=true;previous.status={...previous.status,...newStatus};
@@ -260,7 +258,7 @@ async function main(){
  previous.notification_archive=archive;
  previous.stop_streak=streak;
  previous.last_checked=started;
- save(FILES.snapshot,snapshot);save(FILES.history,{events:previous.events,trades:previous.trades,notification_archive:archive,statistics:stats(runtimeTrades)});save(FILES.state,previous);
+ save(FILES.snapshot,snapshot);save(FILES.history,{events:previous.events,trades:previous.trades,notification_archive:archive,statistics:stats(runtimeTrades),statistics3r:stats3(runtimeTrades)});save(FILES.state,previous);
  console.log('RADARMME1',symbols.length,'selecionados',readings.length,'analisados',signals.length,'candidatos',
    ready.length,'preparar',unsent.length,'ntfy pendentes',errors.length,'erros API');
  if(!readings.length)process.exitCode=1;
