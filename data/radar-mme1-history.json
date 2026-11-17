@@ -1343,7 +1343,7 @@
       "relok": 98,
       "iqe": 98,
       "status": "ABERTA",
-      "checked_to": 1794847499999,
+      "checked_to": 1794876299999,
       "hit1r": true,
       "result_r": null,
       "exit_time": null
@@ -1504,11 +1504,11 @@
       "r2": 134.90992857142857,
       "relok": 99,
       "iqe": 99,
-      "status": "ABERTA",
-      "checked_to": 1794847499999,
+      "status": "STOP",
+      "checked_to": 1794855599999,
       "hit1r": false,
-      "result_r": null,
-      "exit_time": null
+      "result_r": -1,
+      "exit_time": 1794855599999
     }
   ]
 }
