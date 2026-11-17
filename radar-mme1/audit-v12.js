@@ -39,4 +39,30 @@ if(require.main===module){
  console.log(JSON.stringify({scope:'Registros existentes; sem reauditoria OHLC',bySymbol:stats(state.trades),pending:(state.pending||[]).length,stopStreak:state.stop_streak,threeR:null},null,2));
  }
 }
-module.exports={stats,delivery,test};
+function audit3(t,bars,now=Date.now()){
+ if(!t.study3||t.study3.status!=='ABERTA')return;
+ const s=t.study3, up=t.direction==='LONG';
+ for(const k of bars.filter(k=>Number(k[6])>s.checked_to&&Number(k[6])<=now-1400).sort((a,b)=>a[6]-b[6])){
+  const end=Number(k[6]),h=Number(k[2]),l=Number(k[3]);
+  if(end!==s.checked_to+900000||!Number.isFinite(h)||!Number.isFinite(l)||h<l){s.gap=true;break;}
+  s.gap=false;s.checked_to=end;
+  const stop=up?l<=t.stop:h>=t.stop, target=up?h>=s.target:l<=s.target;
+  if(stop||target){s.status=stop&&target?'INDETERMINADA':stop?'STOP':'3R';s.result_r=stop&&target?null:stop?-1:3;break;}
+ }
+}
+function queueItem(msg,now){
+ if(typeof msg!=='string')return msg;
+ const m=msg.match(/Candle fechado: ([^\n]+)/);
+ return {msg,created:m?Date.parse(m[1]):null};
+}
+function formatAlert(msg,trades){
+ const m=msg.match(/• ([A-Z0-9]+) (?:LONG |SHORT )?15m/);
+ if(!m)return msg;
+ const s=stats(trades)[m[1]];
+ return msg+'\n📊 Histórico '+m[1]+': '+(s?s.gains+'/'+(s.gains+s.stops)+' gains | '+(s.winRate===null?'sem amostra':s.winRate.toFixed(1)+'%')+' | '+s.netR+'R':'sem histórico encerrado');
+}
+function classify(item,now){
+ if(!Number.isFinite(item.created)||delivery(item.created,now)!=='ATUAL')return 'HISTORICO';
+ return 'ATUAL';
+}
+module.exports={stats,delivery,test,audit3,queueItem,formatAlert,classify};
