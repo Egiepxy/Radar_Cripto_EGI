@@ -5,6 +5,7 @@
   Motor de análise extraído do RadarMME1 Light V9.1.1,
   publicado separadamente, sem execução de ordens.
 */
+const {stats,delivery,audit3,queueItem,formatAlert,classify}=require('./audit-v12.js');
 const fs=require('fs'),path=require('path');
 const {analyze,egiFreshness,egiRiskGate}=require('./engine-original.js');
 const ROOT=path.resolve(__dirname,'..'), DATA=path.join(ROOT,'data');
@@ -12,7 +13,7 @@ const FILES={snapshot:path.join(DATA,'radar-mme1-latest.json'),state:path.join(D
 const TOP_N=50, TF='15m', TFS=['15m','1h','4h'], MIN_RELOK=97, TOL=0.35, STRETCH=1.5, NTFY_TOPIC='RadarMME1_11';
 const HOSTS=['https://data-api.binance.vision','https://api.binance.com'];
 const STABLE=new Set(['USDC','FDUSD','TUSD','USDP','DAI','EUR','TRY','BRL','AEUR','EURI','USD1','USDE','PYUSD','BFUSD']);
-const load=(p,defaultValue)=>{try{return JSON.parse(fs.readFileSync(p,'utf8'))}catch{return defaultValue}};
+const load=(p,defaultValue)=>{try{return JSON.parse(fs.readFileSync(p,'utf8'))}catch(e){if(e.code==='ENOENT')return defaultValue;throw e;}};
 const save=(p,v)=>{fs.mkdirSync(path.dirname(p),{recursive:true});const s=p+'.tmp';fs.writeFileSync(s,JSON.stringify(v,null,2)+'\n');fs.renameSync(s,p)};
 const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
 const num=x=>Number.isFinite(Number(x))?Number(x):null;
@@ -136,7 +137,8 @@ async function main(){
  const started=new Date().toISOString(),previous=load(FILES.state,{initialized:false,status:{},pending:[],trades:[],events:[],stop_streak:0});
  let symbols;
  try{symbols=await universe()}catch(e){console.error('Falha na seleção do universo; não sobrescrever snapshot:',e);process.exitCode=1;return;}
- const jobs=symbols.flatMap(s=>TFS.map(tf=>({...s,tf})));
+ const jobs=symbols.flatMap(s=>TFS.map(tf=>({...s,tf}))); 
+ for(const t of previous.trades||[])if((t.status==='ABERTA'||t.study3?.status==='ABERTA')&&!jobs.some(j=>j.symbol===t.symbol&&j.tf==='15m'))jobs.push({symbol:t.symbol,tf:'15m'});
  const {results,errors}=await gather(jobs,async job=>({job,klines:await candles(job.symbol,job.tf)}));
  const groups={};
  for(const x of results.filter(Boolean)){(groups[x.job.symbol]??={meta:x.job,klines:{}}).klines[x.job.tf]=x.klines;}
@@ -152,7 +154,7 @@ async function main(){
   if(!r)continue;
   const bookOK=Number.isFinite(meta.bid)&&Number.isFinite(meta.ask)&&meta.bid>0&&meta.ask>meta.bid;
   const dataComplete=!!(data.klines['1h']&&data.klines['4h']);
-  const entryEligible=eligible(r,bookOK)&&dataComplete;
+  const entryEligible=eligible(r,bookOK)&&dataComplete&&delivery(r.signalCandleClose,Date.now())==='ATUAL';
   const prepare=prepareCandidate(r);
   const raw=describe(r);
   const context={};
@@ -174,7 +176,7 @@ async function main(){
   if(previous.initialized&&transitioning&&entryEligible&&
      !runtimeTrades.some(t=>t.symbol===r.symbol&&t.status==='ABERTA')){
    const id=[r.symbol,TF,r.signalCandleClose,r.state].join(':');
-   if(!previous.events?.some(e=>e.id===id)){
+   if(!previous.events?.some(e=>e.id===id)&&!runtimeTrades.some(t=>t.id===id)){
     const contextText='1h '+(context['1h']?.state||'?')+' | 4h '+(context['4h']?.state||'?');
     const msg='📡 RadarMME1 '+r.state+' • '+r.symbol+' 15m\nCandle fechado: '+new Date(r.signalCandleClose).toISOString()+
       '\nRelOk '+r.parecerScore+'/100 • IQE '+r.iqe+'/100 • Score '+r.quality+
@@ -184,7 +186,7 @@ async function main(){
     previous.events.push({id,time:r.signalCandleClose,symbol:r.symbol,type:'SINAL',direction:r.state,relok:r.parecerScore});
     runtimeTrades.push({id,symbol:r.symbol,tf:TF,direction:r.state,signal_close:r.signalCandleClose,
       entry:r.price,stop:r.stop,r1:r.r1,r2:r.r2,relok:r.parecerScore,iqe:r.iqe,
-      status:'ABERTA',checked_to:r.signalCandleClose,hit1r:false,result_r:null,exit_time:null});
+      status:'ABERTA',checked_to:r.signalCandleClose,hit1r:false,result_r:null,exit_time:null,study3:{status:'ABERTA',target:r.price+3*(r.r1-r.price),checked_to:r.signalCandleClose,result_r:null}});
    }
   }else if(previous.initialized&&transitioning&&prepare&&
     !entryEligible && r.crossRecent && r.quality>=70){
@@ -196,9 +198,12 @@ async function main(){
  // Atualizar auditoria virtual com o OHLC de candles já encerrados.
  let streak=Number(previous.stop_streak)||0;
  for(const trade of runtimeTrades){
-  if(trade.status!=='ABERTA')continue;
   const kl=groups[trade.symbol]?.klines?.['15m'];
   if(!kl)continue;
+  audit3(trade,kl);
+  if(trade.status!=='ABERTA')continue;
+  const first=kl.filter(k=>Number(k[6])>trade.checked_to&&Number(k[6])<=Date.now()-1400).sort((a,b)=>a[6]-b[6])[0];
+  if(first&&Number(first[6])!==trade.checked_to+900000){notes.push('Lacuna auditoria '+trade.id);continue;}
   const seen=evaluateTrade(trade,kl);
   for(const msg of seen.events)eventMessages.push(msg);
   if(trade.status==='STOP')streak++;
@@ -206,20 +211,30 @@ async function main(){
  }
  // Parar novos sinais após três STOPs consecutivos, mas jamais parar auditoria dos abertos.
  // Este LAB apenas identifica bloqueio na leitura; o bloqueio é aplicado na próxima varredura.
- const alertCandidates=eventMessages.filter(Boolean);
- for(const message of alertCandidates)if(!pending.includes(message))pending.push(message);
+ const now=Date.now();
+ const archive=previous.notification_archive??=[];
+ const queue=pending.map(m=>queueItem(m,now));
+ for(const msg of eventMessages.filter(Boolean)){
+  const item=queueItem(msg,now);
+  if(!msg.includes('Candle fechado:'))item.created=now;
+  if(!queue.some(q=>q.msg===msg))queue.push(item);
+ }
  const unsent=[];
- for(let i=0;i<pending.length;i++){
-  const msg=pending[i];if(i>=4){unsent.push(msg);continue;}
-  try{if(!await push(msg))unsent.push(msg);}
-  catch(e){console.log('ntfy pendente:',e.message);unsent.push(msg);}
-  if(i<Math.min(3,pending.length-1))await sleep(6500);
+ let sent=0;
+ for(const item of queue){
+  if(classify(item,Date.now())!=='ATUAL'){archive.push({...item,archived_at:Date.now(),reason:'HISTORICO_NAO_ENVIADO'});continue;}
+  if(sent>=4){unsent.push(item);continue;}
+  const msg=formatAlert(item.msg,runtimeTrades);
+  if(process.env.NTFY_ENABLED!=='true'||process.env.NTFY_TOPIC!=='RadarMME1_LAB_V12'){unsent.push(item);continue;}
+  try{sent++;if(!await push(msg))unsent.push(item);}
+  catch(e){unsent.push(item);console.log('ntfy pendente:',e.message);}
+  await sleep(6500);
  }
  const records=readings.sort((a,b)=>Number(b.relok||0)-Number(a.relok||0));
  const signals=records.filter(r=>r.eligible);
  const ready=records.filter(r=>r.state==='PREPARAR');
  const valid=records.filter(r=>r.freshness==='ATUAL');
- const snapshot={app:'Robô RadarMME1 EGI V1.0 LAB',generated_at_utc:started,
+ const snapshot={app:'Robô RadarMME1 EGI V1.2 LAB',generated_at_utc:started,
   source:'Binance Spot / RadarMME1 Light V9.1.1',tf:TF,contexts:['1h','4h'],
   topics:{ntfy:NTFY_TOPIC},configuration:{top_n:TOP_N,relok_min:MIN_RELOK,
   pullback_tolerance_pct:TOL,stretch_pct:STRETCH},
@@ -228,16 +243,16 @@ async function main(){
   btc:records.find(x=>x.symbol==='BTCUSDT')||null,
   top10:records.slice(0,10),readings:records,
   open_studies:runtimeTrades.filter(x=>x.status==='ABERTA').length,
-  trades:runtimeTrades.slice(-100),events:(previous.events||[]).slice(-100),
+  trades:runtimeTrades.slice(-100),events:(previous.events||[]).slice(-100),statistics:stats(runtimeTrades),
   errors:errors.slice(0,30),notes:notes.slice(0,30),
   warning:'Estudo. RelOk automático não substitui aprovação humana/GPT; não há negociação nem taxas/slippage reais.'};
  previous.initialized=true;previous.status={...previous.status,...newStatus};
- previous.events=(previous.events||[]).slice(-250);
- previous.trades=runtimeTrades.slice(-200);
- previous.pending=unsent.slice(-40);
+ previous.events=previous.events||[];
+ previous.trades=runtimeTrades;
+ previous.pending=unsent;
  previous.stop_streak=streak;
  previous.last_checked=started;
- save(FILES.snapshot,snapshot);save(FILES.history,{events:previous.events,trades:previous.trades});save(FILES.state,previous);
+ save(FILES.snapshot,snapshot);save(FILES.history,{events:previous.events,trades:previous.trades,notification_archive:archive,statistics:stats(runtimeTrades)});save(FILES.state,previous);
  console.log('RADARMME1',symbols.length,'selecionados',readings.length,'analisados',signals.length,'candidatos',
    ready.length,'preparar',unsent.length,'ntfy pendentes',errors.length,'erros API');
  if(!readings.length)process.exitCode=1;
