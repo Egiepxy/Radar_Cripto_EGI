@@ -1,37 +1,5 @@
 [
   {
-    "id": "BTCUSDT:4h:1794182399999:BREAK_DOWN",
-    "symbol": "BTCUSDT",
-    "timeframe": "4h",
-    "phase": "BREAK_DOWN",
-    "close_time": 1794182399999,
-    "reference_price": 74851.44,
-    "volume_relative": 2.24041972822009,
-    "support": 74888.0,
-    "resistance": 80390.02,
-    "hypothesis": "BAIXA",
-    "audit": {
-      "2h": {
-        "status": "MEDIDO",
-        "observed_close": 1794189599999,
-        "change_pct": 0.41492,
-        "direction_favorable": false
-      },
-      "4h": {
-        "status": "MEDIDO",
-        "observed_close": 1794196799999,
-        "change_pct": 0.00164,
-        "direction_favorable": false
-      },
-      "24h": {
-        "status": "MEDIDO",
-        "observed_close": 1794268799999,
-        "change_pct": 0.69066,
-        "direction_favorable": false
-      }
-    }
-  },
-  {
     "id": "ETHUSDT:4h:1794182399999:BREAK_DOWN",
     "symbol": "ETHUSDT",
     "timeframe": "4h",
@@ -7922,7 +7890,20 @@
     "support": 0.4685,
     "resistance": 0.5153,
     "hypothesis": "ALTA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794880799999,
+        "change_pct": 0.21327,
+        "direction_favorable": true
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794887999999,
+        "change_pct": 1.045,
+        "direction_favorable": true
+      }
+    }
   },
   {
     "id": "ETHFIUSDT:4h:1794873599999:SWEEP_LOW",
@@ -7935,6 +7916,32 @@
     "support": 0.4685,
     "resistance": 0.6189,
     "hypothesis": "ALTA",
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794880799999,
+        "change_pct": 0.21327,
+        "direction_favorable": true
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794887999999,
+        "change_pct": 1.045,
+        "direction_favorable": true
+      }
+    }
+  },
+  {
+    "id": "UNIUSDT:2h:1794902399999:SWEEP_HIGH",
+    "symbol": "UNIUSDT",
+    "timeframe": "2h",
+    "phase": "SWEEP_HIGH",
+    "close_time": 1794902399999,
+    "reference_price": 5.31,
+    "volume_relative": 1.2975641914967022,
+    "support": 5.033,
+    "resistance": 5.31,
+    "hypothesis": "BAIXA",
     "audit": {}
   }
 ]
