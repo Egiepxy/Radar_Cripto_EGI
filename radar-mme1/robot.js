@@ -17,6 +17,13 @@ const save=(p,v)=>{fs.mkdirSync(path.dirname(p),{recursive:true});const s=p+'.tm
 const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
 const num=x=>Number.isFinite(Number(x))?Number(x):null;
 const pct=(a,b)=>!b?null:(a/b-1)*100;
+function coinStats(trades,symbol){
+ const rows=[...new Map(trades.filter(t=>t.symbol===symbol).map(t=>[t.id,t])).values()];
+ const wins=rows.filter(t=>t.status==='2R'&&t.result_r===2).length, stops=rows.filter(t=>t.status==='STOP'&&t.result_r===-1).length;
+ return {wins,stops,closed:wins+stops,open:rows.filter(t=>t.status==='ABERTA').length,unknown:rows.filter(t=>t.status==='INDETERMINADA').length,hit1r:rows.filter(t=>t.hit1r).length,net_r:2*wins-stops,win_pct:wins+stops?100*wins/(wins+stops):null};
+}
+function statsText(trades,symbol){const a=coinStats(trades,symbol);return '\n📊 '+symbol+' • histórico disponível: '+a.wins+' gains / '+a.stops+' stops | '+a.closed+' encerrados válidos | acerto '+(a.win_pct===null?'sem amostra':a.win_pct.toFixed(1)+'%')+' | '+a.net_r+'R | 1R tocado: '+a.hit1r+' | abertos: '+a.open+' | indeterminados: '+a.unknown+' | payoff '+(a.wins&&a.stops?'2.00':'N/D');}
+function freshClose(t,now=Date.now()){return Number.isFinite(t)&&t<=now-1400&&now-t<=900000+60000;}
 function isLeveraged(base){return /(UP|DOWN|BULL|BEAR)$/.test(base);}
 function describe(r){
  if(!r)return null;
@@ -152,8 +159,11 @@ async function main(){
   if(!r)continue;
   const bookOK=Number.isFinite(meta.bid)&&Number.isFinite(meta.ask)&&meta.bid>0&&meta.ask>meta.bid;
   const dataComplete=!!(data.klines['1h']&&data.klines['4h']);
-  const entryEligible=eligible(r,bookOK)&&dataComplete;
-  const prepare=prepareCandidate(r);
+  const timely=freshClose(r.signalCandleClose);
+  const entryEligible=eligible(r,bookOK)&&dataComplete&&timely;
+  if(!timely)notes.push('CANDLE_ATRASADO_OU_INVALIDO '+r.symbol+' '+r.signalCandleClose);
+
+  const prepare=prepareCandidate(r)&&timely;
   const raw=describe(r);
   const context={};
   for(const tf of ['1h','4h']){
@@ -180,7 +190,7 @@ async function main(){
       '\nRelOk '+r.parecerScore+'/100 • IQE '+r.iqe+'/100 • Score '+r.quality+
       '\nPreço '+r.price+' | Stop '+r.stop+' | 1R '+r.r1+' | 2R '+r.r2+
       '\n'+contextText+'\nCandidato técnico, sem ordem. GPT/humano ainda não aprovou.';
-    eventMessages.push(msg);
+    eventMessages.push(msg+statsText(runtimeTrades,r.symbol));
     previous.events.push({id,time:r.signalCandleClose,symbol:r.symbol,type:'SINAL',direction:r.state,relok:r.parecerScore});
     runtimeTrades.push({id,symbol:r.symbol,tf:TF,direction:r.state,signal_close:r.signalCandleClose,
       entry:r.price,stop:r.stop,r1:r.r1,r2:r.r2,relok:r.parecerScore,iqe:r.iqe,
@@ -200,7 +210,7 @@ async function main(){
   const kl=groups[trade.symbol]?.klines?.['15m'];
   if(!kl)continue;
   const seen=evaluateTrade(trade,kl);
-  for(const msg of seen.events)eventMessages.push(msg);
+  for(const msg of seen.events)eventMessages.push(msg+statsText(runtimeTrades,trade.symbol));
   if(trade.status==='STOP')streak++;
   if(trade.status==='2R')streak=0;
  }
@@ -228,13 +238,14 @@ async function main(){
   btc:records.find(x=>x.symbol==='BTCUSDT')||null,
   top10:records.slice(0,10),readings:records,
   open_studies:runtimeTrades.filter(x=>x.status==='ABERTA').length,
+  statistics:Object.fromEntries([...new Set(runtimeTrades.map(t=>t.symbol))].map(symbol=>[symbol,coinStats(runtimeTrades,symbol)])),
   trades:runtimeTrades.slice(-100),events:(previous.events||[]).slice(-100),
   errors:errors.slice(0,30),notes:notes.slice(0,30),
   warning:'Estudo. RelOk automático não substitui aprovação humana/GPT; não há negociação nem taxas/slippage reais.'};
  previous.initialized=true;previous.status={...previous.status,...newStatus};
- previous.events=(previous.events||[]).slice(-250);
- previous.trades=runtimeTrades.slice(-200);
- previous.pending=unsent.slice(-40);
+ previous.events=(previous.events||[]);
+ previous.trades=runtimeTrades;
+ previous.pending=unsent;
  previous.stop_streak=streak;
  previous.last_checked=started;
  save(FILES.snapshot,snapshot);save(FILES.history,{events:previous.events,trades:previous.trades});save(FILES.state,previous);
@@ -243,4 +254,4 @@ async function main(){
  if(!readings.length)process.exitCode=1;
 }
 if(require.main===module)main().catch(e=>{console.error('Erro geral RadarMME1:',e);process.exitCode=1;});
-module.exports={describe,eligible,prepareCandidate,evaluateTrade,isLeveraged};
+module.exports={coinStats,freshClose,statsText,describe,eligible,prepareCandidate,evaluateTrade,isLeveraged};
