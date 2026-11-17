@@ -12,3 +12,15 @@ assert.equal(classify(queueItem('alerta antigo',100),100),'HISTORICO');
 assert.equal(classify({msg:'x',created:100},900101),'HISTORICO');
 assert.match(formatAlert('📡 RadarMME1 LONG • SOLUSDT 15m', [{id:'1',symbol:'SOLUSDT',status:'2R',result_r:2}]),/1\/1 gains/);
 console.log('V1.2: testes adicionais OK');
+
+const {blocked,load,save}=require('./robot');
+const fs=require('node:fs'),os=require('node:os'),path=require('node:path');
+assert.equal(blocked(2),false);assert.equal(blocked(3),true);assert.equal(blocked(4),true);
+const dir=fs.mkdtempSync(path.join(os.tmpdir(),'egi-v12-'));
+try{
+ const p=path.join(dir,'state.json');
+ const state={trades:Array.from({length:250},(_,id)=>({id})),stop_streak:3,notification_archive:[{msg:'old'}]};
+ save(p,state);assert.deepEqual(load(p,{}),state);assert.equal(blocked(load(p,{}).stop_streak),true);
+ fs.writeFileSync(p,'{');assert.throws(()=>load(p,{}));
+}finally{fs.rmSync(dir,{recursive:true,force:true});}
+console.log('Persistência e bloqueio OK');
