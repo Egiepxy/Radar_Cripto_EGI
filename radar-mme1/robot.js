@@ -39,6 +39,7 @@ function eligible(r,bookOK){
    Number.isFinite(r.parecerScore)&&r.parecerScore>=MIN_RELOK &&
    egiFreshness(r,'15m').code==='ATUAL'&&guard.ok;
 }
+function blocked(streak){return !Number.isFinite(Number(streak))||Number(streak)>=3;}
 function prepareCandidate(r){
  return !!r&&r.state==='PREPARAR'&&r.crossRecent&&r.quality>=70&&
    egiFreshness(r,'15m').code==='ATUAL';
@@ -99,6 +100,7 @@ function evaluateTrade(trade,bars){
  const events=[];
  for(const k of fresh){
   const high=Number(k[2]),low=Number(k[3]),t=Number(k[6]);
+  if(trade.strict_continuity&&t!==trade.checked_to+900000)break;
   const up=trade.direction==='LONG';
   const stopHit=up?low<=trade.stop:high>=trade.stop;
   const oneHit=up?high>=trade.r1:low<=trade.r1;
@@ -154,7 +156,7 @@ async function main(){
   if(!r)continue;
   const bookOK=Number.isFinite(meta.bid)&&Number.isFinite(meta.ask)&&meta.bid>0&&meta.ask>meta.bid;
   const dataComplete=!!(data.klines['1h']&&data.klines['4h']);
-  const entryEligible=eligible(r,bookOK)&&dataComplete&&delivery(r.signalCandleClose,Date.now())==='ATUAL';
+  const entryEligible=!blocked(previous.stop_streak??0)&&eligible(r,bookOK)&&dataComplete&&delivery(r.signalCandleClose,Date.now())==='ATUAL';
   const prepare=prepareCandidate(r);
   const raw=describe(r);
   const context={};
@@ -204,6 +206,7 @@ async function main(){
   if(trade.status!=='ABERTA')continue;
   const first=kl.filter(k=>Number(k[6])>trade.checked_to&&Number(k[6])<=Date.now()-1400).sort((a,b)=>a[6]-b[6])[0];
   if(first&&Number(first[6])!==trade.checked_to+900000){notes.push('Lacuna auditoria '+trade.id);continue;}
+  trade.strict_continuity=true;
   const seen=evaluateTrade(trade,kl);
   for(const msg of seen.events)eventMessages.push(msg);
   if(trade.status==='STOP')streak++;
@@ -242,6 +245,7 @@ async function main(){
   alerts_candidates:signals.length,prepared_count:ready.length,
   btc:records.find(x=>x.symbol==='BTCUSDT')||null,
   top10:records.slice(0,10),readings:records,
+  risk_blocked:blocked(streak),stop_streak:streak,
   open_studies:runtimeTrades.filter(x=>x.status==='ABERTA').length,
   trades:runtimeTrades.slice(-100),events:(previous.events||[]).slice(-100),statistics:stats(runtimeTrades),
   errors:errors.slice(0,30),notes:notes.slice(0,30),
@@ -250,6 +254,7 @@ async function main(){
  previous.events=previous.events||[];
  previous.trades=runtimeTrades;
  previous.pending=unsent;
+ previous.notification_archive=archive;
  previous.stop_streak=streak;
  previous.last_checked=started;
  save(FILES.snapshot,snapshot);save(FILES.history,{events:previous.events,trades:previous.trades,notification_archive:archive,statistics:stats(runtimeTrades)});save(FILES.state,previous);
@@ -258,4 +263,4 @@ async function main(){
  if(!readings.length)process.exitCode=1;
 }
 if(require.main===module)main().catch(e=>{console.error('Erro geral RadarMME1:',e);process.exitCode=1;});
-module.exports={describe,eligible,prepareCandidate,evaluateTrade,isLeveraged};
+module.exports={describe,eligible,prepareCandidate,evaluateTrade,isLeveraged,blocked,load,save,push};
