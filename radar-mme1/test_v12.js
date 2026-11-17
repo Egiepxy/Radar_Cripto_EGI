@@ -24,3 +24,14 @@ try{
  fs.writeFileSync(p,'{');assert.throws(()=>load(p,{}));
 }finally{fs.rmSync(dir,{recursive:true,force:true});}
 console.log('Persistência e bloqueio OK');
+
+const {stats3,riskAfterAudit}=require('./audit-v12');
+const stop=exit_time=>({status:'STOP',exit_time});
+const gain=exit_time=>({status:'2R',exit_time});
+assert.deepEqual(riskAfterAudit(2,[stop(1)]),{streak:3,blocked:true});
+assert.deepEqual(riskAfterAudit(2,[gain(2),stop(1)]),{streak:0,blocked:true});
+assert.deepEqual(riskAfterAudit(0,[stop(3),gain(1),stop(2)]),{streak:2,blocked:false});
+assert.equal(riskAfterAudit(3,[]).blocked,true);
+assert.equal(riskAfterAudit(-1,[]).blocked,true);
+assert.deepEqual(stats3([{id:'old',symbol:'SOL'},{id:'new',symbol:'SOL',study3:{status:'3R',result_r:3}}]).SOL,{tracked:1,untracked:1,hit3r:1,stops:0,open:0,unknown:0});
+console.log('Gate intravarredura e cobertura 3R OK');
