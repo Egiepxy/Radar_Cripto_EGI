@@ -101,6 +101,7 @@ function evaluateTrade(trade,bars){
  for(const k of fresh){
   const high=Number(k[2]),low=Number(k[3]),t=Number(k[6]);
   if(trade.strict_continuity&&t!==trade.checked_to+900000)break;
+  if(!Number.isFinite(high)||!Number.isFinite(low)||high<low)break;
   const up=trade.direction==='LONG';
   const stopHit=up?low<=trade.stop:high>=trade.stop;
   const oneHit=up?high>=trade.r1:low<=trade.r1;
@@ -146,6 +147,25 @@ async function main(){
  for(const x of results.filter(Boolean)){(groups[x.job.symbol]??={meta:x.job,klines:{}}).klines[x.job.tf]=x.klines;}
  const readings=[],eventMessages=[],newStatus={},runtimeTrades=Array.isArray(previous.trades)?previous.trades:[];
  const notes=[],pending=Array.isArray(previous.pending)?previous.pending:[];
+ // Atualizar auditoria virtual com o OHLC de candles já encerrados.
+ let streak=Number(previous.stop_streak)||0;
+ const newlyClosed=[];
+ for(const trade of runtimeTrades){
+  const kl=groups[trade.symbol]?.klines?.['15m'];
+  if(!kl)continue;
+  audit3(trade,kl);
+  if(trade.status!=='ABERTA')continue;
+  const first=kl.filter(k=>Number(k[6])>trade.checked_to&&Number(k[6])<=Date.now()-1400).sort((a,b)=>a[6]-b[6])[0];
+  if(first&&Number(first[6])!==trade.checked_to+900000){notes.push('Lacuna auditoria '+trade.id);continue;}
+  trade.strict_continuity=true;
+  const seen=evaluateTrade(trade,kl);
+  for(const msg of seen.events)eventMessages.push(msg);
+  if(trade.status==='STOP'||trade.status==='2R')newlyClosed.push(trade);
+ }
+ // Aplicar resultados em ordem cronológica antes de considerar novas entradas.
+ for(const t of newlyClosed.sort((a,b)=>a.exit_time-b.exit_time||(a.status===b.status?0:a.status==='2R'?-1:1)))streak=t.status==='STOP'?streak+1:0;
+ const entryBlocked=blocked(previous.stop_streak??0)||blocked(streak);
+
  for(const symbol of symbols){
   const data=groups[symbol.symbol], k15=data?.klines?.['15m'];
   if(!k15){notes.push('Sem 15m: '+symbol.symbol);continue;}
@@ -156,7 +176,7 @@ async function main(){
   if(!r)continue;
   const bookOK=Number.isFinite(meta.bid)&&Number.isFinite(meta.ask)&&meta.bid>0&&meta.ask>meta.bid;
   const dataComplete=!!(data.klines['1h']&&data.klines['4h']);
-  const entryEligible=!blocked(previous.stop_streak??0)&&eligible(r,bookOK)&&dataComplete&&delivery(r.signalCandleClose,Date.now())==='ATUAL';
+  const entryEligible=!entryBlocked&&eligible(r,bookOK)&&dataComplete&&delivery(r.signalCandleClose,Date.now())==='ATUAL';
   const prepare=prepareCandidate(r);
   const raw=describe(r);
   const context={};
@@ -197,23 +217,6 @@ async function main(){
   }
   readings.push(raw);
  }
- // Atualizar auditoria virtual com o OHLC de candles já encerrados.
- let streak=Number(previous.stop_streak)||0;
- for(const trade of runtimeTrades){
-  const kl=groups[trade.symbol]?.klines?.['15m'];
-  if(!kl)continue;
-  audit3(trade,kl);
-  if(trade.status!=='ABERTA')continue;
-  const first=kl.filter(k=>Number(k[6])>trade.checked_to&&Number(k[6])<=Date.now()-1400).sort((a,b)=>a[6]-b[6])[0];
-  if(first&&Number(first[6])!==trade.checked_to+900000){notes.push('Lacuna auditoria '+trade.id);continue;}
-  trade.strict_continuity=true;
-  const seen=evaluateTrade(trade,kl);
-  for(const msg of seen.events)eventMessages.push(msg);
-  if(trade.status==='STOP')streak++;
-  if(trade.status==='2R')streak=0;
- }
- // Parar novos sinais após três STOPs consecutivos, mas jamais parar auditoria dos abertos.
- // Este LAB apenas identifica bloqueio na leitura; o bloqueio é aplicado na próxima varredura.
  const now=Date.now();
  const archive=previous.notification_archive??=[];
  const queue=pending.map(m=>queueItem(m,now));
@@ -245,7 +248,7 @@ async function main(){
   alerts_candidates:signals.length,prepared_count:ready.length,
   btc:records.find(x=>x.symbol==='BTCUSDT')||null,
   top10:records.slice(0,10),readings:records,
-  risk_blocked:blocked(streak),stop_streak:streak,
+  risk_blocked:entryBlocked,stop_streak:streak,
   open_studies:runtimeTrades.filter(x=>x.status==='ABERTA').length,
   trades:runtimeTrades.slice(-100),events:(previous.events||[]).slice(-100),statistics:stats(runtimeTrades),
   errors:errors.slice(0,30),notes:notes.slice(0,30),
