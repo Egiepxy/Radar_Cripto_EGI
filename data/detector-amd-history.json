@@ -1,69 +1,5 @@
 [
   {
-    "id": "FLOKIUSDT:2h:1794175199999:BREAK_DOWN",
-    "symbol": "FLOKIUSDT",
-    "timeframe": "2h",
-    "phase": "BREAK_DOWN",
-    "close_time": 1794175199999,
-    "reference_price": 2.033e-05,
-    "volume_relative": 5.189592139762772,
-    "support": 2.109e-05,
-    "resistance": 2.159e-05,
-    "hypothesis": "BAIXA",
-    "audit": {
-      "2h": {
-        "status": "MEDIDO",
-        "observed_close": 1794182399999,
-        "change_pct": 1.57403,
-        "direction_favorable": false
-      },
-      "4h": {
-        "status": "MEDIDO",
-        "observed_close": 1794189599999,
-        "change_pct": 3.24643,
-        "direction_favorable": false
-      },
-      "24h": {
-        "status": "MEDIDO",
-        "observed_close": 1794261599999,
-        "change_pct": 3.54156,
-        "direction_favorable": false
-      }
-    }
-  },
-  {
-    "id": "RAYUSDT:2h:1794175199999:BREAK_DOWN",
-    "symbol": "RAYUSDT",
-    "timeframe": "2h",
-    "phase": "BREAK_DOWN",
-    "close_time": 1794175199999,
-    "reference_price": 1.6553,
-    "volume_relative": 3.5808123197053456,
-    "support": 1.7327,
-    "resistance": 1.8264,
-    "hypothesis": "BAIXA",
-    "audit": {
-      "2h": {
-        "status": "MEDIDO",
-        "observed_close": 1794182399999,
-        "change_pct": 1.50426,
-        "direction_favorable": false
-      },
-      "4h": {
-        "status": "MEDIDO",
-        "observed_close": 1794189599999,
-        "change_pct": 1.96943,
-        "direction_favorable": false
-      },
-      "24h": {
-        "status": "MEDIDO",
-        "observed_close": 1794261599999,
-        "change_pct": 6.92926,
-        "direction_favorable": false
-      }
-    }
-  },
-  {
     "id": "BTCUSDT:4h:1794182399999:BREAK_DOWN",
     "symbol": "BTCUSDT",
     "timeframe": "4h",
@@ -7882,7 +7818,20 @@
     "support": 1711.08,
     "resistance": 1845.18,
     "hypothesis": "BAIXA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794851999999,
+        "change_pct": 0.07088,
+        "direction_favorable": false
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794859199999,
+        "change_pct": 0.20824,
+        "direction_favorable": false
+      }
+    }
   },
   {
     "id": "AAVEUSDT:2h:1794844799999:SWEEP_HIGH",
@@ -7895,7 +7844,20 @@
     "support": 96.6,
     "resistance": 110.45,
     "hypothesis": "BAIXA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794851999999,
+        "change_pct": -0.73121,
+        "direction_favorable": true
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794859199999,
+        "change_pct": -0.10181,
+        "direction_favorable": true
+      }
+    }
   },
   {
     "id": "NEARUSDT:2h:1794844799999:SWEEP_HIGH",
@@ -7908,7 +7870,20 @@
     "support": 2.907,
     "resistance": 3.242,
     "hypothesis": "BAIXA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794851999999,
+        "change_pct": -0.12706,
+        "direction_favorable": true
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794859199999,
+        "change_pct": 1.14358,
+        "direction_favorable": false
+      }
+    }
   },
   {
     "id": "ETHFIUSDT:2h:1794844799999:SWEEP_LOW",
@@ -7920,6 +7895,45 @@
     "volume_relative": 2.3724176269928208,
     "support": 0.4699,
     "resistance": 0.5153,
+    "hypothesis": "ALTA",
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1794851999999,
+        "change_pct": 0.67553,
+        "direction_favorable": true
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1794859199999,
+        "change_pct": 1.35107,
+        "direction_favorable": true
+      }
+    }
+  },
+  {
+    "id": "ETHFIUSDT:2h:1794873599999:SWEEP_LOW",
+    "symbol": "ETHFIUSDT",
+    "timeframe": "2h",
+    "phase": "SWEEP_LOW",
+    "close_time": 1794873599999,
+    "reference_price": 0.4689,
+    "volume_relative": 1.5217395958441182,
+    "support": 0.4685,
+    "resistance": 0.5153,
+    "hypothesis": "ALTA",
+    "audit": {}
+  },
+  {
+    "id": "ETHFIUSDT:4h:1794873599999:SWEEP_LOW",
+    "symbol": "ETHFIUSDT",
+    "timeframe": "4h",
+    "phase": "SWEEP_LOW",
+    "close_time": 1794873599999,
+    "reference_price": 0.4689,
+    "volume_relative": 0.8460675483965591,
+    "support": 0.4685,
+    "resistance": 0.6189,
     "hypothesis": "ALTA",
     "audit": {}
   }
