@@ -12,7 +12,7 @@ const FILES={snapshot:path.join(DATA,'radar-mme1-latest.json'),state:path.join(D
 const TOP_N=50, TF='15m', TFS=['15m','1h','4h'], MIN_RELOK=97, TOL=0.35, STRETCH=1.5, NTFY_TOPIC='RadarMME1_11';
 const HOSTS=['https://data-api.binance.vision','https://api.binance.com'];
 const STABLE=new Set(['USDC','FDUSD','TUSD','USDP','DAI','EUR','TRY','BRL','AEUR','EURI','USD1','USDE','PYUSD','BFUSD']);
-const load=(p,defaultValue)=>{try{return JSON.parse(fs.readFileSync(p,'utf8'))}catch{return defaultValue}};
+const load=(p,defaultValue)=>{try{return JSON.parse(fs.readFileSync(p,'utf8'))}catch(e){if(e.code==='ENOENT')return defaultValue;throw e;}};
 const save=(p,v)=>{fs.mkdirSync(path.dirname(p),{recursive:true});const s=p+'.tmp';fs.writeFileSync(s,JSON.stringify(v,null,2)+'\n');fs.renameSync(s,p)};
 const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
 const num=x=>Number.isFinite(Number(x))?Number(x):null;
@@ -149,6 +149,10 @@ async function main(){
  for(const x of results.filter(Boolean)){(groups[x.job.symbol]??={meta:x.job,klines:{}}).klines[x.job.tf]=x.klines;}
  const readings=[],eventMessages=[],newStatus={},runtimeTrades=Array.isArray(previous.trades)?previous.trades:[];
  const notes=[],pending=Array.isArray(previous.pending)?previous.pending:[];
+ const quarantined=Array.isArray(previous.quarantined_pending)?previous.quarantined_pending:[];
+ // Legacy queue has no enqueue timestamps. Preserve it, but never replay as a fresh signal.
+ if(!previous.queue_v2){quarantined.push(...pending.splice(0));previous.queue_v2=true;}
+
  for(const symbol of symbols){
   const data=groups[symbol.symbol], k15=data?.klines?.['15m'];
   if(!k15){notes.push('Sem 15m: '+symbol.symbol);continue;}
@@ -190,7 +194,7 @@ async function main(){
       '\nRelOk '+r.parecerScore+'/100 • IQE '+r.iqe+'/100 • Score '+r.quality+
       '\nPreço '+r.price+' | Stop '+r.stop+' | 1R '+r.r1+' | 2R '+r.r2+
       '\n'+contextText+'\nCandidato técnico, sem ordem. GPT/humano ainda não aprovou.';
-    eventMessages.push(msg+statsText(runtimeTrades,r.symbol));
+    eventMessages.push(msg+statsText(runtimeTrades,r.symbol)+'\nGerado UTC: '+new Date().toISOString());
     previous.events.push({id,time:r.signalCandleClose,symbol:r.symbol,type:'SINAL',direction:r.state,relok:r.parecerScore});
     runtimeTrades.push({id,symbol:r.symbol,tf:TF,direction:r.state,signal_close:r.signalCandleClose,
       entry:r.price,stop:r.stop,r1:r.r1,r2:r.r2,relok:r.parecerScore,iqe:r.iqe,
@@ -217,12 +221,15 @@ async function main(){
  // Parar novos sinais após três STOPs consecutivos, mas jamais parar auditoria dos abertos.
  // Este LAB apenas identifica bloqueio na leitura; o bloqueio é aplicado na próxima varredura.
  const alertCandidates=eventMessages.filter(Boolean);
- for(const message of alertCandidates)if(!pending.includes(message))pending.push(message);
+ for(const message of alertCandidates)if(!pending.some(x=>x.message===message))pending.push({message,queued_at:Date.now()});
  const unsent=[];
  for(let i=0;i<pending.length;i++){
-  const msg=pending[i];if(i>=4){unsent.push(msg);continue;}
-  try{if(!await push(msg))unsent.push(msg);}
-  catch(e){console.log('ntfy pendente:',e.message);unsent.push(msg);}
+  const item=pending[i];
+  if(!item||typeof item.message!=='string'||!Number.isFinite(item.queued_at)||Date.now()-item.queued_at>16*60000){quarantined.push(item);continue;}
+  if(i>=4){unsent.push(item);continue;}
+  const msg=item.message+'\nEnfileirado UTC: '+new Date(item.queued_at).toISOString()+' | Enviado UTC: '+new Date().toISOString();
+  try{if(!await push(msg))unsent.push(item);}
+  catch(e){console.log('ntfy pendente:',e.message);unsent.push(item);}
   if(i<Math.min(3,pending.length-1))await sleep(6500);
  }
  const records=readings.sort((a,b)=>Number(b.relok||0)-Number(a.relok||0));
@@ -245,7 +252,7 @@ async function main(){
  previous.initialized=true;previous.status={...previous.status,...newStatus};
  previous.events=(previous.events||[]);
  previous.trades=runtimeTrades;
- previous.pending=unsent;
+ previous.pending=unsent;previous.quarantined_pending=quarantined;
  previous.stop_streak=streak;
  previous.last_checked=started;
  save(FILES.snapshot,snapshot);save(FILES.history,{events:previous.events,trades:previous.trades});save(FILES.state,previous);
