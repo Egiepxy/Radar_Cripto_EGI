@@ -519,6 +519,30 @@
       "type": "SINAL",
       "direction": "LONG",
       "relok": 98
+    },
+    {
+      "id": "ETHUSDT:15m:1794960899999:LONG",
+      "time": 1794960899999,
+      "symbol": "ETHUSDT",
+      "type": "SINAL",
+      "direction": "LONG",
+      "relok": 100
+    },
+    {
+      "id": "DOGEUSDT:15m:1794960899999:LONG",
+      "time": 1794960899999,
+      "symbol": "DOGEUSDT",
+      "type": "SINAL",
+      "direction": "LONG",
+      "relok": 98
+    },
+    {
+      "id": "SUIUSDT:15m:1794960899999:LONG",
+      "time": 1794960899999,
+      "symbol": "SUIUSDT",
+      "type": "SINAL",
+      "direction": "LONG",
+      "relok": 98
     }
   ],
   "trades": [
@@ -1399,7 +1423,7 @@
       "relok": 98,
       "iqe": 98,
       "status": "ABERTA",
-      "checked_to": 1794937499999,
+      "checked_to": 1794960899999,
       "hit1r": true,
       "result_r": null,
       "exit_time": null
@@ -1614,11 +1638,11 @@
       "r2": 63016.46464285714,
       "relok": 100,
       "iqe": 100,
-      "status": "ABERTA",
-      "checked_to": 1794937499999,
+      "status": "STOP",
+      "checked_to": 1794950999999,
       "hit1r": false,
-      "result_r": null,
-      "exit_time": null
+      "result_r": -1,
+      "exit_time": 1794950999999
     },
     {
       "id": "NVDABUSDT:15m:1794937499999:SHORT",
@@ -1632,11 +1656,11 @@
       "r2": 149.80071428571432,
       "relok": 100,
       "iqe": 100,
-      "status": "ABERTA",
-      "checked_to": 1794937499999,
+      "status": "STOP",
+      "checked_to": 1794950099999,
       "hit1r": false,
-      "result_r": null,
-      "exit_time": null
+      "result_r": -1,
+      "exit_time": 1794950099999
     },
     {
       "id": "XRPUSDT:15m:1794937499999:SHORT",
@@ -1650,11 +1674,11 @@
       "r2": 0.9402307142857143,
       "relok": 99,
       "iqe": 99,
-      "status": "ABERTA",
-      "checked_to": 1794937499999,
+      "status": "STOP",
+      "checked_to": 1794948299999,
       "hit1r": false,
-      "result_r": null,
-      "exit_time": null
+      "result_r": -1,
+      "exit_time": 1794948299999
     },
     {
       "id": "BNBUSDT:15m:1794937499999:SHORT",
@@ -1668,11 +1692,11 @@
       "r2": 572.1614285714285,
       "relok": 99,
       "iqe": 99,
-      "status": "ABERTA",
-      "checked_to": 1794937499999,
+      "status": "STOP",
+      "checked_to": 1794956399999,
       "hit1r": false,
-      "result_r": null,
-      "exit_time": null
+      "result_r": -1,
+      "exit_time": 1794956399999
     },
     {
       "id": "SPCXBUSDT:15m:1794937499999:LONG",
@@ -1687,7 +1711,61 @@
       "relok": 98,
       "iqe": 98,
       "status": "ABERTA",
-      "checked_to": 1794937499999,
+      "checked_to": 1794960899999,
+      "hit1r": true,
+      "result_r": null,
+      "exit_time": null
+    },
+    {
+      "id": "ETHUSDT:15m:1794960899999:LONG",
+      "symbol": "ETHUSDT",
+      "tf": "15m",
+      "direction": "LONG",
+      "signal_close": 1794960899999,
+      "entry": 1821.28,
+      "stop": 1796.4044642857143,
+      "r1": 1846.1555357142856,
+      "r2": 1871.0310714285713,
+      "relok": 100,
+      "iqe": 100,
+      "status": "ABERTA",
+      "checked_to": 1794960899999,
+      "hit1r": false,
+      "result_r": null,
+      "exit_time": null
+    },
+    {
+      "id": "DOGEUSDT:15m:1794960899999:LONG",
+      "symbol": "DOGEUSDT",
+      "tf": "15m",
+      "direction": "LONG",
+      "signal_close": 1794960899999,
+      "entry": 0.05996,
+      "stop": 0.05908264285714286,
+      "r1": 0.06083735714285714,
+      "r2": 0.061714714285714276,
+      "relok": 98,
+      "iqe": 98,
+      "status": "ABERTA",
+      "checked_to": 1794960899999,
+      "hit1r": false,
+      "result_r": null,
+      "exit_time": null
+    },
+    {
+      "id": "SUIUSDT:15m:1794960899999:LONG",
+      "symbol": "SUIUSDT",
+      "tf": "15m",
+      "direction": "LONG",
+      "signal_close": 1794960899999,
+      "entry": 0.736,
+      "stop": 0.7234510714285713,
+      "r1": 0.7485489285714286,
+      "r2": 0.7610978571428573,
+      "relok": 98,
+      "iqe": 98,
+      "status": "ABERTA",
+      "checked_to": 1794960899999,
       "hit1r": false,
       "result_r": null,
       "exit_time": null
