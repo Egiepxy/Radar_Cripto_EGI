@@ -6,7 +6,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const {analyze, egiFreshness, egiRiskGate} = require('./engine-original.js');
 const ROOT = path.resolve(__dirname, '..');
-const DIR = path.join(ROOT, 'data');
+const DIR = path.join(ROOT, process.env.FUTURES_LAB === 'true' ? 'data/futures-recovery-lab' : 'data');
 const FILE = {
   latest: path.join(DIR, 'radar-mme1-futures-latest.json'),
   history: path.join(DIR, 'radar-mme1-futures-history.json'),
@@ -33,26 +33,26 @@ function n(x) {const v=Number(x); return Number.isFinite(v)?v:null;}
 function closedBars(bars,now=Date.now()) {
   return (bars||[]).filter(k => Number(k[6])<=now-1400 && Number(k[6])>0);
 }
-async function api(endpoint,params={}) {
+async function api(endpoint,params={},request=fetch,pause=sleep) {
   const qs=new URLSearchParams(params).toString();
   let last;
   for(const host of BASES) {
     for(let a=0;a<2;a++) {
       try {
-        const response=await fetch(host+endpoint+(qs?'?'+qs:''),{signal:AbortSignal.timeout(15000),headers:{'User-Agent':'RadarMME1-EGI-Multimercados-LAB/1.1'}});
-        if(response.status===451) throw new Error('HTTP 451: acesso Binance Futures restrito por região');
-        if(response.status===429 || response.status===418) {last=new Error('HTTP '+response.status);await sleep(1800);continue;}
-        if(!response.ok) throw new Error('HTTP '+response.status);
-        // Alguns endpoints retornam HTTP 200 com corpo vazio/truncado.
-        // Registrar a falha real e tentar o outro host, sem criar precos ficticios.
+        const response=await request(host+endpoint+(qs?'?'+qs:''),{signal:AbortSignal.timeout(15000),headers:{Accept:'application/json','User-Agent':'RadarMME1-EGI-LAB/1.2'}});
+        if([451,403,418,429].includes(response.status)) {
+          const e=Error('HTTP '+response.status+' — coleta suspensa'); e.terminal=true; throw e;
+        }
+        if(response.status!==200) throw Error('HTTP '+response.status);
         const raw=await response.text();
-        if(!raw.trim())throw new Error('Resposta vazia HTTP '+response.status+' de '+host+endpoint);
-        try {return JSON.parse(raw);}
-        catch {throw new Error('JSON invalido HTTP '+response.status+' de '+host+endpoint+' ('+raw.length+' caracteres)');}
-      } catch(err) {last=err; if(String(err.message).includes('451')) break;}
+        if(!raw.trim())throw Error('Resposta vazia');
+        const data=JSON.parse(raw);
+        if(endpoint.endsWith('/exchangeInfo') ? !Array.isArray(data?.symbols)||!data.symbols.length : !Array.isArray(data)||!data.length)throw Error('Formato vazio ou invalido');
+        return data;
+      } catch(err) {if(err.terminal)throw err;last=err;await pause(1000*(a+1));}
     }
   }
-  throw new Error(endpoint+': '+(last?.message||'falha na API'));
+  throw Error(endpoint+': '+(last?.message||'falha na API'));
 }
 async function gather(jobs,worker,limit=4) {
   const result=[],errors=[]; let i=0;
@@ -107,7 +107,7 @@ function evaluateStudy(t,bars) {
   return messages;
 }
 async function notify(message) {
-  if(process.env.NTFY_ENABLED==='false')return false;
+  if(process.env.FUTURES_LAB==='true'||process.env.NTFY_ENABLED==='false')return false;
   const topic=process.env.NTFY_TOPIC||TOPIC;
   if(!/^[A-Za-z0-9_-]{4,70}$/.test(topic))throw Error('Tópico ntfy inválido');
   const r=await fetch('https://ntfy.sh/'+topic,{
@@ -243,4 +243,4 @@ async function run() {
   if(!readings.length)process.exitCode=1;
 }
 if(require.main===module)run().catch(e=>{console.error(e);process.exitCode=1;});
-module.exports={WATCH,TF,pearson,correlate1h,eligible,evaluateStudy,closedBars};
+module.exports={api,WATCH,TF,pearson,correlate1h,eligible,evaluateStudy,closedBars};
