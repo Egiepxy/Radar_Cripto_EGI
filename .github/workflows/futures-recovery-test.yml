@@ -1,0 +1,30 @@
+name: Futures Recovery LAB
+on:
+  push:
+    branches: [lab/futures-recovery-v12]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      FUTURES_LAB: "true"
+      NTFY_ENABLED: "false"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: |
+          node radar-mme1/test_robot.js
+          node radar-mme1/test_futures.js
+          node radar-mme1/test_futures_recovery.js
+      - run: node radar-mme1/futures-robot.js
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: futures-recovery-diagnostic
+          path: data/futures-recovery-lab/
+          if-no-files-found: warn
