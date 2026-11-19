@@ -1430,11 +1430,11 @@
       "r2": 0.30008142857142867,
       "relok": 98,
       "iqe": 98,
-      "status": "ABERTA",
-      "checked_to": 1795061699999,
+      "status": "STOP",
+      "checked_to": 1795076099999,
       "hit1r": true,
-      "result_r": null,
-      "exit_time": null
+      "result_r": -1,
+      "exit_time": 1795076099999
     },
     {
       "id": "SOLUSDT:15m:1794788099999:LONG",
