@@ -551,6 +551,14 @@
       "type": "SINAL",
       "direction": "SHORT",
       "relok": 100
+    },
+    {
+      "id": "SPCXBUSDT:15m:1795124699999:SHORT",
+      "time": 1795124699999,
+      "symbol": "SPCXBUSDT",
+      "type": "SINAL",
+      "direction": "SHORT",
+      "relok": 98
     }
   ],
   "trades": [
@@ -1795,6 +1803,24 @@
       "hit1r": false,
       "result_r": -1,
       "exit_time": 1795043699999
+    },
+    {
+      "id": "SPCXBUSDT:15m:1795124699999:SHORT",
+      "symbol": "SPCXBUSDT",
+      "tf": "15m",
+      "direction": "SHORT",
+      "signal_close": 1795124699999,
+      "entry": 137.36,
+      "stop": 139.28760714285713,
+      "r1": 135.4323928571429,
+      "r2": 133.5047857142858,
+      "relok": 98,
+      "iqe": 98,
+      "status": "ABERTA",
+      "checked_to": 1795124699999,
+      "hit1r": false,
+      "result_r": null,
+      "exit_time": null
     }
   ]
 }
