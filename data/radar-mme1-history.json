@@ -615,6 +615,14 @@
       "type": "SINAL",
       "direction": "SHORT",
       "relok": 98
+    },
+    {
+      "id": "MUBUSDT:15m:1795274999999:LONG",
+      "time": 1795274999999,
+      "symbol": "MUBUSDT",
+      "type": "SINAL",
+      "direction": "LONG",
+      "relok": 98
     }
   ],
   "trades": [
@@ -1980,11 +1988,11 @@
       "r2": 0.2981535714285715,
       "relok": 98,
       "iqe": 98,
-      "status": "ABERTA",
-      "checked_to": 1795246199999,
+      "status": "STOP",
+      "checked_to": 1795258799999,
       "hit1r": true,
-      "result_r": null,
-      "exit_time": null
+      "result_r": -1,
+      "exit_time": 1795258799999
     },
     {
       "id": "SPCXBUSDT:15m:1795200299999:SHORT",
@@ -2003,6 +2011,24 @@
       "hit1r": false,
       "result_r": -1,
       "exit_time": 1795201199999
+    },
+    {
+      "id": "MUBUSDT:15m:1795274999999:LONG",
+      "symbol": "MUBUSDT",
+      "tf": "15m",
+      "direction": "LONG",
+      "signal_close": 1795274999999,
+      "entry": 608.21,
+      "stop": 599.5670714285714,
+      "r1": 616.8529285714287,
+      "r2": 625.4958571428574,
+      "relok": 98,
+      "iqe": 98,
+      "status": "ABERTA",
+      "checked_to": 1795274999999,
+      "hit1r": false,
+      "result_r": null,
+      "exit_time": null
     }
   ]
 }
