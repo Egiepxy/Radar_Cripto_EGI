@@ -623,6 +623,14 @@
       "type": "SINAL",
       "direction": "LONG",
       "relok": 98
+    },
+    {
+      "id": "ZECUSDT:15m:1795294799999:LONG",
+      "time": 1795294799999,
+      "symbol": "ZECUSDT",
+      "type": "SINAL",
+      "direction": "LONG",
+      "relok": 100
     }
   ],
   "trades": [
@@ -2025,7 +2033,25 @@
       "relok": 98,
       "iqe": 98,
       "status": "ABERTA",
-      "checked_to": 1795274999999,
+      "checked_to": 1795294799999,
+      "hit1r": false,
+      "result_r": null,
+      "exit_time": null
+    },
+    {
+      "id": "ZECUSDT:15m:1795294799999:LONG",
+      "symbol": "ZECUSDT",
+      "tf": "15m",
+      "direction": "LONG",
+      "signal_close": 1795294799999,
+      "entry": 793.32,
+      "stop": 785.4803571428572,
+      "r1": 801.1596428571429,
+      "r2": 808.9992857142857,
+      "relok": 100,
+      "iqe": 100,
+      "status": "ABERTA",
+      "checked_to": 1795294799999,
       "hit1r": false,
       "result_r": null,
       "exit_time": null
