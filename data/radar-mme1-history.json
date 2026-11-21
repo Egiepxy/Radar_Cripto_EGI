@@ -1962,11 +1962,11 @@
       "r2": 0.8707642857142857,
       "relok": 100,
       "iqe": 100,
-      "status": "ABERTA",
-      "checked_to": 1795220099999,
+      "status": "2R",
+      "checked_to": 1795234499999,
       "hit1r": true,
-      "result_r": null,
-      "exit_time": null
+      "result_r": 2,
+      "exit_time": 1795234499999
     },
     {
       "id": "TRXUSDT:15m:1795200299999:SHORT",
@@ -1981,8 +1981,8 @@
       "relok": 98,
       "iqe": 98,
       "status": "ABERTA",
-      "checked_to": 1795220099999,
-      "hit1r": false,
+      "checked_to": 1795246199999,
+      "hit1r": true,
       "result_r": null,
       "exit_time": null
     },
