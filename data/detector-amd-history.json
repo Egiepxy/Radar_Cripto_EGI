@@ -6838,6 +6838,12 @@
         "observed_close": 1795255199999,
         "change_pct": 4.00906,
         "direction_favorable": false
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1795327199999,
+        "change_pct": 5.6126,
+        "direction_favorable": false
       }
     }
   },
@@ -6863,6 +6869,12 @@
         "status": "MEDIDO",
         "observed_close": 1795247999999,
         "change_pct": 2.21459,
+        "direction_favorable": false
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1795319999999,
+        "change_pct": 4.61673,
         "direction_favorable": false
       }
     }
@@ -6890,6 +6902,12 @@
         "observed_close": 1795255199999,
         "change_pct": 4.92664,
         "direction_favorable": true
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1795327199999,
+        "change_pct": 6.08532,
+        "direction_favorable": true
       }
     }
   },
@@ -6915,6 +6933,12 @@
         "status": "MEDIDO",
         "observed_close": 1795247999999,
         "change_pct": 3.72959,
+        "direction_favorable": false
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1795319999999,
+        "change_pct": 5.67262,
         "direction_favorable": false
       }
     }
@@ -6942,6 +6966,12 @@
         "observed_close": 1795255199999,
         "change_pct": 4.06355,
         "direction_favorable": false
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1795327199999,
+        "change_pct": 5.36205,
+        "direction_favorable": false
       }
     }
   },
@@ -6967,6 +6997,12 @@
         "status": "MEDIDO",
         "observed_close": 1795247999999,
         "change_pct": 1.71998,
+        "direction_favorable": false
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1795319999999,
+        "change_pct": 4.828,
         "direction_favorable": false
       }
     }
@@ -6994,6 +7030,12 @@
         "observed_close": 1795255199999,
         "change_pct": 3.05946,
         "direction_favorable": false
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1795327199999,
+        "change_pct": 5.56035,
+        "direction_favorable": false
       }
     }
   },
@@ -7019,6 +7061,12 @@
         "status": "MEDIDO",
         "observed_close": 1795247999999,
         "change_pct": 1.26177,
+        "direction_favorable": false
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1795319999999,
+        "change_pct": 4.48179,
         "direction_favorable": false
       }
     }
@@ -7046,6 +7094,12 @@
         "observed_close": 1795255199999,
         "change_pct": 2.67141,
         "direction_favorable": false
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1795327199999,
+        "change_pct": 4.98739,
+        "direction_favorable": false
       }
     }
   },
@@ -7071,6 +7125,12 @@
         "status": "MEDIDO",
         "observed_close": 1795247999999,
         "change_pct": 1.14577,
+        "direction_favorable": false
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1795319999999,
+        "change_pct": 4.26546,
         "direction_favorable": false
       }
     }
@@ -7098,6 +7158,12 @@
         "observed_close": 1795255199999,
         "change_pct": 4.20752,
         "direction_favorable": false
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1795327199999,
+        "change_pct": 5.74656,
+        "direction_favorable": false
       }
     }
   },
@@ -7123,6 +7189,12 @@
         "status": "MEDIDO",
         "observed_close": 1795247999999,
         "change_pct": 1.7591,
+        "direction_favorable": false
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1795319999999,
+        "change_pct": 4.37332,
         "direction_favorable": false
       }
     }
@@ -7150,6 +7222,12 @@
         "observed_close": 1795255199999,
         "change_pct": 3.55819,
         "direction_favorable": true
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1795327199999,
+        "change_pct": 4.81838,
+        "direction_favorable": true
       }
     }
   },
@@ -7175,6 +7253,12 @@
         "status": "MEDIDO",
         "observed_close": 1795247999999,
         "change_pct": 1.6129,
+        "direction_favorable": false
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1795319999999,
+        "change_pct": 4.17889,
         "direction_favorable": false
       }
     }
@@ -7202,6 +7286,12 @@
         "observed_close": 1795255199999,
         "change_pct": 3.33786,
         "direction_favorable": false
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1795327199999,
+        "change_pct": 4.83214,
+        "direction_favorable": false
       }
     }
   },
@@ -7227,6 +7317,12 @@
         "status": "MEDIDO",
         "observed_close": 1795247999999,
         "change_pct": 1.51602,
+        "direction_favorable": false
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1795319999999,
+        "change_pct": 4.37536,
         "direction_favorable": false
       }
     }
@@ -7254,6 +7350,12 @@
         "observed_close": 1795255199999,
         "change_pct": 4.78689,
         "direction_favorable": false
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1795327199999,
+        "change_pct": 6.62295,
+        "direction_favorable": false
       }
     }
   },
@@ -7279,6 +7381,12 @@
         "status": "MEDIDO",
         "observed_close": 1795247999999,
         "change_pct": 1.32343,
+        "direction_favorable": false
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1795319999999,
+        "change_pct": 5.13234,
         "direction_favorable": false
       }
     }
@@ -7306,6 +7414,12 @@
         "observed_close": 1795255199999,
         "change_pct": 4.91483,
         "direction_favorable": true
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1795327199999,
+        "change_pct": 3.82988,
+        "direction_favorable": true
       }
     }
   },
@@ -7331,6 +7445,12 @@
         "status": "MEDIDO",
         "observed_close": 1795255199999,
         "change_pct": 3.45314,
+        "direction_favorable": true
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1795327199999,
+        "change_pct": 8.19826,
         "direction_favorable": true
       }
     }
@@ -7358,6 +7478,12 @@
         "observed_close": 1795247999999,
         "change_pct": 1.78862,
         "direction_favorable": false
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1795319999999,
+        "change_pct": 8.10685,
+        "direction_favorable": false
       }
     }
   },
@@ -7383,6 +7509,12 @@
         "status": "MEDIDO",
         "observed_close": 1795255199999,
         "change_pct": 3.43232,
+        "direction_favorable": false
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1795327199999,
+        "change_pct": 6.55611,
         "direction_favorable": false
       }
     }
@@ -7410,6 +7542,12 @@
         "observed_close": 1795247999999,
         "change_pct": 0.37922,
         "direction_favorable": false
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1795319999999,
+        "change_pct": 5.38491,
+        "direction_favorable": false
       }
     }
   },
@@ -7435,6 +7573,12 @@
         "status": "MEDIDO",
         "observed_close": 1795255199999,
         "change_pct": 4.36095,
+        "direction_favorable": false
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1795327199999,
+        "change_pct": 6.8098,
         "direction_favorable": false
       }
     }
@@ -7462,6 +7606,12 @@
         "observed_close": 1795247999999,
         "change_pct": 0.94989,
         "direction_favorable": false
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1795319999999,
+        "change_pct": 4.4055,
+        "direction_favorable": false
       }
     }
   },
@@ -7487,6 +7637,12 @@
         "status": "MEDIDO",
         "observed_close": 1795255199999,
         "change_pct": 5.60928,
+        "direction_favorable": false
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1795327199999,
+        "change_pct": 10.94778,
         "direction_favorable": false
       }
     }
@@ -7514,6 +7670,12 @@
         "observed_close": 1795247999999,
         "change_pct": 0.78947,
         "direction_favorable": false
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1795319999999,
+        "change_pct": 7.81955,
+        "direction_favorable": false
       }
     }
   },
@@ -7539,6 +7701,12 @@
         "status": "MEDIDO",
         "observed_close": 1795255199999,
         "change_pct": 3.84615,
+        "direction_favorable": true
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1795327199999,
+        "change_pct": 5.4409,
         "direction_favorable": true
       }
     }
@@ -7566,6 +7734,12 @@
         "observed_close": 1795247999999,
         "change_pct": 0.55814,
         "direction_favorable": false
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1795319999999,
+        "change_pct": 5.5814,
+        "direction_favorable": false
       }
     }
   },
@@ -7591,6 +7765,12 @@
         "status": "MEDIDO",
         "observed_close": 1795255199999,
         "change_pct": 1.69771,
+        "direction_favorable": true
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1795327199999,
+        "change_pct": 12.78,
         "direction_favorable": true
       }
     }
@@ -7618,6 +7798,12 @@
         "observed_close": 1795255199999,
         "change_pct": 1.6683,
         "direction_favorable": false
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1795327199999,
+        "change_pct": 5.03762,
+        "direction_favorable": false
       }
     }
   },
@@ -7644,6 +7830,12 @@
         "observed_close": 1795247999999,
         "change_pct": -1.53306,
         "direction_favorable": false
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1795319999999,
+        "change_pct": 2.58703,
+        "direction_favorable": true
       }
     }
   },
@@ -7669,6 +7861,12 @@
         "status": "MEDIDO",
         "observed_close": 1795255199999,
         "change_pct": 3.42679,
+        "direction_favorable": false
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1795327199999,
+        "change_pct": 4.04984,
         "direction_favorable": false
       }
     }
@@ -7696,6 +7894,12 @@
         "observed_close": 1795247999999,
         "change_pct": 0.91743,
         "direction_favorable": false
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1795319999999,
+        "change_pct": 2.44648,
+        "direction_favorable": false
       }
     }
   },
@@ -7721,6 +7925,12 @@
         "status": "MEDIDO",
         "observed_close": 1795255199999,
         "change_pct": 2.83641,
+        "direction_favorable": false
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1795327199999,
+        "change_pct": 4.88127,
         "direction_favorable": false
       }
     }
@@ -7748,6 +7958,12 @@
         "observed_close": 1795255199999,
         "change_pct": 2.18158,
         "direction_favorable": true
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1795327199999,
+        "change_pct": 6.09366,
+        "direction_favorable": true
       }
     }
   },
@@ -7762,6 +7978,19 @@
     "support": 0.4167,
     "resistance": 0.477,
     "hypothesis": "BAIXA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1795312799999,
+        "change_pct": 1.45019,
+        "direction_favorable": false
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1795319999999,
+        "change_pct": 1.63934,
+        "direction_favorable": false
+      }
+    }
   }
 ]
