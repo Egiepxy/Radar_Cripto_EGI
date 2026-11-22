@@ -1,37 +1,5 @@
 [
   {
-    "id": "NEARUSDT:2h:1794671999999:BREAK_DOWN",
-    "symbol": "NEARUSDT",
-    "timeframe": "2h",
-    "phase": "BREAK_DOWN",
-    "close_time": 1794671999999,
-    "reference_price": 3.219,
-    "volume_relative": 2.420142764894287,
-    "support": 3.265,
-    "resistance": 3.639,
-    "hypothesis": "BAIXA",
-    "audit": {
-      "2h": {
-        "status": "MEDIDO",
-        "observed_close": 1794679199999,
-        "change_pct": -2.76483,
-        "direction_favorable": true
-      },
-      "4h": {
-        "status": "MEDIDO",
-        "observed_close": 1794686399999,
-        "change_pct": -4.03852,
-        "direction_favorable": true
-      },
-      "24h": {
-        "status": "MEDIDO",
-        "observed_close": 1794758399999,
-        "change_pct": -2.60951,
-        "direction_favorable": true
-      }
-    }
-  },
-  {
     "id": "NEARUSDT:4h:1794671999999:BREAK_DOWN",
     "symbol": "NEARUSDT",
     "timeframe": "4h",
@@ -7992,5 +7960,18 @@
         "direction_favorable": false
       }
     }
+  },
+  {
+    "id": "NEARUSDT:2h:1795363199999:SWEEP_HIGH",
+    "symbol": "NEARUSDT",
+    "timeframe": "2h",
+    "phase": "SWEEP_HIGH",
+    "close_time": 1795363199999,
+    "reference_price": 2.998,
+    "volume_relative": 0.6753475863759584,
+    "support": 2.55,
+    "resistance": 3.04,
+    "hypothesis": "BAIXA",
+    "audit": {}
   }
 ]
