@@ -7972,6 +7972,19 @@
     "support": 2.55,
     "resistance": 3.04,
     "hypothesis": "BAIXA",
-    "audit": {}
+    "audit": {
+      "2h": {
+        "status": "MEDIDO",
+        "observed_close": 1795370399999,
+        "change_pct": 0.36691,
+        "direction_favorable": false
+      },
+      "4h": {
+        "status": "MEDIDO",
+        "observed_close": 1795377599999,
+        "change_pct": -0.46698,
+        "direction_favorable": true
+      }
+    }
   }
 ]
