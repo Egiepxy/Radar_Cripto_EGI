@@ -4,81 +4,81 @@
   "strength_classes": {
     "ETHUSDT": {
       "class": "NEUTRO",
-      "closed": 1795399199999
+      "closed": 1795427999999
     },
     "SOLUSDT": {
-      "class": "NEUTRO",
-      "closed": 1795399199999
+      "class": "FORTE",
+      "closed": 1795427999999
     },
     "BNBUSDT": {
       "class": "NEUTRO",
-      "closed": 1795399199999
+      "closed": 1795427999999
     },
     "XRPUSDT": {
       "class": "NEUTRO",
-      "closed": 1795399199999
+      "closed": 1795427999999
     },
     "LINKUSDT": {
       "class": "NEUTRO",
-      "closed": 1795399199999
+      "closed": 1795427999999
     },
     "ADAUSDT": {
-      "class": "FRACO",
-      "closed": 1795399199999
+      "class": "NEUTRO",
+      "closed": 1795427999999
     },
     "DOGEUSDT": {
       "class": "NEUTRO",
-      "closed": 1795399199999
+      "closed": 1795427999999
     },
     "AVAXUSDT": {
-      "class": "FRACO",
-      "closed": 1795399199999
+      "class": "NEUTRO",
+      "closed": 1795427999999
     },
     "AAVEUSDT": {
       "class": "FRACO",
-      "closed": 1795399199999
+      "closed": 1795427999999
     },
     "UNIUSDT": {
-      "class": "FORTE",
-      "closed": 1795399199999
+      "class": "NEUTRO",
+      "closed": 1795427999999
     },
     "ONDOUSDT": {
-      "class": "FRACO",
-      "closed": 1795399199999
+      "class": "FORTE",
+      "closed": 1795427999999
     },
     "SUIUSDT": {
-      "class": "FRACO",
-      "closed": 1795399199999
+      "class": "NEUTRO",
+      "closed": 1795427999999
     },
     "NEARUSDT": {
-      "class": "NEUTRO",
-      "closed": 1795399199999
+      "class": "FRACO",
+      "closed": 1795427999999
     },
     "WLDUSDT": {
-      "class": "FRACO",
-      "closed": 1795399199999
+      "class": "NEUTRO",
+      "closed": 1795427999999
     },
     "ETHFIUSDT": {
-      "class": "NEUTRO",
-      "closed": 1795399199999
+      "class": "FRACO",
+      "closed": 1795427999999
     },
     "TIAUSDT": {
       "class": "NEUTRO",
-      "closed": 1795399199999
+      "closed": 1795427999999
     },
     "PEPEUSDT": {
-      "class": "FRACO",
-      "closed": 1795399199999
+      "class": "FORTE",
+      "closed": 1795427999999
     },
     "FLOKIUSDT": {
-      "class": "NEUTRO",
-      "closed": 1795399199999
+      "class": "FORTE",
+      "closed": 1795427999999
     },
     "RAYUSDT": {
-      "class": "FRACO",
-      "closed": 1795399199999
+      "class": "FORTE",
+      "closed": 1795427999999
     }
   },
   "pending": [],
-  "last_bucket": 498722
+  "last_bucket": 498731
 }
