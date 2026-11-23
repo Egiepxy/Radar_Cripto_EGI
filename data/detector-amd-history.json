@@ -1,37 +1,5 @@
 [
   {
-    "id": "NEARUSDT:4h:1794671999999:BREAK_DOWN",
-    "symbol": "NEARUSDT",
-    "timeframe": "4h",
-    "phase": "BREAK_DOWN",
-    "close_time": 1794671999999,
-    "reference_price": 3.219,
-    "volume_relative": 1.6696544543139475,
-    "support": 3.265,
-    "resistance": 3.815,
-    "hypothesis": "BAIXA",
-    "audit": {
-      "2h": {
-        "status": "MEDIDO",
-        "observed_close": 1794679199999,
-        "change_pct": -2.76483,
-        "direction_favorable": true
-      },
-      "4h": {
-        "status": "MEDIDO",
-        "observed_close": 1794686399999,
-        "change_pct": -4.03852,
-        "direction_favorable": true
-      },
-      "24h": {
-        "status": "MEDIDO",
-        "observed_close": 1794758399999,
-        "change_pct": -2.60951,
-        "direction_favorable": true
-      }
-    }
-  },
-  {
     "id": "WLDUSDT:2h:1794671999999:BREAK_DOWN",
     "symbol": "WLDUSDT",
     "timeframe": "2h",
@@ -7958,6 +7926,12 @@
         "observed_close": 1795319999999,
         "change_pct": 1.63934,
         "direction_favorable": false
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1795391999999,
+        "change_pct": 4.876,
+        "direction_favorable": false
       }
     }
   },
@@ -7986,5 +7960,18 @@
         "direction_favorable": true
       }
     }
+  },
+  {
+    "id": "BNBUSDT:2h:1795399199999:SWEEP_HIGH",
+    "symbol": "BNBUSDT",
+    "timeframe": "2h",
+    "phase": "SWEEP_HIGH",
+    "close_time": 1795399199999,
+    "reference_price": 555.87,
+    "volume_relative": 0.8010754417646746,
+    "support": 519.11,
+    "resistance": 560.57,
+    "hypothesis": "BAIXA",
+    "audit": {}
   }
 ]
