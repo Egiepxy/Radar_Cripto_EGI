@@ -1,0 +1,41 @@
+{
+  "initialized": true,
+  "status": {
+    "MUUSDT": {
+      "state": "LATERAL",
+      "close_time": 1795498199999
+    },
+    "SNDKUSDT": {
+      "state": "SINAL_SHORT",
+      "close_time": 1795498199999
+    },
+    "SPCXUSDT": {
+      "state": "LATERAL",
+      "close_time": 1795498199999
+    },
+    "NVDAUSDT": {
+      "state": "SINAL_SHORT",
+      "close_time": 1795498199999
+    },
+    "TSLAUSDT": {
+      "state": "LATERAL",
+      "close_time": 1795498199999
+    },
+    "BZUSDT": {
+      "state": "SHORT",
+      "close_time": 1795498199999
+    },
+    "XAUUSDT": {
+      "state": "SHORT",
+      "close_time": 1795498199999
+    },
+    "BTCUSDT": {
+      "state": "RISCO",
+      "close_time": 1795498199999
+    }
+  },
+  "pending": [],
+  "trades": [],
+  "events": [],
+  "last_checked": "2026-11-24T05:35:49.376Z"
+}
