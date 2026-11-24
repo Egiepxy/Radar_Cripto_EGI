@@ -7926,6 +7926,12 @@
         "observed_close": 1795413599999,
         "change_pct": 0.89229,
         "direction_favorable": false
+      },
+      "24h": {
+        "status": "MEDIDO",
+        "observed_close": 1795485599999,
+        "change_pct": 0.37599,
+        "direction_favorable": false
       }
     }
   },
