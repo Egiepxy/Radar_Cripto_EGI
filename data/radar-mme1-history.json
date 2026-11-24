@@ -647,6 +647,38 @@
       "type": "SINAL",
       "direction": "LONG",
       "relok": 98
+    },
+    {
+      "id": "SOLUSDT:15m:1795478399999:SHORT",
+      "time": 1795478399999,
+      "symbol": "SOLUSDT",
+      "type": "SINAL",
+      "direction": "SHORT",
+      "relok": 100
+    },
+    {
+      "id": "ZECUSDT:15m:1795478399999:SHORT",
+      "time": 1795478399999,
+      "symbol": "ZECUSDT",
+      "type": "SINAL",
+      "direction": "SHORT",
+      "relok": 100
+    },
+    {
+      "id": "HYPEUSDT:15m:1795478399999:SHORT",
+      "time": 1795478399999,
+      "symbol": "HYPEUSDT",
+      "type": "SINAL",
+      "direction": "SHORT",
+      "relok": 98
+    },
+    {
+      "id": "DOGEUSDT:15m:1795478399999:SHORT",
+      "time": 1795478399999,
+      "symbol": "DOGEUSDT",
+      "type": "SINAL",
+      "direction": "SHORT",
+      "relok": 98
     }
   ],
   "trades": [
@@ -2084,11 +2116,11 @@
       "r2": 1772.7500714285718,
       "relok": 100,
       "iqe": 100,
-      "status": "ABERTA",
-      "checked_to": 1795436099999,
+      "status": "2R",
+      "checked_to": 1795442399999,
       "hit1r": true,
-      "result_r": null,
-      "exit_time": null
+      "result_r": 2,
+      "exit_time": 1795442399999
     },
     {
       "id": "HYPEUSDT:15m:1795364999999:LONG",
@@ -2107,6 +2139,78 @@
       "hit1r": false,
       "result_r": -1,
       "exit_time": 1795372199999
+    },
+    {
+      "id": "SOLUSDT:15m:1795478399999:SHORT",
+      "symbol": "SOLUSDT",
+      "tf": "15m",
+      "direction": "SHORT",
+      "signal_close": 1795478399999,
+      "entry": 72.03,
+      "stop": 72.60160714285715,
+      "r1": 71.45839285714285,
+      "r2": 70.88678571428571,
+      "relok": 100,
+      "iqe": 100,
+      "status": "ABERTA",
+      "checked_to": 1795478399999,
+      "hit1r": false,
+      "result_r": null,
+      "exit_time": null
+    },
+    {
+      "id": "ZECUSDT:15m:1795478399999:SHORT",
+      "symbol": "ZECUSDT",
+      "tf": "15m",
+      "direction": "SHORT",
+      "signal_close": 1795478399999,
+      "entry": 776.93,
+      "stop": 783.01,
+      "r1": 770.8499999999999,
+      "r2": 764.7699999999999,
+      "relok": 100,
+      "iqe": 100,
+      "status": "ABERTA",
+      "checked_to": 1795478399999,
+      "hit1r": false,
+      "result_r": null,
+      "exit_time": null
+    },
+    {
+      "id": "HYPEUSDT:15m:1795478399999:SHORT",
+      "symbol": "HYPEUSDT",
+      "tf": "15m",
+      "direction": "SHORT",
+      "signal_close": 1795478399999,
+      "entry": 63.74,
+      "stop": 64.73557142857143,
+      "r1": 62.74442857142857,
+      "r2": 61.74885714285714,
+      "relok": 98,
+      "iqe": 98,
+      "status": "ABERTA",
+      "checked_to": 1795478399999,
+      "hit1r": false,
+      "result_r": null,
+      "exit_time": null
+    },
+    {
+      "id": "DOGEUSDT:15m:1795478399999:SHORT",
+      "symbol": "DOGEUSDT",
+      "tf": "15m",
+      "direction": "SHORT",
+      "signal_close": 1795478399999,
+      "entry": 0.0564,
+      "stop": 0.05712403571428571,
+      "r1": 0.05567596428571429,
+      "r2": 0.054951928571428575,
+      "relok": 98,
+      "iqe": 98,
+      "status": "ABERTA",
+      "checked_to": 1795478399999,
+      "hit1r": false,
+      "result_r": null,
+      "exit_time": null
     }
   ]
 }
