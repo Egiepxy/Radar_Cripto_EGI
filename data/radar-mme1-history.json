@@ -2336,11 +2336,11 @@
       "r2": 150.18192857142856,
       "relok": 99,
       "iqe": 99,
-      "status": "ABERTA",
-      "checked_to": 1795551299999,
+      "status": "STOP",
+      "checked_to": 1795553999999,
       "hit1r": false,
-      "result_r": null,
-      "exit_time": null
+      "result_r": -1,
+      "exit_time": 1795553999999
     }
   ]
 }
