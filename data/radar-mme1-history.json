@@ -815,6 +815,38 @@
       "type": "SINAL",
       "direction": "LONG",
       "relok": 97
+    },
+    {
+      "id": "BTCUSDT:15m:1795755599999:LONG",
+      "time": 1795755599999,
+      "symbol": "BTCUSDT",
+      "type": "SINAL",
+      "direction": "LONG",
+      "relok": 100
+    },
+    {
+      "id": "XRPUSDT:15m:1795755599999:LONG",
+      "time": 1795755599999,
+      "symbol": "XRPUSDT",
+      "type": "SINAL",
+      "direction": "LONG",
+      "relok": 99
+    },
+    {
+      "id": "WBTCUSDT:15m:1795755599999:LONG",
+      "time": 1795755599999,
+      "symbol": "WBTCUSDT",
+      "type": "SINAL",
+      "direction": "LONG",
+      "relok": 98
+    },
+    {
+      "id": "SUIUSDT:15m:1795755599999:LONG",
+      "time": 1795755599999,
+      "symbol": "SUIUSDT",
+      "type": "SINAL",
+      "direction": "LONG",
+      "relok": 98
     }
   ],
   "trades": [
@@ -2487,7 +2519,7 @@
       "relok": 98,
       "iqe": 98,
       "status": "ABERTA",
-      "checked_to": 1795734899999,
+      "checked_to": 1795755599999,
       "hit1r": false,
       "result_r": null,
       "exit_time": null
@@ -2523,7 +2555,7 @@
       "relok": 98,
       "iqe": 98,
       "status": "ABERTA",
-      "checked_to": 1795734899999,
+      "checked_to": 1795755599999,
       "hit1r": false,
       "result_r": null,
       "exit_time": null
@@ -2653,6 +2685,78 @@
       "hit1r": false,
       "result_r": -1,
       "exit_time": 1795676399999
+    },
+    {
+      "id": "BTCUSDT:15m:1795755599999:LONG",
+      "symbol": "BTCUSDT",
+      "tf": "15m",
+      "direction": "LONG",
+      "signal_close": 1795755599999,
+      "entry": 61419.47,
+      "stop": 60572.57578571429,
+      "r1": 62266.36421428571,
+      "r2": 63113.258428571426,
+      "relok": 100,
+      "iqe": 100,
+      "status": "ABERTA",
+      "checked_to": 1795755599999,
+      "hit1r": false,
+      "result_r": null,
+      "exit_time": null
+    },
+    {
+      "id": "XRPUSDT:15m:1795755599999:LONG",
+      "symbol": "XRPUSDT",
+      "tf": "15m",
+      "direction": "LONG",
+      "signal_close": 1795755599999,
+      "entry": 0.9602,
+      "stop": 0.9410035714285714,
+      "r1": 0.9793964285714287,
+      "r2": 0.9985928571428574,
+      "relok": 99,
+      "iqe": 99,
+      "status": "ABERTA",
+      "checked_to": 1795755599999,
+      "hit1r": false,
+      "result_r": null,
+      "exit_time": null
+    },
+    {
+      "id": "WBTCUSDT:15m:1795755599999:LONG",
+      "symbol": "WBTCUSDT",
+      "tf": "15m",
+      "direction": "LONG",
+      "signal_close": 1795755599999,
+      "entry": 61490.43,
+      "stop": 60640.99546428571,
+      "r1": 62339.86453571429,
+      "r2": 63189.29907142858,
+      "relok": 98,
+      "iqe": 98,
+      "status": "ABERTA",
+      "checked_to": 1795755599999,
+      "hit1r": false,
+      "result_r": null,
+      "exit_time": null
+    },
+    {
+      "id": "SUIUSDT:15m:1795755599999:LONG",
+      "symbol": "SUIUSDT",
+      "tf": "15m",
+      "direction": "LONG",
+      "signal_close": 1795755599999,
+      "entry": 0.6832,
+      "stop": 0.6788107142857143,
+      "r1": 0.6875892857142858,
+      "r2": 0.6919785714285716,
+      "relok": 98,
+      "iqe": 98,
+      "status": "ABERTA",
+      "checked_to": 1795755599999,
+      "hit1r": false,
+      "result_r": null,
+      "exit_time": null
     }
   ]
 }
