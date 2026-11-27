@@ -6,6 +6,7 @@
   publicado separadamente, sem execução de ordens.
 */
 const fs=require('fs'),path=require('path');
+const {planQueue}=require('./queue-policy.js');
 const {analyze,egiFreshness,egiRiskGate}=require('./engine-original.js');
 const ROOT=path.resolve(__dirname,'..'), DATA=path.join(ROOT,'data');
 const FILES={snapshot:path.join(DATA,'radar-mme1-latest.json'),state:path.join(DATA,'radar-mme1-state.json'),history:path.join(DATA,'radar-mme1-history.json')};
@@ -207,14 +208,15 @@ async function main(){
  // Parar novos sinais após três STOPs consecutivos, mas jamais parar auditoria dos abertos.
  // Este LAB apenas identifica bloqueio na leitura; o bloqueio é aplicado na próxima varredura.
  const alertCandidates=eventMessages.filter(Boolean);
- for(const message of alertCandidates)if(!pending.includes(message))pending.push(message);
- const unsent=[];
- for(let i=0;i<pending.length;i++){
-  const msg=pending[i];if(i>=4){unsent.push(msg);continue;}
-  try{if(!await push(msg))unsent.push(msg);}
-  catch(e){console.log('ntfy pendente:',e.message);unsent.push(msg);}
-  if(i<Math.min(3,pending.length-1))await sleep(6500);
+ const plan=planQueue(pending,alertCandidates,started),unsent=[];
+ let delivered=0;
+ for(let i=0;i<plan.queue.length;i++){
+  const item=plan.queue[i];if(i>=4){unsent.push(item);continue;}
+  try{if(await push(item.message))delivered++;else unsent.push(item);}
+  catch(e){console.log('ntfy pendente:',e.message);unsent.push(item);}
+  if(i<Math.min(3,plan.queue.length-1))await sleep(6500);
  }
+ previous.pendingArchive=[...(Array.isArray(previous.pendingArchive)?previous.pendingArchive:[]),...plan.archive];
  const records=readings.sort((a,b)=>Number(b.relok||0)-Number(a.relok||0));
  const signals=records.filter(r=>r.eligible);
  const ready=records.filter(r=>r.state==='PREPARAR');
@@ -230,11 +232,12 @@ async function main(){
   open_studies:runtimeTrades.filter(x=>x.status==='ABERTA').length,
   trades:runtimeTrades.slice(-100),events:(previous.events||[]).slice(-100),
   errors:errors.slice(0,30),notes:notes.slice(0,30),
+  delivery:{pendingBefore:pending.length,newMessages:alertCandidates.length,sent:delivered,pendingAfter:unsent.length,archivedThisRun:plan.archive.length,archivedTotal:previous.pendingArchive.length,duplicates:plan.duplicates},
   warning:'Estudo. RelOk automático não substitui aprovação humana/GPT; não há negociação nem taxas/slippage reais.'};
  previous.initialized=true;previous.status={...previous.status,...newStatus};
  previous.events=(previous.events||[]).slice(-250);
  previous.trades=runtimeTrades.slice(-200);
- previous.pending=unsent.slice(-40);
+ previous.pending=unsent;
  previous.stop_streak=streak;
  previous.last_checked=started;
  save(FILES.snapshot,snapshot);save(FILES.history,{events:previous.events,trades:previous.trades});save(FILES.state,previous);
