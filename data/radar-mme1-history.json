@@ -2519,8 +2519,8 @@
       "relok": 98,
       "iqe": 98,
       "status": "ABERTA",
-      "checked_to": 1795755599999,
-      "hit1r": false,
+      "checked_to": 1795792499999,
+      "hit1r": true,
       "result_r": null,
       "exit_time": null
     },
@@ -2555,8 +2555,8 @@
       "relok": 98,
       "iqe": 98,
       "status": "ABERTA",
-      "checked_to": 1795755599999,
-      "hit1r": false,
+      "checked_to": 1795792499999,
+      "hit1r": true,
       "result_r": null,
       "exit_time": null
     },
@@ -2698,11 +2698,11 @@
       "r2": 63113.258428571426,
       "relok": 100,
       "iqe": 100,
-      "status": "ABERTA",
-      "checked_to": 1795755599999,
+      "status": "STOP",
+      "checked_to": 1795790699999,
       "hit1r": false,
-      "result_r": null,
-      "exit_time": null
+      "result_r": -1,
+      "exit_time": 1795790699999
     },
     {
       "id": "XRPUSDT:15m:1795755599999:LONG",
@@ -2716,11 +2716,11 @@
       "r2": 0.9985928571428574,
       "relok": 99,
       "iqe": 99,
-      "status": "ABERTA",
-      "checked_to": 1795755599999,
-      "hit1r": false,
-      "result_r": null,
-      "exit_time": null
+      "status": "STOP",
+      "checked_to": 1795791599999,
+      "hit1r": true,
+      "result_r": -1,
+      "exit_time": 1795791599999
     },
     {
       "id": "WBTCUSDT:15m:1795755599999:LONG",
@@ -2734,11 +2734,11 @@
       "r2": 63189.29907142858,
       "relok": 98,
       "iqe": 98,
-      "status": "ABERTA",
-      "checked_to": 1795755599999,
+      "status": "STOP",
+      "checked_to": 1795790699999,
       "hit1r": false,
-      "result_r": null,
-      "exit_time": null
+      "result_r": -1,
+      "exit_time": 1795790699999
     },
     {
       "id": "SUIUSDT:15m:1795755599999:LONG",
@@ -2752,11 +2752,11 @@
       "r2": 0.6919785714285716,
       "relok": 98,
       "iqe": 98,
-      "status": "ABERTA",
-      "checked_to": 1795755599999,
-      "hit1r": false,
-      "result_r": null,
-      "exit_time": null
+      "status": "2R",
+      "checked_to": 1795772699999,
+      "hit1r": true,
+      "result_r": 2,
+      "exit_time": 1795772699999
     }
   ]
 }
