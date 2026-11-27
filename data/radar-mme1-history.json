@@ -847,6 +847,30 @@
       "type": "SINAL",
       "direction": "LONG",
       "relok": 98
+    },
+    {
+      "id": "ETHUSDT:15m:1795822199999:SHORT",
+      "time": 1795822199999,
+      "symbol": "ETHUSDT",
+      "type": "SINAL",
+      "direction": "SHORT",
+      "relok": 100
+    },
+    {
+      "id": "SOLUSDT:15m:1795822199999:SHORT",
+      "time": 1795822199999,
+      "symbol": "SOLUSDT",
+      "type": "SINAL",
+      "direction": "SHORT",
+      "relok": 100
+    },
+    {
+      "id": "NVDABUSDT:15m:1795822199999:SHORT",
+      "time": 1795822199999,
+      "symbol": "NVDABUSDT",
+      "type": "SINAL",
+      "direction": "SHORT",
+      "relok": 98
     }
   ],
   "trades": [
@@ -2519,7 +2543,7 @@
       "relok": 98,
       "iqe": 98,
       "status": "ABERTA",
-      "checked_to": 1795792499999,
+      "checked_to": 1795822199999,
       "hit1r": true,
       "result_r": null,
       "exit_time": null
@@ -2555,7 +2579,7 @@
       "relok": 98,
       "iqe": 98,
       "status": "ABERTA",
-      "checked_to": 1795792499999,
+      "checked_to": 1795822199999,
       "hit1r": true,
       "result_r": null,
       "exit_time": null
@@ -2757,6 +2781,60 @@
       "hit1r": true,
       "result_r": 2,
       "exit_time": 1795772699999
+    },
+    {
+      "id": "ETHUSDT:15m:1795822199999:SHORT",
+      "symbol": "ETHUSDT",
+      "tf": "15m",
+      "direction": "SHORT",
+      "signal_close": 1795822199999,
+      "entry": 1659.49,
+      "stop": 1669.8181071428571,
+      "r1": 1649.161892857143,
+      "r2": 1638.8337857142858,
+      "relok": 100,
+      "iqe": 100,
+      "status": "ABERTA",
+      "checked_to": 1795822199999,
+      "hit1r": false,
+      "result_r": null,
+      "exit_time": null
+    },
+    {
+      "id": "SOLUSDT:15m:1795822199999:SHORT",
+      "symbol": "SOLUSDT",
+      "tf": "15m",
+      "direction": "SHORT",
+      "signal_close": 1795822199999,
+      "entry": 71.49,
+      "stop": 72.1815,
+      "r1": 70.79849999999999,
+      "r2": 70.10699999999999,
+      "relok": 100,
+      "iqe": 100,
+      "status": "ABERTA",
+      "checked_to": 1795822199999,
+      "hit1r": false,
+      "result_r": null,
+      "exit_time": null
+    },
+    {
+      "id": "NVDABUSDT:15m:1795822199999:SHORT",
+      "symbol": "NVDABUSDT",
+      "tf": "15m",
+      "direction": "SHORT",
+      "signal_close": 1795822199999,
+      "entry": 148.74,
+      "stop": 150.48139285714285,
+      "r1": 146.99860714285717,
+      "r2": 145.25721428571433,
+      "relok": 98,
+      "iqe": 98,
+      "status": "ABERTA",
+      "checked_to": 1795822199999,
+      "hit1r": false,
+      "result_r": null,
+      "exit_time": null
     }
   ]
 }
